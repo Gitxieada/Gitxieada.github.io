@@ -1,11 +1,4 @@
----
-title: README
-date: 2017-10-26 17:32:41
----
-
-# Gitxieada.github.io
-
-小谢的技术博客
+## 小谢的技术博客
 
 主题
 [hexo-theme-yilia](https://github.com/litten/hexo-theme-yilia)
