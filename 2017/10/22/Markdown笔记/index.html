@@ -15,12 +15,12 @@
 <meta property="og:url" content="http://yoursite.com/2017/10/22/Markdown笔记/index.html">
 <meta property="og:site_name" content="Gitxie的博客">
 <meta property="og:description" content="最初只需要记住# 标题一、## 标题二、1. 第一点、* 这一点，用这几个写写日志、需求文档、小文章，排版上足够了；逐渐的你发现有些文字需要重点指出，那么还可以使用加粗、斜体 来对文字做重点说明；如果你是名程序员，那么可以用 ``` 把代码块包起来，渲染后可以关键字高亮，用&amp;gt; 可以做引用。">
-<meta property="og:image" content="http://yoursite.com/2017/10/22/Markdown笔记/pictures/罗宾2.jpg">
-<meta property="og:updated_time" content="2017-10-25T17:42:13.031Z">
+<meta property="og:image" content="http://yoursite.com/img/罗宾2.jpg">
+<meta property="og:updated_time" content="2017-10-26T08:27:21.188Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Markdown总结与归纳">
 <meta name="twitter:description" content="最初只需要记住# 标题一、## 标题二、1. 第一点、* 这一点，用这几个写写日志、需求文档、小文章，排版上足够了；逐渐的你发现有些文字需要重点指出，那么还可以使用加粗、斜体 来对文字做重点说明；如果你是名程序员，那么可以用 ``` 把代码块包起来，渲染后可以关键字高亮，用&amp;gt; 可以做引用。">
-<meta name="twitter:image" content="http://yoursite.com/2017/10/22/Markdown笔记/pictures/罗宾2.jpg">
+<meta name="twitter:image" content="http://yoursite.com/img/罗宾2.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Gitxie的博客" type="application/atom+xml">
   
@@ -71,6 +71,8 @@
     			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
     			
             
+    			
+    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
     			
             
     			
@@ -176,8 +178,8 @@
 <li>无序列表</li>
 <li>无序列表    <h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4>1 .无序列表或有序列表标记和后面的文字之间要有一个空格隔开。<br>2 .有序列表标记不是按照你写的数字进行显示的，而是根据当前有序列表标记所在位置显示的。  <h3 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h3></li>
 </ul>
-<p>使用<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">![<span class="string">Alt text</span>](<span class="link">./pictures/罗宾2.jpg "Optional title"</span>)</div></pre></td></tr></table></figure></p>
-<p>导入图片。其中：<br><code>Alt text</code>为如果图片无法显示时显示的文字；<br><code>./pictures/罗宾2.jpg</code>为图片所在路径；<br><code>Optional title</code>为显示标题。显示效果为在你将鼠标放到图片上后，会显示一个小框提示，提示的内容就是 Optional title里的内容。<br> 效果<br> <img src="./pictures/罗宾2.jpg" alt="Alt text" title="Optional title"> </p>
+<p>使用<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">![<span class="string">Alt text</span>](<span class="link">/img/罗宾2.jpg "Optional title"</span>)</div></pre></td></tr></table></figure></p>
+<p>导入图片。其中：<br><code>Alt text</code>为如果图片无法显示时显示的文字；<br><code>/img/罗宾2.jpg</code>为图片所在路径；<br><code>Optional title</code>为显示标题。显示效果为在你将鼠标放到图片上后，会显示一个小框提示，提示的内容就是 Optional title里的内容。<br> 效果<br> <img src="/img/罗宾2.jpg" alt="Alt text" title="Optional title"> </p>
 <h4 id="注意-1"><a href="#注意-1" class="headerlink" title="注意"></a>注意</h4><p>导入的图片路径可以使用绝对路径也可以使用相对路径，建议使用相对路径。<br>我通常的做法是Markdown文档的同级目录下建立一个pictures文件夹，里面放置所有所需的图片，如果图片多的话，你也可以在pictures文件夹里建立子文件夹归类。  </p>
 <h3 id="插入链接"><a href="#插入链接" class="headerlink" title="插入链接"></a>插入链接</h3><p>使用<code>[](link &quot;Optional title&quot;)</code>表示行内链接。其中：<br><code>[]</code>内的内容为要添加链接的文字。<br><code>link</code>为链接地址。<br><code>Optional title</code>为显示标题。显示效果为在你将鼠标放到链接上后，会显示一个小框提示，提示的内容就是 Optional title里的内容。<br>参考式链接如例所示。</p>
 <p>例1：行内链接<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">这就是我们常用的地址：[<span class="string">Baidu</span>](<span class="link">www.baidu.com "百度一下，你就知道" </span>)</div></pre></td></tr></table></figure></p>
@@ -434,6 +436,8 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
       
     
       
+      
+      
     
       
       
@@ -445,13 +449,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
     
     
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
+      
         
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -530,6 +536,38 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
     	</section>
     
 
+    
+    	<section class="tools-section tools-section-friends" q-show="friends">
+  		
+        <ul class="search-ul">
+          
+            <li class="search-li">
+              <a href="https://developer.mozilla.org/zh-CN/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>MDN Web 文档</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="https://www.liaoxuefeng.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>廖雪峰的官方网站</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="http://www.w3school.com.cn/index.html" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>w3school 在线教程</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="http://www.runoob.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>菜鸟教程</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="http://www.imooc.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>慕课网</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
+            </li>
+          
+        </ul>
+  		
+    	</section>
     
 
     
