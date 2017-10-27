@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: yilia | Gitxie的博客</title>
+  <title>git学习 | Gitxie的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="菜鸟一枚，拖延症患者">
-<meta name="keywords" content="前端,拖延症患者,程序媛">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Gitxie的博客">
-<meta property="og:url" content="http://yoursite.com/tags/yilia/index.html">
+  <meta name="description" content="记录平时学到的知识点,方便查阅">
+<meta name="keywords" content="git,学习,笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git学习">
+<meta property="og:url" content="http://yoursite.com/2017/10/27/git学习/index.html">
 <meta property="og:site_name" content="Gitxie的博客">
-<meta property="og:description" content="菜鸟一枚，拖延症患者">
+<meta property="og:description" content="记录平时学到的知识点,方便查阅">
+<meta property="og:updated_time" content="2017-10-27T16:22:59.703Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Gitxie的博客">
-<meta name="twitter:description" content="菜鸟一枚，拖延症患者">
+<meta name="twitter:title" content="git学习">
+<meta name="twitter:description" content="记录平时学到的知识点,方便查阅">
   
     <link rel="alternative" href="/atom.xml" title="Gitxie的博客" type="application/atom+xml">
   
@@ -139,75 +140,202 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-git学习" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/10/23/hexo--yilia 搭建教程/" class="archive-article-date">
-  	<time datetime="2017-10-23T14:35:41.932Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-23</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/10/23/hexo--yilia 搭建教程/">hexo--yilia 博客搭建教程</a>
+    <h1 class="article-title" itemprop="name">
+      git学习
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/10/27/git学习/" class="archive-article-date">
+  	<time datetime="2017-10-27T06:07:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>记录平时学到的知识点,方便查阅</p>
+<a id="more"></a>
+<h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><p>工作流<br>你的本地仓库由 git 维护的三棵”树”组成。第一个是你的 工作目录，它持有实际文件；第二个是 暂存区（Index），它像个缓存区域，临时保存你的改动；最后是 HEAD，它指向你最后一次提交的结果。</p>
+<h2 id="Git项目建立"><a href="#Git项目建立" class="headerlink" title="Git项目建立"></a>Git项目建立</h2><blockquote>
+<p>Git 使用 git init 命令来初始化一个 Git 仓库，Git 的很多命令都需要在 Git 的仓库中运行，所以 git init 是使用 Git 的第一个命令。<br>在执行完成 git init 命令后，Git 仓库会生成一个 .git 目录，该目录包含了资源的所有元数据，其他的项目目录保持不变（不像 SVN 会在每个子目录生成 .svn 目录，Git 只在仓库的根目录生成 .git 目录）。</p>
+</blockquote>
+<h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><p>首先在Github新建一个空仓库—必须是空仓库。<br>在本地建立一个Git版本库，如在D盘 目录下新建一个testgit版本库。<br>通过命令 git init 把这个目录变成git可以管理的仓库，如下：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ git init 			<span class="comment">//初始化一个Git仓库</span></div><div class="line"></div><div class="line">$ git remote add origin git@github<span class="selector-class">.com</span>:yourName/yourRepo<span class="selector-class">.git</span> </div><div class="line"><span class="comment">//把本地库的内容推送到远程</span></div></pre></td></tr></table></figure></p>
+<p>后面的yourName和yourRepo表示你再github的用户名和刚才新建的仓库，加完之后进入.git，打开config，这里会多出一个remote “origin”内容，这就是刚才添加的远程地址，也可以直接修改config来配置远程地址。<br>使用Git提交文件到版本库有两步：<br>第一步：是使用 git add 把文件添加进去，实际上就是把文件添加到暂存区。<br>第二步：使用git commit提交更改，实际上就是把暂存区的所有内容提交到当前分支上。用命令 git status来查看下状态。  </p>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">$</span> git add -A  		<span class="comment">//把所有的文件更新到仓库中,提出更改（把它们添加到暂存区）</span></div><div class="line"><span class="symbol">$</span> git commit -m <span class="string">"代码提交信息"</span>  <span class="comment">//说明你这次修改了什么。现在，你的改动已经提交到了 HEAD，但是还没到你的远端仓库。</span></div></pre></td></tr></table></figure>
+<p>使用 git push命令，实际上是把当前分支master推送到远程。  </p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git push origin <span class="keyword">master</span> 	<span class="title">//添加到origin</span>的<span class="literal">master</span>分支</div></pre></td></tr></table></figure>
+<h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><p>从别人那里Fork或者本来在自己的仓库就有代码的<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">clone</span> &lt;repo&gt;</span></div><div class="line"></div><div class="line">/*直接git clone过来即可,但默认只添加master分支</div><div class="line">如果我们需要克隆到指定的目录，可以使用以下命令格式：</div><div class="line">git clone &lt;repo&gt; &lt;directory&gt;</div><div class="line">参数说明：</div><div class="line">repo:Git 仓库。</div><div class="line">directory:本地目录。</div><div class="line">*/</div><div class="line"></div><div class="line"><span class="meta">$</span><span class="bash"> git branch -a //查看隐藏分支</span></div><div class="line"></div><div class="line">//可以在本地新建同名分支，再pull下来，或者一步到位</div><div class="line"><span class="meta">$</span><span class="bash"> git checkout -b <span class="built_in">test</span> origin/<span class="built_in">test</span></span></div><div class="line">//或者</div><div class="line"><span class="meta">$</span><span class="bash"> git checkout -t origin/<span class="built_in">test</span></span></div></pre></td></tr></table></figure></p>
+<h2 id="更新远端修改和合并"><a href="#更新远端修改和合并" class="headerlink" title="更新远端修改和合并"></a>更新远端修改和合并</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ git pull origin master  //将origin远端的master分支内容更新到本地</div><div class="line">$ git <span class="keyword">merge</span> <span class="keyword">test</span>   </div><div class="line">//将<span class="keyword">test</span>分支和<span class="keyword">master</span>合并——用<span class="keyword">test</span>代替当前分支 </div><div class="line">所以一般<span class="keyword">master</span>为最终发行版本，在<span class="keyword">test</span>分支修改好后再合并</div></pre></td></tr></table></figure>
+<p>git merge命令用于合并指定分支到当前分支上</p>
+<h2 id="Git分支"><a href="#Git分支" class="headerlink" title="Git分支"></a>Git分支</h2><p>git checkout 命令加上 –b参数表示创建并切换，相当于如下2条命令</p>
+<figure class="highlight q"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git branch <span class="built_in">dev</span></div><div class="line">git checkout <span class="built_in">dev</span></div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> git branch //查看当前有哪些分支</span></div><div class="line"><span class="meta">$</span><span class="bash"> git branch fir //新建一个分支fir</span></div><div class="line"><span class="meta">$</span><span class="bash"> git checkout -b <span class="built_in">test</span></span></div><div class="line">//新建并切换到test分支，里面的内容就是新建时所在分支的内容</div><div class="line"><span class="meta">$</span><span class="bash"> git checkout master  //切换回master分支</span></div><div class="line"><span class="meta">$</span><span class="bash"> ls   //查看当前分支的内容</span></div><div class="line"><span class="meta">$</span><span class="bash"> git branch -d <span class="built_in">test</span> </span></div><div class="line">/* 删除本地test分支,注意不能删除当前分支，须要切换到其它分支再删除。*/</div><div class="line"><span class="meta">$</span><span class="bash"> git push origin :<span class="built_in">test</span>  //删除远程库的<span class="built_in">test</span>分支</span></div><div class="line"><span class="meta">$</span><span class="bash"> git push -u origin <span class="built_in">test</span></span></div><div class="line">//在远端新建一个test分支,并把更新推送上去</div></pre></td></tr></table></figure>
+<h2 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h2><figure class="highlight gams"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">$</span> git <span class="built-in">log</span>  <span class="comment">//查看commit提交历史</span></div><div class="line"><span class="symbol">$</span> git <span class="built-in">log</span> --pretty=oneline   <span class="comment">//能看到commit id</span></div><div class="line"><span class="symbol">$</span> git reflog   <span class="comment">//获取到版本号(commit id)</span></div><div class="line"><span class="symbol">$</span> git reset --hard a8d4349   </div><div class="line"><span class="comment">//切换到当前分支以前的状态，a8d4349为commit id前7位</span></div></pre></td></tr></table></figure>
+<p>版本回退操作:<br>第一种：git reset  –hard HEAD^ 那么如果要回退到上上个版本只需把HEAD^ 改成 HEAD^^ 以此类推。那如果要回退到前100个版本的话，使用上面的方法肯定不方便，我们可以使用下面的简便命令操作：git reset  –hard HEAD~100 即可。</p>
+<p>第二种：通过版本号回退，使用命令方法如下：<br>git reset  –hard 版本号</p>
+<p>本文主要参考自</p>
+<ul>
+<li><a href="http://blog.jobbole.com/78960/" target="_blank" rel="external">手把手教你使用Git</a></li>
+<li><a href="http://blog.magicwang.tech/post/Git%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/" target="_blank" rel="external">Git学习笔记 | Magicwangs</a></li>
+<li><a href="http://www.runoob.com/w3cnote/git-guide.html" target="_blank" rel="external">Github 简明教程</a></li>
+<li><a href="http://markyun.github.io/2015/instruction-Git/" target="_blank" rel="external">Git 简单使用说明 - Markyun</a></li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">学习</a>
         		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
+      		 
         		<li class="article-tag-list-item">
-        			<a href="/categories/教程//" class="article-tag-list-link color3">教程</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
         		</li>
       		
 		</ul>
 	</div>
 
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/10/27/git学习/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2017/10/27/hexo-常见问题及解决【更新中】/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          hexo 常见问题及解决【更新中】
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2017/10/23/hexo--yilia 搭建教程/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">hexo--yilia 博客搭建教程</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#基础知识"><span class="toc-number">1.</span> <span class="toc-text">基础知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Git项目建立"><span class="toc-number">2.</span> <span class="toc-text">Git项目建立</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#方法一"><span class="toc-number">2.1.</span> <span class="toc-text">方法一</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法二"><span class="toc-number">2.2.</span> <span class="toc-text">方法二</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#更新远端修改和合并"><span class="toc-number">3.</span> <span class="toc-text">更新远端修改和合并</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Git分支"><span class="toc-number">4.</span> <span class="toc-text">Git分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#版本回退"><span class="toc-number">5.</span> <span class="toc-text">版本回退</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -240,9 +368,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
