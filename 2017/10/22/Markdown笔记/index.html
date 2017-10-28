@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Gitxie的博客">
 <meta property="og:description" content="最初只需要记住# 标题一、## 标题二、1. 第一点、* 这一点，用这几个写写日志、需求文档、小文章，排版上足够了；逐渐的你发现有些文字需要重点指出，那么还可以使用加粗、斜体 来对文字做重点说明；如果你是名程序员，那么可以用 ``` 把代码块包起来，渲染后可以关键字高亮，用&amp;gt; 可以做引用。">
 <meta property="og:image" content="http://yoursite.com/img/罗宾2.jpg">
-<meta property="og:updated_time" content="2017-10-26T08:27:21.188Z">
+<meta property="og:updated_time" content="2017-10-28T13:32:30.591Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Markdown总结与归纳">
 <meta name="twitter:description" content="最初只需要记住# 标题一、## 标题二、1. 第一点、* 这一点，用这几个写写日志、需求文档、小文章，排版上足够了；逐渐的你发现有些文字需要重点指出，那么还可以使用加粗、斜体 来对文字做重点说明；如果你是名程序员，那么可以用 ``` 把代码块包起来，渲染后可以关键字高亮，用&amp;gt; 可以做引用。">
@@ -202,7 +202,25 @@
 </blockquote>
 <h4 id="注意-3"><a href="#注意-3" class="headerlink" title="注意"></a>注意</h4><p>如果<code>&gt;</code>和<code>&gt;&gt;</code>嵌套使用的话，从<code>&gt;&gt;</code>退到<code>&gt;</code>时，必须之间要加一个空格或者<code>&gt;</code>作为过渡，否则默认为下一行和上一行是同一级别的引用。如示例所示。<br>引用标记里可以使用其他标记，如：有序列表或无序列表标记，代码标记等。</p>
 <h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><figure class="highlight gherkin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">|<span class="string">表头一</span>|<span class="string">表头二</span>|<span class="string">  </span></div><div class="line">|<span class="string">------</span>|<span class="string">---</span>|</div><div class="line">|<span class="string">内容一</span>|<span class="string">内容二</span>|</div><div class="line">|<span class="string">内容三</span>|<span class="string">内容四</span>|</div></pre></td></tr></table></figure>
-<p>显示结果：<br>|表头一|表头二|<br>|——|—|<br>|内容一|内容二|<br>|内容三|内容四|</p>
+<p>显示结果：</p>
+<table>
+<thead>
+<tr>
+<th>表头一</th>
+<th>表头二</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>内容一</td>
+<td>内容二</td>
+</tr>
+<tr>
+<td>内容三</td>
+<td>内容四</td>
+</tr>
+</tbody>
+</table>
 <p>需要注意的是，第二行中的-只要有三个或三个以上即可。没有具体的个数要求。</p>
 <p>带左中右对齐的表格。<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="params">|左对齐|</span>居中对齐<span class="params">|右对齐|</span></div><div class="line"><span class="params">|:-    |</span><span class="symbol">:------</span><span class="symbol">:|-</span><span class="symbol">:|</span></div><div class="line"><span class="params">|左对齐列|</span>居中对齐列<span class="params">|右对齐列|</span></div><div class="line"><span class="params">|1|</span><span class="number">2</span><span class="params">|3|</span></div></pre></td></tr></table></figure></p>
 <table>
@@ -488,15 +506,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">demo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">学习</a>
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -512,15 +522,27 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Issue</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">demo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">感想</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">学习</a>
               </li>
             
             <div class="clearfix"></div>
