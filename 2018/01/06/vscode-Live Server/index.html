@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/01/06/vscode-Live Server/index.html">
 <meta property="og:site_name" content="Gitxie的博客">
 <meta property="og:description" content="Visual Studio Code 可安装静态web服务器  Live Server用于运行前端代码，方便调试，实现了保存页面自动刷新。最新的 Live Server已支持php动态页面。  参考链接：vscode-Live Server的使用心得 - 马玲俊 - 博客园vscode运行前端代码 - 赵小生z - 博客园">
-<meta property="og:updated_time" content="2018-01-06T07:24:54.495Z">
+<meta property="og:updated_time" content="2018-01-06T09:44:38.822Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Live Server安装与使用">
 <meta name="twitter:description" content="Visual Studio Code 可安装静态web服务器  Live Server用于运行前端代码，方便调试，实现了保存页面自动刷新。最新的 Live Server已支持php动态页面。  参考链接：vscode-Live Server的使用心得 - 马玲俊 - 博客园vscode运行前端代码 - 赵小生z - 博客园">
@@ -170,16 +170,10 @@
 <p><em>参考链接：</em><br><a href="http://www.cnblogs.com/alinjj/p/7295350.html" target="_blank" rel="external">vscode-Live Server的使用心得 - 马玲俊 - 博客园</a><br><a href="https://www.cnblogs.com/zhmhhu/p/7862601.html" target="_blank" rel="external">vscode运行前端代码 - 赵小生z - 博客园</a><br><a id="more"></a><br>vscode-Live Server—–http服务器（相当于使用nodejs的http-server ）。</p>
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>安装方法:<br>点击左侧第五个图标，打开“扩展”页面，在文本框中输入Live Server，点击第一个搜索结果，在右侧页面中点击安装，等待安装完成。</p>
 <h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><p>开启Server（服务）<br>有四种方式：</p>
-<ol>
-<li><p>在窗口的最底部有Go Live按钮可以点击，一旦点击，就会自动在浏览器中打开HTML文件,再点击一次，即停止运行服务器。</p>
-</li>
-<li><p>在HTML文件中右键，然后点击Open with Live Server </p>
-</li>
-<li><p>快捷键 (alt+L, O) 打开服务   (alt+L, C) 关闭服务</p>
-</li>
-<li><p>按F1,然后在输入栏中输入<br>Live Server: Open  with Live Server   打开服务，<br>或者 Live Server: Close Live Server  关闭服务</p>
-</li>
-</ol>
+<p>1.在窗口的最底部有Go Live按钮可以点击，一旦点击，就会自动在浏览器中打开HTML文件,再点击一次，即停止运行服务器。</p>
+<p>2.在HTML文件中右键，然后点击Open with Live Server </p>
+<p>3.快捷键 (alt+L, O) 打开服务   (alt+L, C) 关闭服务</p>
+<p>4.按F1,然后在输入栏中输入<br> Live Server: Open  with Live Server   打开服务，<br> 或者 Live Server: Close Live Server  关闭服务</p>
 <h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>Live Server有一些默认配置选项，用户可以修改。<br>点击 文件-&gt;首选项-&gt;设置， 在右侧页面中找到 Live Server Config，其中列出的是本插件的配置属性。将其复制到右侧，修改属性值，点击保存即可。<br>设置的含义，查找该插件的说明文档。<br>注意，VSCode 中的所有设置都是通过json格式的数据配置的。用户可以查找对应的key值，修改其value，从而修改配置属性。</p>
 <p><strong>关于Live Server的配置</strong></p>
 <figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"> <span class="number">1</span> &#123;</div><div class="line"> <span class="number">2</span> <span class="string">"liveServer.settings.port"</span>: <span class="number">8080</span>, <span class="comment">//设置本地服务的端口号</span></div><div class="line"> <span class="number">3</span>     <span class="string">"liveServer.settings.root"</span>: <span class="string">"/"</span>, <span class="comment">//设置根目录，也就是打开的文件会在该目录下找</span></div><div class="line"> <span class="number">4</span>     <span class="string">"liveServer.settings.CustomBrowser"</span>: <span class="string">"chrome"</span>, <span class="comment">//设置默认打开的浏览器</span></div><div class="line"> <span class="number">5</span>     <span class="string">"liveServer.settings.AdvanceCustomBrowserCmdLine"</span>: <span class="string">"chrome --incognito --remote-debugging-port=9222"</span>,</div><div class="line"> <span class="number">6</span>     <span class="string">"liveServer.settings.NoBrowser"</span>: <span class="literal">false</span>,</div><div class="line"> <span class="number">7</span>     <span class="string">"liveServer.settings.ignoredFiles"</span>: [<span class="comment">//设置忽略的文件</span></div><div class="line"> <span class="number">8</span>         <span class="string">".vscode/**"</span>,</div><div class="line"> <span class="number">9</span>         <span class="string">"**/*.scss"</span>,</div><div class="line"><span class="number">10</span>         <span class="string">"**/*.sass"</span></div><div class="line"><span class="number">11</span>     ]</div><div class="line"><span class="number">12</span> &#125;</div></pre></td></tr></table></figure>
@@ -431,7 +425,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">http-server</a>
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -439,11 +433,23 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">...</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">学习</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Vscode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">技巧</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -459,11 +465,19 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+                <a href="javascript:void(0)" class="js-tag color1">shell</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">学习</a>
+                <a href="javascript:void(0)" class="js-tag color2">http-server</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">...</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Live Server</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -471,15 +485,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">shell</a>
+                <a href="javascript:void(0)" class="js-tag color3">方法</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Vscode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">技巧</a>
+                <a href="javascript:void(0)" class="js-tag color3">感悟</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -495,27 +505,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">转载</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">感悟</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">方法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">路径</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Live Server</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color3">转载</a>
               </li>
             
             <div class="clearfix"></div>

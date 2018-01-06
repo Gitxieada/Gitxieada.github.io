@@ -9,13 +9,13 @@
   <title>常用命令及快捷键 | Gitxie的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="一些常用命令集合在一个页面，以免总是翻找,不方便。">
-<meta name="keywords" content="...,命令,快捷键">
+<meta name="keywords" content="命令,快捷键">
 <meta property="og:type" content="article">
 <meta property="og:title" content="常用命令及快捷键">
 <meta property="og:url" content="http://yoursite.com/2017/12/26/常用命令及快捷键/index.html">
 <meta property="og:site_name" content="Gitxie的博客">
 <meta property="og:description" content="一些常用命令集合在一个页面，以免总是翻找,不方便。">
-<meta property="og:updated_time" content="2018-01-06T09:35:14.422Z">
+<meta property="og:updated_time" content="2018-01-06T11:00:06.040Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="常用命令及快捷键">
 <meta name="twitter:description" content="一些常用命令集合在一个页面，以免总是翻找,不方便。">
@@ -169,10 +169,8 @@
 <figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">git <span class="keyword">add</span><span class="bash"> .  //把所有的文件更新到仓库中,提出更改（把它们添加到暂存区）</span></div><div class="line"><span class="bash">git status  </span></div><div class="line"><span class="bash">/* 列出当前目录所有还没有被git管理的文件和被git管理且被修改但还未提交(git commit)的文件，也就是所有改动文件，红色字体标出。 git add . 添加到暂存区，这时再输入一次 git status 如果看见文件都变绿了 ，那么就代表它们已经准备好了被提交（git commit）。*/</span></div><div class="line"><span class="bash">git diff  文件名 //查看具体修改了什么内容</span></div><div class="line"><span class="bash">git commit -m <span class="string">"代码提交信息"</span> </span></div><div class="line"><span class="bash">git push origin master</span></div></pre></td></tr></table></figure>
 <p>详细：<a href="https://gitxieada.github.io/2017/10/27/git%E5%AD%A6%E4%B9%A0/" target="_blank" rel="external">git学习</a></p>
 <h2 id="vscode"><a href="#vscode" class="headerlink" title="vscode"></a>vscode</h2><ol>
-<li><p>Ctrl+Shift+P, F1 ： 展示全局命令面板</p>
-</li>
-<li><p>Ctrl+P ：快速打开最近打开的文件，在Ctrl+P下输入&gt;又可以回到主命令框 Ctrl+Shift+P模式</p>
-</li>
+<li>Ctrl+Shift+P或F1：展示全局命令面板</li>
+<li>Ctrl+P：快速打开最近打开的文件，在Ctrl+P下输入&gt;又可以回到主命令框 Ctrl+Shift+P模式</li>
 <li>Ctrl + Shift + [ ： 折叠区域代码</li>
 <li>Ctrl + Shift + ] ： 展开区域代码</li>
 <li>Ctrl+C Ctrl+V ： 如果不选中，默认复制或剪切一整行</li>
@@ -192,11 +190,16 @@
 <li>Ctrl+L :注释代码</li>
 </ol>
 <p>详细：<a href="https://gitxieada.github.io/2017/11/01/VScode%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/" target="_blank" rel="external">VScode使用技巧</a></p>
-<h2 id="windows"><a href="#windows" class="headerlink" title="windows"></a>windows</h2><ol>
-<li>在当前项目文件夹下打开cmd命令：<br>按住键盘上<figure class="highlight plain"><figcaption><span>```键的同时，点击鼠标右键，在弹出的菜单中会出现“在此处打开命令窗口”</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">点击后直接打开CMD窗口。</div><div class="line"></div><div class="line">2. 快速打开 Windows 任务管理器: Ctrl + Shift + Esc   </div><div class="line">3. 显示桌面: Win + D </div><div class="line">4. 打开我的电脑: Win + E  </div><div class="line">5. 打开运行窗口: Win + R  </div><div class="line"></div><div class="line">## hexo</div></pre></td></tr></table></figure></li>
-</ol>
-<p>hexo new “postName” #新建文章<br>hexo generate #生成网页<br>hexo server #本地预览，’Ctrl+C’关闭<br>hexo deploy #部署.deploy目录<br>hexo clean #清除缓存</p>
-<p>```</p>
+<h2 id="windows"><a href="#windows" class="headerlink" title="windows"></a>windows</h2><ul>
+<li><p>在当前项目文件夹下打开cmd命令：<br>按住键盘上<code>Shift</code>键的同时，点击鼠标右键，在弹出的菜单中会出现“在此处打开命令窗口”<br>点击后直接打开CMD窗口。</p>
+</li>
+<li><p>快速打开 Windows 任务管理器: Ctrl + Shift + Esc   </p>
+</li>
+<li>显示桌面: Win + D </li>
+<li>打开我的电脑: Win + E  </li>
+<li>打开运行窗口: Win + R  </li>
+</ul>
+<h2 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a>hexo</h2><figure class="highlight axapta"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">hexo <span class="keyword">new</span> <span class="string">"postName"</span> <span class="meta">#新建文章  </span></div><div class="line">hexo generate <span class="meta">#生成网页  </span></div><div class="line">hexo <span class="keyword">server</span> <span class="meta">#本地预览，'Ctrl+C'关闭  </span></div><div class="line">hexo deploy <span class="meta">#部署.deploy目录  </span></div><div class="line">hexo clean <span class="meta">#清除缓存</span></div></pre></td></tr></table></figure>
 <h2 id="路径符号"><a href="#路径符号" class="headerlink" title="路径符号"></a>路径符号</h2><p>以下为建立路径所使用的几个特殊符号，及其所代表的意义。</p>
 <p>“./“：代表目前所在的目录。</p>
 <p>“../“：代表上一层目录。</p>
@@ -208,15 +211,16 @@
     </div>
     <div class="article-info article-info-index">
       
+        <div class="article-pop-out tagcloud">
+          <i class="icon-tuding"></i>
+          <a class="article-tag-list-link color3">置顶</a>
+        </div>
+      
       
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">...</a>
-        		</li>
-      		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">命令</a>
         		</li>
@@ -303,7 +307,7 @@
   
   
     <a href="/2017/12/06/http-server安装与使用/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">http-server</div>
+      <div class="article-nav-title">http-server安装与使用</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -330,7 +334,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#git"><span class="toc-number">1.</span> <span class="toc-text">git</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vscode"><span class="toc-number">2.</span> <span class="toc-text">vscode</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#windows"><span class="toc-number">3.</span> <span class="toc-text">windows</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#路径符号"><span class="toc-number">4.</span> <span class="toc-text">路径符号</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#git"><span class="toc-number">1.</span> <span class="toc-text">git</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vscode"><span class="toc-number">2.</span> <span class="toc-text">vscode</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#windows"><span class="toc-number">3.</span> <span class="toc-text">windows</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo"><span class="toc-number">4.</span> <span class="toc-text">hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#路径符号"><span class="toc-number">5.</span> <span class="toc-text">路径符号</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -456,7 +460,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">http-server</a>
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -464,11 +468,23 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">...</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">学习</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Vscode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">技巧</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -484,11 +500,19 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+                <a href="javascript:void(0)" class="js-tag color1">shell</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">学习</a>
+                <a href="javascript:void(0)" class="js-tag color2">http-server</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">...</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Live Server</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -496,15 +520,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">shell</a>
+                <a href="javascript:void(0)" class="js-tag color3">方法</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Vscode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">技巧</a>
+                <a href="javascript:void(0)" class="js-tag color3">感悟</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -520,27 +540,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">转载</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">感悟</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">方法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">路径</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Live Server</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color3">转载</a>
               </li>
             
             <div class="clearfix"></div>
