@@ -9,13 +9,13 @@
   <title>git学习 | Gitxie的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="记录平时学到的知识点,方便查阅">
-<meta name="keywords" content="git,学习,笔记">
+<meta name="keywords" content="笔记,学习,git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git学习">
 <meta property="og:url" content="http://yoursite.com/2017/10/27/git学习/index.html">
 <meta property="og:site_name" content="Gitxie的博客">
 <meta property="og:description" content="记录平时学到的知识点,方便查阅">
-<meta property="og:updated_time" content="2017-10-27T16:22:59.703Z">
+<meta property="og:updated_time" content="2018-01-06T08:24:20.044Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git学习">
 <meta name="twitter:description" content="记录平时学到的知识点,方便查阅">
@@ -171,7 +171,7 @@
 <p>Git 使用 git init 命令来初始化一个 Git 仓库，Git 的很多命令都需要在 Git 的仓库中运行，所以 git init 是使用 Git 的第一个命令。<br>在执行完成 git init 命令后，Git 仓库会生成一个 .git 目录，该目录包含了资源的所有元数据，其他的项目目录保持不变（不像 SVN 会在每个子目录生成 .svn 目录，Git 只在仓库的根目录生成 .git 目录）。</p>
 </blockquote>
 <h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><p>首先在Github新建一个空仓库—必须是空仓库。<br>在本地建立一个Git版本库，如在D盘 目录下新建一个testgit版本库。<br>通过命令 git init 把这个目录变成git可以管理的仓库，如下：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ git init 			<span class="comment">//初始化一个Git仓库</span></div><div class="line"></div><div class="line">$ git remote add origin git@github<span class="selector-class">.com</span>:yourName/yourRepo<span class="selector-class">.git</span> </div><div class="line"><span class="comment">//把本地库的内容推送到远程</span></div></pre></td></tr></table></figure></p>
-<p>后面的yourName和yourRepo表示你再github的用户名和刚才新建的仓库，加完之后进入.git，打开config，这里会多出一个remote “origin”内容，这就是刚才添加的远程地址，也可以直接修改config来配置远程地址。<br>使用Git提交文件到版本库有两步：<br>第一步：是使用 git add 把文件添加进去，实际上就是把文件添加到暂存区。<br>第二步：使用git commit提交更改，实际上就是把暂存区的所有内容提交到当前分支上。用命令 git status来查看下状态。  </p>
+<p>后面的yourName和yourRepo表示你在github的用户名和刚才新建的仓库，加完之后进入.git，打开config，这里会多出一个remote “origin”内容，这就是刚才添加的远程地址，也可以直接修改config来配置远程地址。<br>使用Git提交文件到版本库有两步：<br>第一步：是使用 git add 把文件添加进去，实际上就是把文件添加到暂存区。<br>第二步：使用git commit提交更改，实际上就是把暂存区的所有内容提交到当前分支上。用命令 git status来查看下状态。  </p>
 <figure class="highlight gams"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">$</span> git add -A  		<span class="comment">//把所有的文件更新到仓库中,提出更改（把它们添加到暂存区）</span></div><div class="line"><span class="symbol">$</span> git commit -m <span class="string">"代码提交信息"</span>  <span class="comment">//说明你这次修改了什么。现在，你的改动已经提交到了 HEAD，但是还没到你的远端仓库。</span></div></pre></td></tr></table></figure>
 <p>使用 git push命令，实际上是把当前分支master推送到远程。  </p>
 <figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git push origin <span class="keyword">master</span> 	<span class="title">//添加到origin</span>的<span class="literal">master</span>分支</div></pre></td></tr></table></figure>
@@ -204,7 +204,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -212,7 +212,7 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
         		</li>
       		
 		</ul>
@@ -349,7 +349,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 小谢
+    		&copy; 2018 小谢
 			</div>
 			<!--统计start-->
       <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
@@ -446,15 +446,19 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">学习</a>
+                <a href="javascript:void(0)" class="js-tag color2">http-server</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">...</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -466,11 +470,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Issue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Issue</a>
+                <a href="javascript:void(0)" class="js-tag color3">学习</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -478,11 +486,27 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">shell</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Vscode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">技巧</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">shell</a>
+                <a href="javascript:void(0)" class="js-tag color3">命令</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">感想</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -498,19 +522,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">感想</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Vscode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">路径</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Live Server</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
             
             <div class="clearfix"></div>
