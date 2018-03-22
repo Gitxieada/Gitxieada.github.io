@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>JavaScript学习总结--基础一[更新中] | Gitxie的博客</title>
+  <title>JavaScript高级程序设计--读书笔记1(更新中) | Gitxie的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="JavaScript基础学习一[更新中]">
-<meta name="keywords" content="笔记,JavaScript">
+  <meta name="description" content="本文摘自JavaScript高级程序设计">
+<meta name="keywords" content="JavaScript高级程序,笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript学习总结--基础一[更新中]">
-<meta property="og:url" content="http://yoursite.com/2017/10/27/JavaScript学习总结-基础一/index.html">
+<meta property="og:title" content="JavaScript高级程序设计--读书笔记1(更新中)">
+<meta property="og:url" content="http://yoursite.com/2017/12/25/JavaScript高级程序设计-读书笔记1/index.html">
 <meta property="og:site_name" content="Gitxie的博客">
-<meta property="og:description" content="JavaScript基础学习一[更新中]">
-<meta property="og:updated_time" content="2017-10-28T17:10:53.862Z">
+<meta property="og:description" content="本文摘自JavaScript高级程序设计">
+<meta property="og:updated_time" content="2018-03-22T03:40:27.648Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript学习总结--基础一[更新中]">
-<meta name="twitter:description" content="JavaScript基础学习一[更新中]">
+<meta name="twitter:title" content="JavaScript高级程序设计--读书笔记1(更新中)">
+<meta name="twitter:description" content="本文摘自JavaScript高级程序设计">
   
     <link rel="alternative" href="/atom.xml" title="Gitxie的博客" type="application/atom+xml">
   
@@ -144,112 +144,67 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-JavaScript学习总结-基础一" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-JavaScript高级程序设计-读书笔记1" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      JavaScript学习总结--基础一[更新中]
+      JavaScript高级程序设计--读书笔记1(更新中)
     </h1>
   
 
         
-        <a href="/2017/10/27/JavaScript学习总结-基础一/" class="archive-article-date">
-  	<time datetime="2017-10-27T06:10:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-27</time>
+        <a href="/2017/12/25/JavaScript高级程序设计-读书笔记1/" class="archive-article-date">
+  	<time datetime="2017-12-24T18:18:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-25</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>JavaScript基础学习一[更新中]<br><a id="more"></a><br>JavaScript 的内容，包含以下三部分：<br>ECMAScript（核心）：JavaScript 语言基础；<br>DOM（文档对象模型）：规定了访问HTML和XML的接口；<br>BOM（浏览器对象模型）：提供了独立于内容而在浏览器窗口之间进行交互的对象和方法。</p>
-<p>内核<br>首先得搞懂浏览器内核究竟指的是什么。</p>
-<p>浏览器内核又可以分成两部分：渲染引擎(layout engineer 或者 Rendering Engine)和 JS 引擎。<br>它负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入 CSS 等），以及计算网页的显示方式，然后会输出至显示器或打印机。浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不相同。所有网页浏览器、电子邮件客户端以及其它需要编辑、显示网络内容的应用程序都需要内核。JS 引擎则是解析 Javascript 语言，执行 javascript 语言来实现网页的动态效果。</p>
-<p>最开始渲染引擎和 JS 引擎并没有区分的很明确，后来 JS 引擎越来越独立，内核就倾向于只指渲染引擎。</p>
-<p>常见的浏览器内核可以分这四种：Trident、Gecko、Blink、Webkit。<br>浏览器内核与 JS 引擎一览：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">浏览器RunTime</th>
-<th style="text-align:center">内核（渲染引擎）</th>
-<th style="text-align:right">JavaScript 引擎</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Chrome</td>
-<td style="text-align:center">Blink（28~） Webkit（Chrome 27）</td>
-<td style="text-align:right">V8</td>
-</tr>
-<tr>
-<td style="text-align:left">FireFox</td>
-<td style="text-align:center">Gecko</td>
-<td style="text-align:right">SpiderMonkey</td>
-</tr>
-<tr>
-<td style="text-align:left">Safari</td>
-<td style="text-align:center">Webkit</td>
-<td style="text-align:right">JavaScriptCore</td>
-</tr>
-<tr>
-<td style="text-align:left">Edge</td>
-<td style="text-align:center">EdgeHTML</td>
-<td style="text-align:right">Chakra(for JavaScript)</td>
-</tr>
-<tr>
-<td style="text-align:left">IE</td>
-<td style="text-align:center">Trident</td>
-<td style="text-align:right">Chakra(for JScript)</td>
-</tr>
-<tr>
-<td style="text-align:left">PhantomJS</td>
-<td style="text-align:center">Webkit</td>
-<td style="text-align:right">JavaScriptCore</td>
-</tr>
-<tr>
-<td style="text-align:left">Node.js</td>
-<td style="text-align:center">-</td>
-<td style="text-align:right">V8</td>
-</tr>
-</tbody>
-</table>
-<p> 注意：   </p>
-<p>标识符</p>
+        <p>本文摘自JavaScript高级程序设计<br><a id="more"></a></p>
+<h2 id="1-JavaScript-实现"><a href="#1-JavaScript-实现" class="headerlink" title="1.JavaScript 实现"></a>1.JavaScript 实现</h2><p>JavaScript 是一种专为与网页交互而设计的脚本语言，由下列三个不同的部分组成：  </p>
 <ul>
-<li>第一个字符必须是一个字母、下划线（_）或一个美<br>元符号（$）</li>
-<li>其他字符可以是字母、下划线、美元符号或数字</li>
+<li>ECMAScript，由 ECMA-262 定义，提供核心语言功能；</li>
+<li>文档对象模型（DOM），提供访问和操作网页内容的方法和接口；</li>
+<li>浏览器对象模型（BOM），提供与浏览器交互的方法和接口。</li>
 </ul>
-<p>使用Strict mode<br><code>&quot;ues strict&quot;</code></p>
-<p>语句<br>好的习惯：不要省略 ; 和 {}<br>变量<br>局部变量 var<br>全局变量</p>
-<p>JavaScript数据类型<br>数据类型  </p>
+<p>1、  ECMAScript<br>由 ECMA-262 定义的 ECMAScript 与 Web浏览器没有依赖关系。实际上，这门语言本身并不包含输<br>入和输出定义。ECMA-262 定义的只是这门语言的基础，而在此基础之上可以构建更完善的脚本语言。</p>
+<p>2、文档对象模型（DOM）<br>文档对象模型（DOM，Document Object Model）是针对 XML 但经过扩展用于 HTML 的应用程序编程接口（API，Application Programming Interface）。DOM 把整个页面映射为一个多层节点结构。HTML<br>或 XML 页面中的每个组成部分都是某种类型的节点，这些节点又包含着不同类型的数据。<br>DOM 级别  :<br>DOM1 级，DOM2 级，DOM3 级。<br>DOM0 级标准是不存在的；所谓 DOM0 级只是 DOM 历史坐标中的一个参照点而已。具体说来，DOM0 级指的是 Internet Explorer 4.0 和 Netscape Navigator 4.0最初支持的 DHTML。</p>
+<p>3、  浏览器对象模型（BOM）<br>开发人员使用 BOM 可以控制浏览器显示的页面以外的部分。<br>从根本上讲，BOM 只处理浏览器窗口和框架；但人们习惯上也把所有针对浏览器的 JavaScript 扩展算作 BOM的一部分。</p>
+<h2 id="2-在-HTML-中使用-JavaScript"><a href="#2-在-HTML-中使用-JavaScript" class="headerlink" title="2.在 HTML 中使用 JavaScript"></a>2.在 HTML 中使用 JavaScript</h2><p>2.1 <code>&lt;script&gt;</code> 元素<br>向 HTML 页面中插入 JavaScript 的主要方法，就是使用 <code>&lt;script&gt;</code> 元素。<br>HTML 4.01 为<code>&lt;script&gt;</code>定义了下列 6 个属性。</p>
 <ul>
-<li><p>Undefined<br>Undefined即一个特殊的值，当一个变量声明但<br>未初始化时，就会被赋予undefined值。</p>
-<figure class="highlight delphi"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> <span class="keyword">message</span>;</div><div class="line">alert(<span class="keyword">message</span> == undefinded);<span class="comment">//true</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>Null<br>空对象指针<br>当一个变量是为了保存一个对象，但没办<br>法一即初始化的时候，应该为之分配一个<br>null 值。</p>
-</li>
-<li><p>Boolean </p>
-</li>
-<li><p>Number<br>NaN<br>任何涉及NaN的操作（NaN + 1）都会返回NaN<br>NaN与任何值都不相等，包括NaN本身</p>
-</li>
-<li><p>String</p>
-</li>
-<li>Object<br>创建Object实例：<figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> o=<span class="keyword">new</span> <span class="built_in">Object</span>();</div></pre></td></tr></table></figure>
+<li>async ：可选。表示应该立即下载脚本，但不应妨碍页面中的其他操作，比如下载其他资源或等待加载其他脚本。只对外部脚本文件有效。</li>
+<li>charset ：可选。表示通过 src 属性指定的代码的字符集。由于大多数浏览器会忽略它的值，因此这个属性很少有人用。</li>
+<li>defer ：可选。表示脚本可以延迟到文档完全被解析和显示之后再执行。只对外部脚本文件有效。IE7 及更早版本对嵌入脚本也支持这个属性。</li>
+<li>language ：已废弃。原来用于表示编写代码使用的脚本语言（如 JavaScript 、 JavaScript1.2或 VBScript ）。大多数浏览器会忽略这个属性，因此也没有必要再用了。</li>
+<li>src ：可选。表示包含要执行代码的外部文件。</li>
+<li>type ：可选。可以看成是 language 的替代属性；表示编写代码使用的脚本语言的内容类型（也称为 MIME 类型）。考虑到约定俗成和最大限度的浏览器兼容性，目前 type 属性的值依旧还是text/javascript 。不过，这个属性并不是必需的，如果没有指定这个属性，则其默认值仍为text/javascript 。</li>
+</ul>
+<p>使用 <code>&lt;script&gt;</code>元素的方式有两种：直接在页面中嵌入 JavaScript 代码和包含外部 JavaScript文件。<br>1、  在使用 <code>&lt;script&gt;</code>元素嵌入 JavaScript 代码时，只须为<code>&lt;script&gt;</code>指定<code>type</code>属性。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHi</span>(<span class="params"></span>)</span>&#123;</div><div class="line">alert(<span class="string">"Hi!"</span>);</div><div class="line">&#125;</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+<p>在使用 <code>&lt;script&gt;</code> 嵌入 JavaScript 代码时，记住不要在代码中的任何地方出现 <code>&lt;/script&gt;</code> 字符串。<br>因为按照解析嵌入式代码的规则，当浏览器遇到字符串 “<code>&lt;/script&gt;</code>“ 时，就会认为那是结束的<code>&lt;/script&gt;</code> 标签。而通过转义字符“/”可以解决这个问题:<br><code>&lt;\/script&gt;</code><br>这样写代码浏览器可以接受，因而也就不会导致错误了。</p>
+<p>2、 如果要通过 <code>&lt;script&gt;</code> 元素来包含外部 JavaScript 文件，那么 src 属性就是必需的。这个属性的值是一个指向外部 JavaScript 文件的链接，例如：<br><code>&lt;script type=&quot;text/javascript&quot; src=&quot;example.js&quot;&gt;&lt;/script&gt;</code></p>
+<p>需要注意的是，带有 src 属性的<code>&lt;script&gt;</code> 元素不应该在其<code>&lt;script&gt;</code> 和 <code>&lt;/script&gt;</code> 标签之间再包含额外的 JavaScript 代码。如果包含了嵌入的代码，则只会下载并执行外部脚本文件，嵌入的代码会被忽略。<br>另外，通过 <code>&lt;script&gt;</code> 元素的 src 属性还可以包含来自外部域的 JavaScript 文件。<br>即它的 src属性可以是指向当前 HTML 页面所在域之外的某个域中的完整 URL。<br>无论如何包含代码，只要不存在 defer 和 async 属性，浏览器都会按照<code>&lt;script&gt;</code>元素在页面中出现的先后顺序对它们依次进行解析。换句话说，在第一个<code>&lt;script&gt;</code> 元素包含的代码解析完成后，第二个<code>&lt;script&gt;</code> 包含的代码才会被解析，然后才是第三个、第四个……</p>
+<p>2.1.1 标签的位置<br>按照传统的做法，所有 <code>&lt;script&gt;</code> 元素都应该放在页面的 <code>&lt;head&gt;</code> 元素中,这种做法的目的就是把所有外部文件（包括 CSS 文件和 JavaScript 文件）的引用都放在相同的地方。可是，在文档的 <code>&lt;head&gt;</code>元素中包含所有 JavaScript 文件，意味着必须等到全部 JavaScript 代码都被下载、解析和执行完成以后，才能开始呈现页面的内容（浏览器在遇到 <code>&lt;body&gt;</code>标签时才开始呈现内容）。对于那些需要很多 JavaScript 代码的页面来说，这无疑会导致浏览器在呈现页面时出现明显的延迟，而延迟期间的浏览器窗口中将是一片空白。为了避免这个问题，现代 Web 应用程序一般都把全部 <strong>JavaScript 引用放在 <body> 元素中页面内容的后面</body></strong></p>
+<p>2.1.2  延迟脚本<br>HTML 4.01 为 <code>&lt;script&gt;</code>标签定义了 defer 属性。<br>把 defer 属性设置为 <code>defer=&quot;defer&quot;</code>,这个属性的用途是表明脚本在执行时不会影响页面的构造。也就是说，脚本会被延迟到整个页面都解析完毕后再运行。因此，在 <code>&lt;script&gt;</code>元素中设置defer 属性，相当于告诉浏览器立即下载，但延迟执行。</p>
+<p>2.1.3 异步脚本<br>HTML5 为 <code>&lt;script&gt;</code>元素定义了 async 属性。这个属性与 defer 属性类似，都用于改变处理脚本的行为。同样与 defer 类似， async 只适用于外部脚本文件，并告诉浏览器立即下载文件。但与 defer不同的是，标记为 async 的脚本并不保证按照指定它们的先后顺序执行。<br>建议异步脚本不要在加载期间修改 DOM。<br>异步脚本一定会在页面的 load 事件前执行，但可能会在 DOMContentLoaded 事件触发之前或之后执行。<br>2.2  <code>&lt;noscript&gt;</code> 元素<br>包含在<code>&lt;noscript&gt;</code>元素中的内容只有在下列情况下才会显示出来：</p>
+<ul>
+<li>浏览器不支持脚本；</li>
+<li>浏览器支持脚本，但脚本被禁用。<br>符合上述任何一个条件，浏览器都会显示<code>&lt;noscript&gt;</code>中的内容。而在除此之外的其他情况下，浏览器不会呈现 <code>&lt;noscript&gt;</code>中的内容。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;title&gt;Example HTML Page&lt;<span class="regexp">/title&gt;</span></div><div class="line"><span class="regexp">&lt;script type="text/</span>javascript<span class="string">" defer="</span>defer<span class="string">" src="</span>example1.js<span class="string">"&gt;&lt;/script&gt;</span></div><div class="line"><span class="string">&lt;script type="</span>text/javascript<span class="string">" defer="</span>defer<span class="string">" src="</span>example2.js<span class="string">"&gt;&lt;/script&gt;</span></div><div class="line"><span class="string">&lt;/head&gt;</span></div><div class="line"><span class="string">&lt;body&gt;</span></div><div class="line"><span class="string">&lt;noscript&gt;</span></div><div class="line"><span class="string">&lt;p&gt; 本页面需要浏览器支持（启用）JavaScript 。</span></div><div class="line"><span class="string">&lt;/noscript&gt;</span></div><div class="line"><span class="string">&lt;/body&gt;</span></div><div class="line"><span class="string">&lt;/html&gt;</span></div></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>Object类型所具有的任何属性和方法也同样存在于更具体的对象中<br><strong>constructor</strong><br><strong>hasOwnProperty(propertyName)</strong><br>isPrototypeOf(object)<br>propertyIsEnumerable(propertyName)<br>toLocaleString()<br>toString()<br>valueOf()  </p>
-<p>typeof 运算符<br>检测JavaScript数据类型<br>调用方法:<br>typeof a<br>typeof(a)  </p>
+<p>这个页面会在脚本无效的情况下向用户显示一条消息。而在启用了脚本的浏览器中，用户永远也不会看到它——尽管它是页面的一部分。</p>
+<p>2.3  小结<br>把 JavaScript 插入到 HTML 页面中要使用 <code>&lt;script&gt;</code> 元素。使用这个元素可以把 JavaScript 嵌入到<br>HTML页面中，让脚本与标记混合在一起；也可以包含外部的 JavaScript文件。而我们需要注意的地方有：</p>
 <ul>
-<li>“undefined”</li>
-<li>“boolean”</li>
-<li>“string”</li>
-<li>“number”</li>
-<li>“object”</li>
-<li>“function” </li>
+<li>在包含外部 JavaScript 文件时，必须将 src 属性设置为指向相应文件的 URL。而这个文件既可以是与包含它的页面位于同一个服务器上的文件，也可以是其他任何域中的文件。</li>
+<li>所有 <code>&lt;script&gt;</code>元素都会按照它们在页面中出现的先后顺序依次被解析。在不使用 defer 和async 属性的情况下，只有在解析完前面 <code>&lt;script&gt;</code> 元素中的代码之后，才会开始解析后面<code>&lt;script&gt;</code> 元素中的代码。</li>
+<li>由于浏览器会先解析完不使用 defer 属性的 <code>&lt;script&gt;</code> 元素中的代码，然后再解析后面的内容，所以一般应该把<code>&lt;script&gt;</code> 元素放在页面最后，即主要内容后面， <code>&lt;/body&gt;</code> 标签前面。</li>
+<li>使用 defer 属性可以让脚本在文档完全呈现之后再执行。延迟脚本总是按照指定它们的顺序执行。</li>
+<li>使用 async 属性可以表示当前脚本不必等待其他脚本，也不必阻塞文档呈现。不能保证异步脚本按照它们在页面中出现的顺序执行。<br>另外，使用 <code>&lt;noscript&gt;</code> 元素可以指定在不支持脚本的浏览器中显示的替代内容。但在启用了脚本的情况下，浏览器不会显示 <code>&lt;noscript&gt;</code>元素中的任何内容。</li>
 </ul>
-<p>数据类型转化:<br>Number()<br>parseInt()<br>parseFloat()<br>String()<br>toString  </p>
 
       
 
@@ -263,11 +218,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JavaScript高级程序</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
         		</li>
       		
 		</ul>
@@ -323,7 +278,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/10/27/JavaScript学习总结-基础一/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/12/25/JavaScript高级程序设计-读书笔记1/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -337,18 +292,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/10/27/提问的智慧/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/12/26/常用命令及快捷键/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          提问的智慧
+          常用命令及快捷键
         
       </div>
     </a>
   
   
-    <a href="/2017/10/27/git学习/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">git学习</div>
+    <a href="/2017/12/06/http-server安装与使用/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">http-server安装与使用</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -375,7 +330,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-JavaScript-实现"><span class="toc-number">1.</span> <span class="toc-text">1.JavaScript 实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-在-HTML-中使用-JavaScript"><span class="toc-number">2.</span> <span class="toc-text">2.在 HTML 中使用 JavaScript</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -501,14 +456,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Vscode</a>
               </li>
              
@@ -517,11 +464,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color5">JavaScript高级程序</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">学习</a>
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -533,15 +484,23 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Issue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">http-server</a>
+                <a href="javascript:void(0)" class="js-tag color1">shell</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">shell</a>
+                <a href="javascript:void(0)" class="js-tag color2">http-server</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -582,10 +541,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">转载</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
             
             <div class="clearfix"></div>
