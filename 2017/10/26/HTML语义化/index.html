@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>相对路径和绝对路径的区别 | Gitxie的博客</title>
+  <title>HTML语义化 | Gitxie的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本文摘自： 相对路径和绝对路径的区别 - 夏雪冬日 - 博客园  在HTML里只要涉及文件的地方(如超级链接、图片等)就会涉及绝对路径与相对路径的概念。">
-<meta name="keywords" content="笔记,路径">
+  <meta name="description" content="什么是HTML语义化:HTML语义化就是根据具体内容，选择合适的标签进行代码的编写。便于开发者阅读和写出更优雅的代码，同时让搜索引擎的爬虫能更好的识别。  本文整理自以下文章： HTML 5的革新——语义化标签(一) 》 html5jscss">
+<meta name="keywords" content="HTML">
 <meta property="og:type" content="article">
-<meta property="og:title" content="相对路径和绝对路径的区别">
-<meta property="og:url" content="http://yoursite.com/2017/10/28/相对路径和绝对路径的区别/index.html">
+<meta property="og:title" content="HTML语义化">
+<meta property="og:url" content="http://yoursite.com/2017/10/26/HTML语义化/index.html">
 <meta property="og:site_name" content="Gitxie的博客">
-<meta property="og:description" content="本文摘自： 相对路径和绝对路径的区别 - 夏雪冬日 - 博客园  在HTML里只要涉及文件的地方(如超级链接、图片等)就会涉及绝对路径与相对路径的概念。">
-<meta property="og:updated_time" content="2017-11-01T16:41:42.684Z">
+<meta property="og:description" content="什么是HTML语义化:HTML语义化就是根据具体内容，选择合适的标签进行代码的编写。便于开发者阅读和写出更优雅的代码，同时让搜索引擎的爬虫能更好的识别。  本文整理自以下文章： HTML 5的革新——语义化标签(一) 》 html5jscss">
+<meta property="og:updated_time" content="2018-03-23T08:06:43.436Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="相对路径和绝对路径的区别">
-<meta name="twitter:description" content="本文摘自： 相对路径和绝对路径的区别 - 夏雪冬日 - 博客园  在HTML里只要涉及文件的地方(如超级链接、图片等)就会涉及绝对路径与相对路径的概念。">
+<meta name="twitter:title" content="HTML语义化">
+<meta name="twitter:description" content="什么是HTML语义化:HTML语义化就是根据具体内容，选择合适的标签进行代码的编写。便于开发者阅读和写出更优雅的代码，同时让搜索引擎的爬虫能更好的识别。  本文整理自以下文章： HTML 5的革新——语义化标签(一) 》 html5jscss">
   
     <link rel="alternative" href="/atom.xml" title="Gitxie的博客" type="application/atom+xml">
   
@@ -144,38 +144,96 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-相对路径和绝对路径的区别" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-HTML语义化" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      相对路径和绝对路径的区别
+      HTML语义化
     </h1>
   
 
         
-        <a href="/2017/10/28/相对路径和绝对路径的区别/" class="archive-article-date">
-  	<time datetime="2017-10-28T09:19:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-28</time>
+        <a href="/2017/10/26/HTML语义化/" class="archive-article-date">
+  	<time datetime="2017-10-26T03:17:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>本文摘自： <a href="http://www.cnblogs.com/heyonggang/archive/2013/03/01/2938984.html" target="_blank" rel="external">相对路径和绝对路径的区别 - 夏雪冬日 - 博客园</a></strong> </p>
-<p>在HTML里只要涉及文件的地方(如超级链接、图片等)就会涉及绝对路径与相对路径的概念。<br><a id="more"></a></p>
-<h2 id="绝对路径"><a href="#绝对路径" class="headerlink" title="绝对路径"></a>绝对路径</h2><p><em>绝对路径是指文件在硬盘上真正存在的路径。</em><br> 例如“bg.jpg”这个图片是存放在硬盘的<code>“E:\book\网页布局代码\第2章”</code>目录下，那么 <code>“bg.jpg”</code>这个图片的绝对路径就是<code>“E:\book\网页布\代码\第2章\bg.jpg&quot;</code>。<br>那么如果要使用绝对路径指定网页的背景图片就应该使用 以下语句：<br><figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;body backround="E:<span class="symbol">\b</span>ook<span class="symbol">\网</span>页布局<span class="symbol">\代</span>码<span class="symbol">\第</span>2章<span class="symbol">\b</span>g.jpg" &gt;</div></pre></td></tr></table></figure></p>
-<h3 id="使用绝对路径的缺点"><a href="#使用绝对路径的缺点" class="headerlink" title="使用绝对路径的缺点"></a>使用绝对路径的缺点</h3><p>   事实上，在网页编程时，很少会使用绝对路径，如果使用<code>“E:\book\网页布\代码\第2章\bg.jpg”</code>来指定背景图片的位置，在自己的计算机上 浏览可能会一切正常，但是上传到Web服务器上浏览就很有可能不会显示图片了。因为上传到Web服务器上时，可能整个网站并没有放在Web服务器的E盘， 有可能是D盘或H盘。即使放在Web服务器的E盘里，Web服务器的E盘里也不一定会存在<code>“E:\book\网页布局\代码\第2章”</code>这个目录，因此在浏览网页时是不会显示图片的。</p>
-<h2 id="相对路径"><a href="#相对路径" class="headerlink" title="相对路径"></a>相对路径</h2><p>为了避免这种隋况发生，通常在网页里指定文件时，都会选择使用相对路径。所谓相对路径，就是相对于自己的目标文件位置。<br>    例如上面的例子，“s1.htm” 文件里引用了“bg.jpg”图片，由于“bg.jpg”图片相对于“s1.htm”来说，是在同一个目录的，那么要在“s1.htm”文件里使用以下代码后，只要这两个文件的相对位置没有变(也就是说还是在同一个目录内)，那么无论上传到Web服务器的哪个位置，在浏览器里都能正确地显示图片。<br>   <code>&lt;body background=&quot;bg.jpg&quot;&gt;</code><br>    再举一个例子，假设“s1.htm”文件所在目录为“E:\book\网页布局\代码\第2章”，而“bg.jpg”图片所在目录为“E:\book\网页 布局\代码\第2章\img”，那么“bg.jpg”图片相对于“s1.htm”文件来说，是在其所在目录的“img”子目录里，则引用图片的语句应该为：</p>
-<p><code>&lt;body background=&quot;img/bg.jpg&quot;&gt;</code></p>
-<p>注意：<br>    相对路径使用“/”字符作为目录的分隔字符，而绝对路径可以使用“\”或“/”字符作为目录的分隔字符。<br>    由于“img”目录是“第2章”目录下的子目录，因此在“img”前不用再加上<code>“/”</code>字符。<br>    在相对路径里常使用<code>“../”</code>来表示上一级目录。如果有多个上一级目录，可以使用多个<code>“../”</code>，例如<code>“http://www.cnblogs.com/”</code>代表上上级目录。假设 “s1.htm”文件所在目录为<code>“E:\book\网页布局\代码\第2章”</code>，而“bg.jpg”图片所在目录为<code>“E:\book\网页布局\代码”</code>，那 么“bg.jpg”图片相对于“s1.htm”文件来说，是在其所在目录的上级目录里，则引用图片的语句应该为：</p>
-<p><code>&lt;body background=&quot;../bg.jpg&quot;&gt;</code></p>
-<p>再举一个例子，假设“s1.htm”文件所在目录为<code>“E:\book\网页布局\代码\第2章”</code>，而<code>“bg.jpg”图片所在目录为“E:\book\网 页布局\代码\img”</code>，那么“bg.jpg”图片相对于“s1.htm”文件来说，是在其所在目录的上级目录里的“img”子目录里，则引用图片的语句 应该为：<br>     <body background="../img/bg.jpg">  </body></p>
-<h2 id="相对虚拟目录"><a href="#相对虚拟目录" class="headerlink" title="相对虚拟目录"></a>相对虚拟目录</h2><p>有关相对路径还有一个比较特殊的表示：“相对虚拟目录”。请看下面的例子：<br>     <body background="/img/bg.jpg"></body></p>
-<p>在这个例子里，background属性的值为<code>“/img/bg.jpg”</code>，</p>
-<p>注意 在“img”前有一个<code>“/”</code>字符。这个<code>“/”</code>代表的是虚拟目录的根目录. 假设把<code>“E:\book\网页布局\代码”</code>设为虚拟目录，那么<code>“/img/bg.jpg”</code>的真实路径为<code>“E:\book\网页布局\代码\img \bg.jpg”</code>；如果把<code>“E:\book\网页布局\代码\第2章”</code>设为虚拟目录，那么<code>“/img/bg.jpg”</code>的真实路径为<code>“E:\book\网页 布局\代码\第2章\img\bg.jpg”</code></p>
+        <blockquote>
+<p>什么是HTML语义化:<br>HTML语义化就是根据具体内容，选择合适的标签进行代码的编写。便于开发者阅读和写出更优雅的代码，同时让搜索引擎的爬虫能更好的识别。</p>
+</blockquote>
+<p>本文整理自以下文章：</p>
+<p><a href="http://www.html5jscss.com/html5-semantics-section.html" target="_blank" rel="external">HTML 5的革新——语义化标签(一) 》 html5jscss</a></p>
+<a id="more"></a>
+<h2 id="一、为什么要语义化？"><a href="#一、为什么要语义化？" class="headerlink" title="一、为什么要语义化？"></a>一、为什么要语义化？</h2><ul>
+<li>为了在没有CSS的情况下，页面也能呈现出很好地内容结构、代码结构:为了裸奔时好看；</li>
+<li>用户体验：例如title、alt用于解释名词或解释图片信息、label标签的活用；</li>
+<li>有利于SEO：和搜索引擎建立良好沟通，有助于爬虫抓取更多的有效信息：爬虫依赖于标签来确定上下文和各个关键字的权重；</li>
+<li>方便其他设备解析（如屏幕阅读器、盲人阅读器、移动设备）以意义的方式来渲染网页；</li>
+<li><p>便于团队开发和维护，语义化更具可读性，是下一步吧网页的重要动向，遵循W3C标准的团队都遵循这个标准，可以减少差异化。</p>
+<h2 id="二、写HTML代码时应注意什么？"><a href="#二、写HTML代码时应注意什么？" class="headerlink" title="二、写HTML代码时应注意什么？"></a>二、写HTML代码时应注意什么？</h2></li>
+<li><p>尽可能少的使用无语义的标签div和span；<br>在语义不明显时，既可以使用div或者p时，尽量用p, 因为p在默认情况下有上下间距，对兼容特殊终端有利；</p>
+</li>
+<li>不要使用纯样式标签，如：b、font、u等，改用css设置。</li>
+<li>需要强调的文本，可以包含在strong或者em标签中（浏览器预设样式，能用CSS指定就不用他们），strong默认样式是加粗（不要用b），em是斜体（不用i）；</li>
+<li>使用表格时，标题要用caption，表头用thead，主体部分用tbody包围，尾部用tfoot包围。表头和一般单元格要区分开，表头用th，单元格用td；</li>
+<li>表单域要用fieldset标签包起来，并用legend标签说明表单的用途；</li>
+<li>每个input标签对应的说明文本都需要使用label标签，并且通过为input设置id属性，在lable标签中设置for=someld来让说明文本和相对应的input关联起来。</li>
+</ul>
+<h2 id="三、标签详解"><a href="#三、标签详解" class="headerlink" title="三、标签详解"></a>三、标签详解</h2><p>不要因为html5新标签的出现，而随意用之，错误的使用肯定会事与愿违。所以有些地方还是要用div的，就是因为div没有任何意义的元素，他只是一个标签，仅仅是用来构建外观和结构。因此是最适合做容器的标签。</p>
+<p>W3C定义了这些语义标签，不可能完全符合我们有时的设计目标，就像制定出来的法律不可能流传100年都不改变，更何况它才制定没多久，不可能这些语义标签对所以设计目标的适应。只是一定程度上的“通用”，我们的目标是让爬虫读懂重要的东西就够了。</p>
+<p>结论：不能因为有了HTML 5标签就弃用了div，每个事物都有它的独有作用的。</p>
+<h3 id="header元素"><a href="#header元素" class="headerlink" title="header元素"></a>header元素</h3><p><code>header</code> 元素代表“网页”或“section”的页眉。<br>通常包含<code>h1-h6</code>元素或<code>hgroup</code>，作为整个页面或者一个内容块的标题。也可以包裹一节的目录部分，一个搜索框，一个nav，或者任何相关logo。<br>整个页面没有限制<code>header</code>元素的个数，可以拥有多个，可以为每个内容块增加一个<code>header</code>元素。</p>
+<p><code>header</code>使用注意：</p>
+<ul>
+<li>可以是“网页”或任意“section”的头部部分；</li>
+<li>没有个数限制。</li>
+<li>如果hgroup或h1-h6自己就能工作的很好，那就不要用header。<h3 id="footer元素"><a href="#footer元素" class="headerlink" title="footer元素"></a>footer元素</h3><code>footer</code>元素代表“网页”或“section”的页脚，通常含有该节的一些基本信息，譬如：作者，相关文档链接，版权资料。如果<code>footer</code>元素包含了整个节，那么它们就代表附录，索引，提拔，许可协议，标签，类别等一些其他类似信息。<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="variable">&lt;footer&gt;</span></div><div class="line">    COPYRIGHT<span class="meta">@gitxieada</span></div><div class="line"><span class="variable">&lt;/footer&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><code>footer</code>使用注意：</p>
+<ul>
+<li>可以是“网页”或任意“section”的底部部分；</li>
+<li>没有个数限制，除了包裹的内容不一样，其他跟header类似。<h3 id="hgroup元素"><a href="#hgroup元素" class="headerlink" title="hgroup元素"></a>hgroup元素</h3></li>
+</ul>
+<p><code>hgroup</code>元素代表“网页”或“section”的标题，当元素有多个层级时，该元素可以将<code>h1</code>到<code>h6</code>元素放在其内，譬如文章的主标题和副标题的组合</p>
+<p><code>hgroup</code>使用注意：</p>
+<ul>
+<li>如果只需要一个<code>h1-h6</code>标签就不用<code>hgroup</code></li>
+<li>如果有连续多个<code>h1-h6</code>标签就用<code>hgroup</code></li>
+<li>如果有连续多个标题和其他文章数据，<code>h1-h6</code>标签就用<code>hgroup</code>包住，和其他文章元数据一起放入<code>header</code>标签<h3 id="nav元素"><a href="#nav元素" class="headerlink" title="nav元素"></a>nav元素</h3></li>
+</ul>
+<p><code>nav</code>元素代表页面的导航链接区域。用于定义页面的<strong>主要导航部分</strong>。<br><code>nav</code>使用注意：<br>用在整个页面主要导航部分上，不合适就不要用 <code>nav</code>元素；</p>
+<h3 id="aside元素"><a href="#aside元素" class="headerlink" title="aside元素"></a>aside元素</h3><p><code>aside</code>元素被包含在<code>article</code>元素中作为主要内容的附属信息部分，其中的内容可以是与当前文章有关的相关资料、标签、名词解释等。（特殊的section）。</p>
+<p>在<code>article</code>元素之外使用作为页面或站点全局的附属信息部分。最典型的是侧边栏，其中的内容可以是日志串连，其他组的导航，甚至广告，这些内容相关的页面。</p>
+<p><code>aside</code>使用总结：</p>
+<ul>
+<li><code>aside</code>在<code>article</code>内表示主要内容的附属信息，</li>
+<li>在<code>article</code>之外则可做侧边栏，没有<code>article</code>与之对应，最好不用。</li>
+<li>如果是广告，其他日志链接或者其他分类导航也可以用<h3 id="section元素"><a href="#section元素" class="headerlink" title="section元素"></a>section元素</h3><code>section</code>元素代表文档中的“节”或“段”，“段”可以是指一篇文章里按照主题的分段；“节”可以是指一个页面里的分组。<br><code>section</code>通常还带标题，虽然html5中<code>section</code>会自动给标题h1-h6降级，但是最好手动给他们降级。<br><code>section</code>使用注意：</li>
+</ul>
+<p>一张页面可以用section划分为简介、文章条目和联系信息。不过在文章内页，最好用article。section不是一般意义上的容器元素，如果想作为样式展示和脚本的便利，可以用div。</p>
+<ul>
+<li>表示文档中的节或者段；</li>
+<li>article、nav、aside可以理解为特殊的section，所以如果可以用article、nav、aside就不要用section，没实际意义的就用div<h3 id="article元素"><a href="#article元素" class="headerlink" title="article元素"></a>article元素</h3></li>
+</ul>
+<p><code>article</code>元素最容易跟<code>section</code>和<code>div</code>混淆，其实article代表一个在文档，页面或者网站中自成一体的内容，其目的是为了让开发者独立开发或重用。譬如论坛的帖子，博客上的文章，一篇用户的评论，一个互动的widget小工具。（特殊的section）</p>
+<p>除了它的内容，<code>article</code>会有一个标题（通常会在<code>header</code>里），会有一个<code>footer</code>页脚。<br><code>article</code>使用注意：</p>
+<ul>
+<li>自身独立的情况下：用article</li>
+<li>是相关内容：用section</li>
+<li>没有语义的：用div<h3 id="HTML5其他结构元素标签"><a href="#HTML5其他结构元素标签" class="headerlink" title="HTML5其他结构元素标签"></a>HTML5其他结构元素标签</h3></li>
+</ul>
+<p>HTML5节元素标签包括<code>body article nav aside section header footer hgroup</code>，还有<code>h1-h6 address</code>。</p>
+<ul>
+<li><code>address</code>代表区块容器，必须是作为联系信息出现，邮编地址、邮件地址等等,一般出现在<code>footer</code>。</li>
+<li><code>h1-h6</code>因为hgroup，section和article的出现，h1-h6定义也发生了变化，允许一张页面出现多个h1。</li>
+</ul>
 
       
 
@@ -189,11 +247,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">路径</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTML</a>
         		</li>
       		
 		</ul>
@@ -249,7 +303,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/10/28/相对路径和绝对路径的区别/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/10/26/HTML语义化/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -263,18 +317,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/11/01/shell命令-更新中/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/10/27/git学习/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          shell命令[更新中]
+          git学习
         
       </div>
     </a>
   
   
-    <a href="/2017/10/27/Demo【更新中】/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Demo【更新中】</div>
+    <a href="/2017/10/23/如何新建一篇博客/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">如何新建一篇博客</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -301,7 +355,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#绝对路径"><span class="toc-number">1.</span> <span class="toc-text">绝对路径</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#使用绝对路径的缺点"><span class="toc-number">1.1.</span> <span class="toc-text">使用绝对路径的缺点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#相对路径"><span class="toc-number">2.</span> <span class="toc-text">相对路径</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#相对虚拟目录"><span class="toc-number">3.</span> <span class="toc-text">相对虚拟目录</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、为什么要语义化？"><span class="toc-number">1.</span> <span class="toc-text">一、为什么要语义化？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、写HTML代码时应注意什么？"><span class="toc-number">2.</span> <span class="toc-text">二、写HTML代码时应注意什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、标签详解"><span class="toc-number">3.</span> <span class="toc-text">三、标签详解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#header元素"><span class="toc-number">3.1.</span> <span class="toc-text">header元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#footer元素"><span class="toc-number">3.2.</span> <span class="toc-text">footer元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hgroup元素"><span class="toc-number">3.3.</span> <span class="toc-text">hgroup元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nav元素"><span class="toc-number">3.4.</span> <span class="toc-text">nav元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#aside元素"><span class="toc-number">3.5.</span> <span class="toc-text">aside元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#section元素"><span class="toc-number">3.6.</span> <span class="toc-text">section元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#article元素"><span class="toc-number">3.7.</span> <span class="toc-text">article元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTML5其他结构元素标签"><span class="toc-number">3.8.</span> <span class="toc-text">HTML5其他结构元素标签</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>

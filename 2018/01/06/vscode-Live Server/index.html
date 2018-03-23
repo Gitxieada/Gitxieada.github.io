@@ -176,7 +176,7 @@
 <p>4.按F1,然后在输入栏中输入<br> Live Server: Open  with Live Server   打开服务，<br> 或者 Live Server: Close Live Server  关闭服务</p>
 <h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>Live Server有一些默认配置选项，用户可以修改。<br>点击 文件-&gt;首选项-&gt;设置， 在右侧页面中找到 Live Server Config，其中列出的是本插件的配置属性。将其复制到右侧，修改属性值，点击保存即可。<br>设置的含义，查找该插件的说明文档。<br>注意，VSCode 中的所有设置都是通过json格式的数据配置的。用户可以查找对应的key值，修改其value，从而修改配置属性。</p>
 <p><strong>关于Live Server的配置</strong></p>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"> <span class="number">1</span> &#123;</div><div class="line"> <span class="number">2</span> <span class="string">"liveServer.settings.port"</span>: <span class="number">8080</span>, <span class="comment">//设置本地服务的端口号</span></div><div class="line"> <span class="number">3</span>     <span class="string">"liveServer.settings.root"</span>: <span class="string">"/"</span>, <span class="comment">//设置根目录，也就是打开的文件会在该目录下找</span></div><div class="line"> <span class="number">4</span>     <span class="string">"liveServer.settings.CustomBrowser"</span>: <span class="string">"chrome"</span>, <span class="comment">//设置默认打开的浏览器</span></div><div class="line"> <span class="number">5</span>     <span class="string">"liveServer.settings.AdvanceCustomBrowserCmdLine"</span>: <span class="string">"chrome --incognito --remote-debugging-port=9222"</span>,</div><div class="line"> <span class="number">6</span>     <span class="string">"liveServer.settings.NoBrowser"</span>: <span class="literal">false</span>,</div><div class="line"> <span class="number">7</span>     <span class="string">"liveServer.settings.ignoredFiles"</span>: [<span class="comment">//设置忽略的文件</span></div><div class="line"> <span class="number">8</span>         <span class="string">".vscode/**"</span>,</div><div class="line"> <span class="number">9</span>         <span class="string">"**/*.scss"</span>,</div><div class="line"><span class="number">10</span>         <span class="string">"**/*.sass"</span></div><div class="line"><span class="number">11</span>     ]</div><div class="line"><span class="number">12</span> &#125;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"> <span class="number">1</span> &#123;</div><div class="line"> <span class="number">2</span> <span class="string">"liveServer.settings.port"</span>: <span class="number">8080</span>, <span class="comment">//设置本地服务的端口号</span></div><div class="line"> <span class="number">3</span>     <span class="string">"liveServer.settings.root"</span>: <span class="string">"/"</span>, <span class="comment">//设置根目录，也就是打开的文件会在该目录下找</span></div><div class="line"> <span class="number">4</span>     <span class="string">"liveServer.settings.CustomBrowser"</span>: <span class="string">"chrome"</span>, <span class="comment">//设置默认打开的浏览器</span></div><div class="line"> <span class="number">5</span>     <span class="string">"liveServer.settings.AdvanceCustomBrowserCmdLine"</span>: <span class="string">"chrome --incognito --remote-debugging-port=9222"</span>,</div><div class="line"> <span class="number">6</span>     <span class="string">"liveServer.settings.NoBrowser"</span>: <span class="literal">false</span>,</div><div class="line"> <span class="number">7</span>     <span class="string">"liveServer.settings.ignoredFiles"</span>: [<span class="comment">//设置忽略的文件</span></div><div class="line"> <span class="number">8</span>         <span class="string">".vscode/**"</span>,</div><div class="line"> <span class="number">9</span>         <span class="string">"**/*.scss"</span>,</div><div class="line"><span class="number">10</span>         <span class="string">"**/*.sass"</span></div><div class="line"><span class="number">11</span>     ]</div><div class="line"><span class="number">12</span> &#125;</div></pre></td></tr></table></figure>
 <h2 id="使用注意事项"><a href="#使用注意事项" class="headerlink" title="使用注意事项"></a>使用注意事项</h2><p>1、设置服务根路径的配置，只能设置到文件夹，不能设置到具体的HTML文件，例如 /dist/test.html  结果能打开页面，但是文件里面引用的文件加载出现报错。</p>
 <p>2、根目录下会自动打开index.html</p>
 
@@ -426,23 +426,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">demo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Vscode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">技巧</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">学习</a>
+                <a href="javascript:void(0)" class="js-tag color5">JavaScript高级程序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -450,11 +434,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">http-server</a>
+                <a href="javascript:void(0)" class="js-tag color5">demo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -466,11 +450,19 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Issue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">shell</a>
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -478,7 +470,19 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Vscode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">技巧</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">版权声明</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">http-server</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -486,7 +490,19 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">方法</a>
+                <a href="javascript:void(0)" class="js-tag color1">shell</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">路径</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">感想</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">转载</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -502,23 +518,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">感想</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">路径</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">npm</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">转载</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JavaScript高级程序</a>
+                <a href="javascript:void(0)" class="js-tag color3">方法</a>
               </li>
             
             <div class="clearfix"></div>
