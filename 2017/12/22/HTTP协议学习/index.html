@@ -6,18 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: 学习 | Gitxie的博客</title>
+  <title>HTTP协议学习 | Gitxie的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="菜鸟一枚，拖延症患者">
-<meta name="keywords" content="前端,拖延症患者,程序媛">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Gitxie的博客">
-<meta property="og:url" content="http://yoursite.com/tags/学习/index.html">
+  <meta name="description" content="HTTP，Hypertext Transfer Protocol，超文本传输协议HTTP是一个基于“请求与响应”模式的、无状态的应用层协议。（无状态是指协议对于事物处理没有记忆能力。缺少状态意味着如果后续处理需要前面的信息，则它必须重传，这样可能导致每次连接传送的数据量增大。）">
+<meta name="keywords" content="HTTP,笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTTP协议学习">
+<meta property="og:url" content="http://yoursite.com/2017/12/22/HTTP协议学习/index.html">
 <meta property="og:site_name" content="Gitxie的博客">
-<meta property="og:description" content="菜鸟一枚，拖延症患者">
+<meta property="og:description" content="HTTP，Hypertext Transfer Protocol，超文本传输协议HTTP是一个基于“请求与响应”模式的、无状态的应用层协议。（无状态是指协议对于事物处理没有记忆能力。缺少状态意味着如果后续处理需要前面的信息，则它必须重传，这样可能导致每次连接传送的数据量增大。）">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/12554487/19838051/cde55046-9f01-11e6-997d-2312a4377a66.png">
+<meta property="og:updated_time" content="2018-03-23T16:25:45.521Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Gitxie的博客">
-<meta name="twitter:description" content="菜鸟一枚，拖延症患者">
+<meta name="twitter:title" content="HTTP协议学习">
+<meta name="twitter:description" content="HTTP，Hypertext Transfer Protocol，超文本传输协议HTTP是一个基于“请求与响应”模式的、无状态的应用层协议。（无状态是指协议对于事物处理没有记忆能力。缺少状态意味着如果后续处理需要前面的信息，则它必须重传，这样可能导致每次连接传送的数据量增大。）">
+<meta name="twitter:image" content="https://cloud.githubusercontent.com/assets/12554487/19838051/cde55046-9f01-11e6-997d-2312a4377a66.png">
   
     <link rel="alternative" href="/atom.xml" title="Gitxie的博客" type="application/atom+xml">
   
@@ -143,194 +146,217 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-HTTP协议学习" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      HTTP协议学习
+    </h1>
+  
+
+        
+        <a href="/2017/12/22/HTTP协议学习/" class="archive-article-date">
+  	<time datetime="2017-12-21T16:49:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-22</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>HTTP，Hypertext Transfer Protocol，超文本传输协议<br>HTTP是一个基于“请求与响应”模式的、无状态的应用层协议。<br>（无状态是指协议对于事物处理没有记忆能力。缺少状态意味着如果后续处理需要前面的信息，则它必须重传，这样可能导致每次连接传送的数据量增大。）<br><a id="more"></a></p>
+</blockquote>
+<p><strong>在TCP/IP协议栈中的位置：</strong><br>    HTTP协议通常承载于TCP协议之上，有时也承载于TLS或SSL协议层之上，这个时候，就成了我们常说的HTTPS。默认HTTP的端口号为80，HTTPS的端口号为443。</p>
+<h2 id="HTTP-URL"><a href="#HTTP-URL" class="headerlink" title="HTTP URL"></a>HTTP URL</h2><p>HTTP URL (URL是一种特殊类型的URI，包含了用于查找某个资源的足够的信息)的格式如下：<br><code>http://host[&quot;:&quot;port][abs_path]</code><br>http表示要通过HTTP协议来定位网络资源；<br>host表示合法的Internet主机域名或者IP地址；  port指定一个端口号，为空则使用缺省端口80；  abs_path指定请求资源的URI；如果URL中没有给出abs_path，那么当它作为请求URI时，必须以“/”的形式给出，通常这个工作浏览器自动帮我们完成。<br>HTTP URL的理解：<br>URL是通过HTTP协议存取资源的Internet路径，一个URL对应一个数据资源</p>
+<h2 id="HTTP协议对资源的操作"><a href="#HTTP协议对资源的操作" class="headerlink" title="HTTP协议对资源的操作"></a>HTTP协议对资源的操作</h2><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>请求获取URL位置的资源</td>
+</tr>
+<tr>
+<td>HEAD</td>
+<td>请求获取URL位置资源的响应消息报告，即获得该资源的头部信息</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>请求向URL位置的资源后附加新的数据</td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>请求向URL位置存储一个资源，覆盖原URL位置的资源</td>
+</tr>
+<tr>
+<td>PATCH</td>
+<td>请求局部更新URL位置的资源，即改变该处资源的部分内容</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>请求删除URL位置存储的资源</td>
+</tr>
+</tbody>
+</table>
+<p><strong>PATCH 和PUT的区别</strong><br>假设URL位置有一组数据UserInfo，包括UserID、UserName等20个字段  </p>
+<p>需求：用户修改了UserName，其他不变<br>• 采用PATCH，仅向URL提交UserName的局部更新请求<br>• 采用PUT，必须将所有20个字段一并提交到URL，未提交字段被删除<br>PATCH的最主要好处：节省网络带宽</p>
+<h2 id="常见HTTP响应状态码"><a href="#常见HTTP响应状态码" class="headerlink" title="常见HTTP响应状态码"></a>常见HTTP响应状态码</h2><p>状态代码有三位数字组成，第一个数字定义了响应的类别，且有五种可能取值：  </p>
+<p><img src="https://cloud.githubusercontent.com/assets/12554487/19838051/cde55046-9f01-11e6-997d-2312a4377a66.png" alt="图片来源https://github.com/muwenzi/Program-Blog/issues/40" title="HTTP响应状态码"></p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span>xx：指示信息<span class="comment">--表示请求已接收，继续处理</span></div><div class="line"><span class="number">2</span>xx：成功<span class="comment">--表示请求已被成功接收、理解、接受</span></div><div class="line"><span class="number">3</span>xx：重定向<span class="comment">--信息不完整需要进一步补充</span></div><div class="line"><span class="number">4</span>xx：客户端错误<span class="comment">--请求有语法错误或请求无法实现</span></div><div class="line"><span class="number">5</span>xx：服务器端错误<span class="comment">--服务器未能实现合法的请求</span></div></pre></td></tr></table></figure>
+<figure class="highlight tap"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div></pre></td><td class="code"><pre><div class="line">常见http响应状态码：</div><div class="line">请求收到，继续处理：</div><div class="line">           <span class="number"> 100 </span>     客户端必须继续发出请求</div><div class="line">           <span class="number"> 101 </span>     客户端要求服务器根据请求转换HTTP协议版本</div><div class="line"></div><div class="line">     操作成功收到，分析，接受：</div><div class="line">           <span class="number"> 200 </span>     交易成功</div><div class="line">           <span class="number"> 201 </span>     提示知道新文件的URL</div><div class="line">           <span class="number"> 202 </span>     接受和处理、但处理未完成</div><div class="line">           <span class="number"> 203 </span>     返回信息不确定或不完整</div><div class="line">           <span class="number"> 204 </span>     请求收到，但返回信息为空</div><div class="line">           <span class="number"> 205 </span>     服务器完成了请求，用户代理必须复位当前已经浏览过的文件</div><div class="line">           <span class="number"> 206 </span>     服务器已经完成了部分用户的GET请求</div><div class="line"></div><div class="line">     重定向：</div><div class="line">           <span class="number"> 300 </span>     请求的资源可在多处得到</div><div class="line">           <span class="number"> 301 </span>     永久重定向，在Location响应首部的值仍为当前URL(隐式重定向)</div><div class="line">           <span class="number"> 302 </span>     临时重定向，在Location响应首部的值仍为新的URL(显示重定向)</div><div class="line">           <span class="number"> 303 </span>     建议客户端访问其他URL或访问方式</div><div class="line">           <span class="number"> 304 </span>     Not Modified 请求的资源没有改变 可以继续使用缓存</div><div class="line">           <span class="number"> 305 </span>     请求的资源必须从服务器指定的地址得到</div><div class="line">           <span class="number"> 306 </span>     前一版本HTTP中使用的代码，现行版本中不再使用</div><div class="line">           <span class="number"> 307 </span>     声明请求的资源临时性删除</div><div class="line"></div><div class="line">     客户端错误：</div><div class="line">           <span class="number"> 400 </span>     错误请求，如语法错误</div><div class="line">           <span class="number"> 401 </span>     未授权</div><div class="line">               HTTP 401.1    未授权，登录失败</div><div class="line">               HTTP 401.2    未授权，服务器配置问题导致登录失败</div><div class="line">               HTTP 401.3    ACL  禁止访问资源</div><div class="line">               HTTP 401.4    未授权  授权被筛选器拒绝</div><div class="line">               HTTP 401.5    未授权  ISAPI或CGI授权失败</div><div class="line">           <span class="number"> 402 </span>     保留有效ChargeTo头响应</div><div class="line">           <span class="number"> 403 </span>     禁止访问</div><div class="line">               HTTP 403.1    禁止访问  禁止可执行访问</div><div class="line">               HTTP 403.2    禁止访问  禁止读访问</div><div class="line">               HTTP 403.3    禁止访问  禁止写访问</div><div class="line">               HTTP 403.4    禁止访问  要求SSL</div><div class="line">               HTTP 403.5    禁止访问  要求SSL 128</div><div class="line">               HTTP 403.6    禁止访问  IP地址被拒绝</div><div class="line">               HTTP 403.7    禁止访问  要求客户端证书</div><div class="line">               HTTP 403.8    禁止访问  禁止站点访问</div><div class="line">               HTTP 403.9    禁止访问  连接的用户过多</div><div class="line">               HTTP 403.10   禁止访问  配置无效</div><div class="line">               HTTP 403.11   禁止访问  密码更改</div><div class="line">               HTTP 403.12   禁止访问  映射器拒绝访问</div><div class="line">               HTTP 403.13   禁止访问  客户端证书已被吊销</div><div class="line">               HTTP 403.15   禁止访问  客户端访问许可过多</div><div class="line">               HTTP 403.16   禁止访问  客户端证书不可信或者无效</div><div class="line">               HTTP 403.17   禁止访问  客户端证书已经到期或者尚未生效</div><div class="line">           <span class="number"> 404 </span>      没有发现文件、查询或URL</div><div class="line">           <span class="number"> 405 </span>      用户在Request-Line字段定义的方法不允许</div><div class="line">           <span class="number"> 406 </span>      根据用户发送的Accept拖，请求资源不可访问</div><div class="line">           <span class="number"> 407 </span>      类似401，用户必须首先在代理服务器上得到授权</div><div class="line">           <span class="number"> 408 </span>      客户端没有在用户指定的饿时间内完成请求</div><div class="line">           <span class="number"> 409 </span>      对当前资源状态，请求不能完成</div><div class="line">           <span class="number"> 410 </span>      服务器上不再有此资源且无进一步的参考地址</div><div class="line">           <span class="number"> 411 </span>      服务器拒绝用户定义的Content-Length属性请求   </div><div class="line">           <span class="number"> 412 </span>      一个或多个请求头字段在当前请求中错误</div><div class="line">           <span class="number"> 413 </span>      请求的资源大于服务器允许的大小</div><div class="line">           <span class="number"> 414 </span>      请求的资源URL长于服务器允许的长度</div><div class="line">           <span class="number"> 415 </span>      请求资源不支持请求项目格式</div><div class="line">           <span class="number"> 416 </span>      请求中包含Range请求头字段，在当前请求资源范围内没有range指示值，       请求也不包含If-Range请求头字段</div><div class="line">           <span class="number"> 417 </span>      服务器不满足请求Expect头字段指定的期望值，如果是代理服务器，可能是下一级服务器不能满足请求长</div><div class="line">     服务器端错误: </div><div class="line">           <span class="number"> 500 </span>- 内部服务器错误</div><div class="line">               HTTP 500.100 - 内部服务器错误 </div><div class="line">               HTTP 500-11 服务器关闭</div><div class="line">               HTTP 500-12 应用程序重新启动</div><div class="line">               HTTP 500-13 - 服务器太忙</div><div class="line">               HTTP 500-14 - 应用程序无效</div><div class="line">               HTTP 500-15 - 不允许请求 </div><div class="line">           <span class="number"> 501 </span>- 未实现</div><div class="line">           <span class="number"> 502 </span>- 网关错误</div><div class="line">           <span class="number"> 503 </span>- 服务不可用</div><div class="line">           <span class="number"> 504 </span>- 网关超时</div></pre></td></tr></table></figure>
+<p>参考资料<br><a href="https://github.com/muwenzi/Program-Blog/issues/40" target="_blank" rel="external">常见HTTP响应状态码 · Issue #40 · muwenzi/Program-Blog</a><br><a href="http://blog.51cto.com/shjia/1432670" target="_blank" rel="external">Apache之HTTP协议-让梦冬眠-51CTO博客</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/01/常用Windows7快捷键/" class="archive-article-date">
-  	<time datetime="2017-11-01T14:10:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/01/常用Windows7快捷键/">常用Windows7快捷键</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">技巧</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTTP</a>
         		</li>
       		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">学习</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/01/shell命令-更新中/" class="archive-article-date">
-  	<time datetime="2017-11-01T14:08:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/01/shell命令-更新中/">shell命令[更新中]</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">学习</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">shell</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/10/27/git学习/" class="archive-article-date">
-  	<time datetime="2017-10-27T06:07:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/10/27/git学习/">git学习</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
         		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">学习</a>
-        		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/12/22/HTTP协议学习/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/10/23/如何新建一篇博客/" class="archive-article-date">
-  	<time datetime="2017-10-23T15:43:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-23</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2017/12/25/JavaScript高级程序设计-读书笔记1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          JavaScript高级程序设计--读书笔记1(更新中)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/12/06/http-server安装与使用/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">http-server安装与使用</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/10/23/如何新建一篇博客/">如何新建一篇博客</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">学习</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">博客</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP-URL"><span class="toc-number">1.</span> <span class="toc-text">HTTP URL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP协议对资源的操作"><span class="toc-number">2.</span> <span class="toc-text">HTTP协议对资源的操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常见HTTP响应状态码"><span class="toc-number">3.</span> <span class="toc-text">常见HTTP响应状态码</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -363,9 +389,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
