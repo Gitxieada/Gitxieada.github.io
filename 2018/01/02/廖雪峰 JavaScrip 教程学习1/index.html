@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/01/02/廖雪峰 JavaScrip 教程学习1/index.html">
 <meta property="og:site_name" content="Gitxie的博客">
 <meta property="og:description" content="最近又再从头看廖雪峰的 JavaScript 教程，之前就看过，但是当时就只是走马观花的看看。现在准备重新看一遍。因此就有了这篇读书笔记。把一些我认为的重要的地方摘录下来，巩固JavaScript知识。">
-<meta property="og:updated_time" content="2018-03-27T08:36:56.610Z">
+<meta property="og:updated_time" content="2018-03-27T16:00:47.196Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="廖雪峰 JavaScrip 教程笔记--快速入门">
 <meta name="twitter:description" content="最近又再从头看廖雪峰的 JavaScript 教程，之前就看过，但是当时就只是走马观花的看看。现在准备重新看一遍。因此就有了这篇读书笔记。把一些我认为的重要的地方摘录下来，巩固JavaScript知识。">
@@ -239,38 +239,22 @@
 <p><em>请注意</em>，如果通过索引赋值时，索引超过了范围，同样会引起<code>Array</code>大小的变化。</p>
 <p>不建议直接修改<code>Array</code>的大小，访问索引时要确保索引不会越界。</p>
 <h5 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h5><ol>
-<li><p>indexOf </p>
-<p>与String类似，<code>Array</code>也可以通过<code>indexOf()</code>来搜索一个指定的元素的位置</p>
+<li>indexOf<br>与String类似，<code>Array</code>也可以通过<code>indexOf()</code>来搜索一个指定的元素的位置</li>
+<li><p>slice<br><code>slice()</code>就是对应String的<code>substring()</code>版本，它截取<code>Array</code>的部分元素，然后返回一个新的<code>Array</code>。<br><code>slice()</code>的起止参数包括开始索引，不包括结束索引。<br>如果不给<code>slice()</code>传递任何参数，它就会从头到尾截取所有元素。利用这一点，我们可以很容易地复制一个<code>Array</code></p>
 </li>
-<li><p>slice</p>
-<p><code>slice()</code>就是对应String的<code>substring()</code>版本，它截取<code>Array</code>的部分元素，然后返回一个新的<code>Array</code>。</p>
-<p><code>slice()</code>的起止参数包括开始索引，不包括结束索引。</p>
-<p>如果不给<code>slice()</code>传递任何参数，它就会从头到尾截取所有元素。利用这一点，我们可以很容易地复制一个<code>Array</code></p>
+<li><p>push和pop<br><code>push()</code>向<code>Array</code>的末尾添加若干元素，<code>pop()</code>则把<code>Array</code>的最后一个元素删除掉</p>
 </li>
-<li><p>push和pop</p>
-<p><code>push()</code>向<code>Array</code>的末尾添加若干元素，<code>pop()</code>则把<code>Array</code>的最后一个元素删除掉</p>
+<li><p>unshift和shift<br>如果要往<code>Array</code>的头部添加若干元素，使用<code>unshift()</code>方法，<code>shift()</code>方法则把<code>Array</code>的第一个元素删掉。</p>
 </li>
-<li><p>unshift和shift</p>
-<p>如果要往<code>Array</code>的头部添加若干元素，使用<code>unshift()</code>方法，<code>shift()</code>方法则把<code>Array</code>的第一个元素删掉。</p>
+<li><p>sort<br><code>sort()</code>可以对当前<code>Array</code>进行排序，它会直接修改当前<code>Array</code>的元素位置，直接调用时，按照默认顺序排序。</p>
 </li>
-<li><p>sort</p>
-<p><code>sort()</code>可以对当前<code>Array</code>进行排序，它会直接修改当前<code>Array</code>的元素位置，直接调用时，按照默认顺序排序。</p>
+<li><p>reverse<br>把整个<code>Array</code>的元素给掉个个，也就是反转。</p>
 </li>
-<li><p>reverse</p>
-<p>把整个<code>Array</code>的元素给掉个个，也就是反转。</p>
+<li><p>splice<br><code>splice()</code>方法是修改<code>Array</code>的“万能方法”，它可以从指定的索引开始删除若干元素，然后再从该位置添加若干元素。</p>
 </li>
-<li><p>splice</p>
-<p><code>splice()</code>方法是修改<code>Array</code>的“万能方法”，它可以从指定的索引开始删除若干元素，然后再从该位置添加若干元素。</p>
+<li><p>concat<br><code>concat()</code>方法把当前的<code>Array</code>和另一个<code>Array</code>连接起来，并返回一个新的<code>Array</code>。<br><em>请注意</em>，<code>concat()</code>方法并没有修改当前<code>Array</code>，而是返回了一个新的<code>Array</code>。<br>实际上，<code>concat()</code>方法可以接收任意个元素和<code>Array</code>，并且自动把<code>Array</code>拆开，然后全部添加到新的<code>Array</code>里</p>
 </li>
-<li><p>concat</p>
-<p><code>concat()</code>方法把当前的<code>Array</code>和另一个<code>Array</code>连接起来，并返回一个新的<code>Array</code>。</p>
-<p><em>请注意</em>，<code>concat()</code>方法并没有修改当前<code>Array</code>，而是返回了一个新的<code>Array</code>。</p>
-<p>实际上，<code>concat()</code>方法可以接收任意个元素和<code>Array</code>，并且自动把<code>Array</code>拆开，然后全部添加到新的<code>Array</code>里</p>
-</li>
-<li><p>join</p>
-<p>把当前<code>Array</code>的每个元素都用指定的字符串连接起来，然后返回连接后的字符串，如果<code>Array</code>的元素不是字符串，将自动转换为字符串后再连接。</p>
-<p>​</p>
-<p>​</p>
+<li><p>join<br>把当前<code>Array</code>的每个元素都用指定的字符串连接起来，然后返回连接后的字符串，如果<code>Array</code>的元素不是字符串，将自动转换为字符串后再连接。</p>
 </li>
 </ol>
 <h4 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h4><p>JavaScript的对象是一组由键-值组成的无序集合。JavaScript对象的键都是字符串类型，值可以是任意数据类型。每个键又称为对象的属性，要获取一个对象的属性，我们用<code>对象变量.属性名</code>的方式。</p>
@@ -288,24 +272,15 @@
 <p><em>请注意</em>，<code>if...else...</code>语句的执行特点是二选一，在多个<code>if...else...</code>语句中，如果某个条件成立，则后续就不再继续判断了。</p>
 <p>JavaScript把<code>null</code>、<code>undefined</code>、<code>0</code>、<code>NaN</code>和空字符串<code>&#39;&#39;</code>视为<code>false</code>，其他值一概视为<code>true</code>。</p>
 <h3 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h3><p>JavaScript的循环有两种，一种是<code>for</code>循环，通过初始条件、结束条件和递增条件来循环执行语句块。</p>
-<h4 id="for-…-in"><a href="#for-…-in" class="headerlink" title="for … in"></a><strong>for … in</strong></h4><p>for循环的一个变体是for … in循环，它可以把一个对象的所有属性依次循环出。</p>
-<p>由于<code>Array</code>也是对象，而它的每个元素的索引被视为对象的属性，因此，<code>for ... in</code>循环可以直接循环出<code>Array</code>的索引。</p>
-<p><em>请注意</em>，<code>for ... in</code>对<code>Array</code>的循环得到的是<code>String</code>而不是<code>Number</code>。</p>
+<h4 id="for-…-in"><a href="#for-…-in" class="headerlink" title="for … in"></a><strong>for … in</strong></h4><p>for循环的一个变体是for … in循环，它可以把一个对象的所有属性依次循环出。<br>由于<code>Array</code>也是对象，而它的每个元素的索引被视为对象的属性，因此，<code>for ... in</code>循环可以直接循环出<code>Array</code>的索引。<br><em>请注意</em>，<code>for ... in</code>对<code>Array</code>的循环得到的是<code>String</code>而不是<code>Number</code>。</p>
 <h4 id="while"><a href="#while" class="headerlink" title="while"></a>while</h4><p><code>while</code>循环只有一个判断条件，条件满足，就不断循环，条件不满足时则退出循环。</p>
-<h4 id="do-…-while"><a href="#do-…-while" class="headerlink" title="do … while"></a>do … while</h4><p>它和<code>while</code>循环的唯一区别在于，不是在每次循环开始的时候判断条件，而是在每次循环完成的时候判断条件。</p>
-<p>用<code>do { ... } while()</code>循环要小心，循环体会至少执行1次，而<code>for</code>和<code>while</code>循环则可能一次都不执行。</p>
+<h4 id="do-…-while"><a href="#do-…-while" class="headerlink" title="do … while"></a>do … while</h4><p>它和<code>while</code>循环的唯一区别在于，不是在每次循环开始的时候判断条件，而是在每次循环完成的时候判断条件。<br>用<code>do { ... } while()</code>循环要小心，循环体会至少执行1次，而<code>for</code>和<code>while</code>循环则可能一次都不执行。</p>
 <h3 id="Map和Set"><a href="#Map和Set" class="headerlink" title="Map和Set"></a>Map和Set</h3><p><code>Map</code>和<code>Set</code>是ES6标准新增的数据类型。</p>
-<h4 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h4><p><code>Map</code>是一组键值对的结构，具有极快的查找速度。</p>
-<p>初始化<code>Map</code>需要一个二维数组，或者直接初始化一个空<code>Map</code>。<code>Map</code>具有以下方法：</p>
+<h4 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h4><p><code>Map</code>是一组键值对的结构，具有极快的查找速度。<br>初始化<code>Map</code>需要一个二维数组，或者直接初始化一个空<code>Map</code>。<code>Map</code>具有以下方法：</p>
 <figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> m = <span class="keyword">new</span> <span class="built_in">Map</span>(); <span class="comment">// 空Map</span></div><div class="line">m.<span class="keyword">set</span>(<span class="string">'Adam'</span>, <span class="number">67</span>); <span class="comment">// 添加新的key-value</span></div><div class="line">m.<span class="keyword">set</span>(<span class="string">'Bob'</span>, <span class="number">59</span>);</div><div class="line">m.has(<span class="string">'Adam'</span>); <span class="comment">// 是否存在key 'Adam': true</span></div><div class="line">m.<span class="keyword">get</span>(<span class="string">'Adam'</span>); <span class="comment">// 67</span></div><div class="line">m.delete(<span class="string">'Adam'</span>); <span class="comment">// 删除key 'Adam'</span></div><div class="line">m.<span class="keyword">get</span>(<span class="string">'Adam'</span>); <span class="comment">// undefined</span></div></pre></td></tr></table></figure>
 <p>由于一个key只能对应一个value，所以，多次对一个key放入value，后面的值会把前面的值冲掉。</p>
-<h4 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h4><p><code>Set</code>和<code>Map</code>类似，也是一组key的集合，但不存储value。由于key不能重复，所以，在<code>Set</code>中，没有重复的key。</p>
-<p>要创建一个<code>Set</code>，需要提供一个<code>Array</code>作为输入，或者直接创建一个空<code>Set</code>。重复元素在<code>Set</code>中自动被过滤。</p>
-<p>通过<code>add(key)</code>方法可以添加元素到<code>Set</code>中，可以重复添加，但不会有效果。</p>
-<p>通过<code>delete(key)</code>方法可以删除元素。</p>
-<h3 id="iterable"><a href="#iterable" class="headerlink" title="iterable"></a>iterable</h3><p>遍历<code>Array</code>可以采用下标循环，遍历<code>Map</code>和<code>Set</code>就无法使用下标。为了统一集合类型，ES6标准引入了新的iterable类型，Array、Map和Set都属于iterable类型。</p>
-<p>具有<code>iterable</code>类型的集合可以通过新的<code>for ... of</code>循环来遍历。</p>
-<p>使用<code>iterable</code>内置的<code>forEach</code>方法，它接收一个函数，每次迭代就自动回调该函数。</p>
+<h4 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h4><p><code>Set</code>和<code>Map</code>类似，也是一组key的集合，但不存储value。由于key不能重复，所以，在<code>Set</code>中，没有重复的key。<br>要创建一个<code>Set</code>，需要提供一个<code>Array</code>作为输入，或者直接创建一个空<code>Set</code>。重复元素在<code>Set</code>中自动被过滤。<br>通过<code>add(key)</code>方法可以添加元素到<code>Set</code>中，可以重复添加，但不会有效果。<br>通过<code>delete(key)</code>方法可以删除元素。</p>
+<h3 id="iterable"><a href="#iterable" class="headerlink" title="iterable"></a>iterable</h3><p>遍历<code>Array</code>可以采用下标循环，遍历<code>Map</code>和<code>Set</code>就无法使用下标。为了统一集合类型，ES6标准引入了新的iterable类型，Array、Map和Set都属于iterable类型。<br>具有<code>iterable</code>类型的集合可以通过新的<code>for ... of</code>循环来遍历。<br>使用<code>iterable</code>内置的<code>forEach</code>方法，它接收一个函数，每次迭代就自动回调该函数。</p>
 
       
 
@@ -569,15 +544,19 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Vscode</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">技巧</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -597,6 +576,10 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Issue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">yilia</a>
               </li>
              
@@ -605,11 +588,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">shell</a>
+                <a href="javascript:void(0)" class="js-tag color2">Live Server</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+                <a href="javascript:void(0)" class="js-tag color5">版权声明</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">博客</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -621,19 +608,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Issue</a>
+                <a href="javascript:void(0)" class="js-tag color3">命令</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">博客</a>
+                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">版权声明</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Live Server</a>
+                <a href="javascript:void(0)" class="js-tag color1">shell</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -645,7 +628,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">路径</a>
+                <a href="javascript:void(0)" class="js-tag color3">计划</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -653,23 +636,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">转载</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">计划</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">命令</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
+                <a href="javascript:void(0)" class="js-tag color3">路径</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">npm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">转载</a>
               </li>
             
             <div class="clearfix"></div>
