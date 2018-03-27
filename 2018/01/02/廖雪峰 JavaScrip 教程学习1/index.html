@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/01/02/廖雪峰 JavaScrip 教程学习1/index.html">
 <meta property="og:site_name" content="Gitxie的博客">
 <meta property="og:description" content="最近又再从头看廖雪峰的 JavaScript 教程，之前就看过，但是当时就只是走马观花的看看。现在准备重新看一遍。因此就有了这篇读书笔记。把一些我认为的重要的地方摘录下来，巩固JavaScript知识。">
-<meta property="og:updated_time" content="2018-03-27T16:00:47.196Z">
+<meta property="og:updated_time" content="2018-03-27T16:14:21.108Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="廖雪峰 JavaScrip 教程笔记--快速入门">
 <meta name="twitter:description" content="最近又再从头看廖雪峰的 JavaScript 教程，之前就看过，但是当时就只是走马观花的看看。现在准备重新看一遍。因此就有了这篇读书笔记。把一些我认为的重要的地方摘录下来，巩固JavaScript知识。">
@@ -190,7 +190,7 @@
 <figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">`这是一个</div><div class="line">多行</div><div class="line">字符串`;</div></pre></td></tr></table></figure>
 <h5 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h5><p>要把多个字符串连接起来，可以用<code>+</code>号连接。</p>
 <p>ES6新增了一种模板字符串，表示方法和上面的多行字符串一样，但是它会自动替换字符串中的变量：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> name = <span class="string">'小明'</span>;</div><div class="line"><span class="keyword">var</span> age = <span class="number">20</span>;</div><div class="line"><span class="keyword">var</span> message = <span class="string">`你好, <span class="subst">$&#123;name&#125;</span>, 你今年<span class="subst">$&#123;age&#125;</span>岁了!`</span>;</div><div class="line">alert(message);</div></pre></td></tr></table></figure>
+<figure class="highlight delphi"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> <span class="keyword">name</span> = <span class="string">'小明'</span>;</div><div class="line"><span class="keyword">var</span> age = <span class="number">20</span>;</div><div class="line"><span class="keyword">var</span> <span class="keyword">message</span> = `你好, $<span class="comment">&#123;name&#125;</span>, 你今年$<span class="comment">&#123;age&#125;</span>岁了!`;</div><div class="line">alert(<span class="keyword">message</span>);</div></pre></td></tr></table></figure>
 <h5 id="操作字符串"><a href="#操作字符串" class="headerlink" title="操作字符串"></a>操作字符串</h5><p><em>特别注意</em>，字符串是不可变的，如果对字符串的某个索引赋值，不会有任何错误，但是，也没有任何效果。</p>
 <p>JavaScript为字符串提供了一些常用方法，注意，调用这些方法本身不会改变原有字符串的内容，而是返回一个新字符串：</p>
 <table>
@@ -222,7 +222,7 @@
 <p>第二种是<code>===</code>比较，它不会自动转换数据类型，如果数据类型不一致，返回<code>false</code>，如果一致，再比较。</p>
 <p>由于JavaScript这个设计缺陷，<strong>不要</strong>使用<code>==</code>比较，始终坚持使用<code>===</code>比较。</p>
 <p>另一个例外是<code>NaN</code>这个特殊的Number与所有其他值都不相等，包括它自己：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="literal">NaN</span> === <span class="literal">NaN</span>; <span class="comment">// false</span></div></pre></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attr">NaN</span> === NaN; // <span class="literal">false</span></div></pre></td></tr></table></figure>
 <p>唯一能判断<code>NaN</code>的方法是通过<code>isNaN()</code>函数：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">isNaN</span>(<span class="literal">NaN</span>); <span class="comment">// true</span></div></pre></td></tr></table></figure>
 <p>最后要注意浮点数的相等比较：</p>
@@ -239,7 +239,8 @@
 <p><em>请注意</em>，如果通过索引赋值时，索引超过了范围，同样会引起<code>Array</code>大小的变化。</p>
 <p>不建议直接修改<code>Array</code>的大小，访问索引时要确保索引不会越界。</p>
 <h5 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h5><ol>
-<li>indexOf<br>与String类似，<code>Array</code>也可以通过<code>indexOf()</code>来搜索一个指定的元素的位置</li>
+<li><p>indexOf<br>与String类似，<code>Array</code>也可以通过<code>indexOf()</code>来搜索一个指定的元素的位置</p>
+</li>
 <li><p>slice<br><code>slice()</code>就是对应String的<code>substring()</code>版本，它截取<code>Array</code>的部分元素，然后返回一个新的<code>Array</code>。<br><code>slice()</code>的起止参数包括开始索引，不包括结束索引。<br>如果不给<code>slice()</code>传递任何参数，它就会从头到尾截取所有元素。利用这一点，我们可以很容易地复制一个<code>Array</code></p>
 </li>
 <li><p>push和pop<br><code>push()</code>向<code>Array</code>的末尾添加若干元素，<code>pop()</code>则把<code>Array</code>的最后一个元素删除掉</p>
@@ -532,6 +533,10 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">demo</a>
               </li>
              
@@ -544,11 +549,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -568,15 +569,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Issue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -588,15 +585,23 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Issue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">shell</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Live Server</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">版权声明</a>
+                <a href="javascript:void(0)" class="js-tag color3">博客</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">博客</a>
+                <a href="javascript:void(0)" class="js-tag color5">版权声明</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -608,27 +613,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">命令</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">shell</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">JavaScrip</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">廖雪峰</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">计划</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -640,11 +629,23 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">npm</a>
+                <a href="javascript:void(0)" class="js-tag color3">计划</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">转载</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">npm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">命令</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
               </li>
             
             <div class="clearfix"></div>
