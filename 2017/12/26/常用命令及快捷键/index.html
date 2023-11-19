@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/12/26/常用命令及快捷键/index.html">
 <meta property="og:site_name" content="Gitxie的博客">
 <meta property="og:description" content="一些常用命令集合在一个页面，以免总是翻找,不方便。">
-<meta property="og:updated_time" content="2018-01-08T16:22:27.304Z">
+<meta property="og:updated_time" content="2023-11-17T09:43:29.291Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="常用命令及快捷键">
 <meta name="twitter:description" content="一些常用命令集合在一个页面，以免总是翻找,不方便。">
@@ -161,6 +161,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>一些常用命令集合在一个页面，以免总是翻找,不方便。<br><a id="more"></a></p>
+<p><code>Shift+空格</code> 全半角切换</p>
 <h2 id="git"><a href="#git" class="headerlink" title="git"></a>git</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//首先在Github新建一个空仓库—必须是空仓库。</span></div><div class="line"><span class="comment">//在本地建立一个Git版本库。</span></div><div class="line"> git init 			<span class="comment">//初始化一个Git仓库</span></div><div class="line"> git remote add origin git@github<span class="selector-class">.com</span>:yourName/yourRepo<span class="selector-class">.git</span> </div><div class="line"><span class="comment">//把本地库的内容推送到远程。后面的yourName和yourRepo表示你在github的用户名和刚才新建的仓库</span></div></pre></td></tr></table></figure>
 <figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">git <span class="keyword">add</span><span class="bash"> .  //把所有的文件更新到仓库中,提出更改（把它们添加到暂存区）</span></div><div class="line"><span class="bash">git status  </span></div><div class="line"><span class="bash">/* 列出当前目录所有还没有被git管理的文件和被git管理且被修改但还未提交(git commit)的文件，也就是所有改动文件，红色字体标出。 git add . 添加到暂存区，这时再输入一次 git status 如果看见文件都变绿了 ，那么就代表它们已经准备好了被提交（git commit）。*/</span></div><div class="line"><span class="bash">git diff  文件名 //查看具体修改了什么内容</span></div><div class="line"><span class="bash">git commit -m <span class="string">"代码提交信息"</span> </span></div><div class="line"><span class="bash">git push origin master</span></div></pre></td></tr></table></figure>
 <p>详细：<a href="https://gitxieada.github.io/2017/10/27/git%E5%AD%A6%E4%B9%A0/" target="_blank" rel="external">git学习</a></p>
@@ -362,11 +363,11 @@
         &copy; 2023 小谢
       </div>
       <!--统计start-->
-      
-      <script async src="https://busuanzi.icodeq.com/busuanzi.pure.mini.js"></script> 
+
+      <script async src="https://busuanzi.icodeq.com/busuanzi.pure.mini.js"></script>
+      本文总阅读量 <span id="busuanzi_value_page_pv"></span> 次
       本站总访问量 <span id="busuanzi_value_site_pv"></span> 次
       本站总访客数 <span id="busuanzi_value_site_uv"></span> 人
-      
       <!--统计end-->
       <div class="footer-right">
         <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/litten/hexo-theme-yilia"
@@ -450,6 +451,14 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">demo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ERP</a>
               </li>
              
@@ -458,15 +467,23 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">demo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+                <a href="javascript:void(0)" class="js-tag color5">智能制造</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">数字化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">MES</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">WMS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -478,7 +495,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
+                <a href="javascript:void(0)" class="js-tag color3">网络</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -490,11 +507,19 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">学习</a>
+                <a href="javascript:void(0)" class="js-tag color4">Web</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">全栈</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -503,6 +528,14 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">yilia</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">学习</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -559,10 +592,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">路径</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">网络</a>
               </li>
              
               <li class="article-tag-list-item">
