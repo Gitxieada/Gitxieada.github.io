@@ -12,10 +12,10 @@
 <meta name="keywords" content="笔记,SQL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SQL学习笔记">
-<meta property="og:url" content="http://yoursite.com/2023/11/15/SQL-Study-Notes/index.html">
+<meta property="og:url" content="http://yoursite.com/2023/11/22/SQL-Study-Notes/index.html">
 <meta property="og:site_name" content="Gitxie的博客">
 <meta property="og:description" content="读《SQL必知必会（第5版）》，把一些我认为的重要的地方摘录下来。 在线的SQL学习平台  SQLBolt :只支持英文，适合小白学习  SQLZOO: 支持繁体中文,建议还是用英文来看">
-<meta property="og:updated_time" content="2023-11-19T08:49:52.187Z">
+<meta property="og:updated_time" content="2023-11-22T08:50:13.077Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SQL学习笔记">
 <meta name="twitter:description" content="读《SQL必知必会（第5版）》，把一些我认为的重要的地方摘录下来。 在线的SQL学习平台  SQLBolt :只支持英文，适合小白学习  SQLZOO: 支持繁体中文,建议还是用英文来看">
@@ -156,8 +156,8 @@
   
 
         
-        <a href="/2023/11/15/SQL-Study-Notes/" class="archive-article-date">
-  	<time datetime="2023-11-15T02:35:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-11-15</time>
+        <a href="/2023/11/22/SQL-Study-Notes/" class="archive-article-date">
+  	<time datetime="2023-11-22T08:20:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-11-22</time>
 </a>
         
       </header>
@@ -220,12 +220,274 @@
 在确实需要使用通配符时，也尽量不要把它们用在搜索模式的开始处。把通配符置于开始处，搜索起来是最慢的。
 仔细注意通配符的位置。如果放错地方，可能不会返回想要的数据。
 </code></pre><h2 id="第-7-课-创建计算字段"><a href="#第-7-课-创建计算字段" class="headerlink" title="第 7 课 创建计算字段"></a>第 7 课 创建计算字段</h2><h3 id="计算字段"><a href="#计算字段" class="headerlink" title="计算字段"></a>计算字段</h3><p>存储在表中的数据都不是应用程序所需要的。我们需要直接从数据库中检索出转换、计算或格式化过的数据，而不是检索出数据，然后再在客户端应用程序中重新格式化。</p>
-<p>需要特别注意，只有数据库知道 SELECT 语句中哪些列是实际的表列，<br>哪些列是计算字段。从客户端（如应用程序）来看，计算字段的数据与<br>其他列的数据的返回方式相同。</p>
-<h3 id="拼接字段"><a href="#拼接字段" class="headerlink" title="拼接字段"></a>拼接字段</h3><p>在 SQL中的 SELECT 语句中，可使用一<br>个特殊的操作符来拼接两个列。根据你所使用的 DBMS，此操作符可用加号（ + ）或两个竖杠（ || ）表示。在 MySQL和 MariaDB中，必须使用特殊的函数。SQL Server使用 + 号。DB2、Oracle、PostgreSQL和SQLite使用 || 。</p>
-<p>###　TRIM 函数<br>RTRIM() 函数去掉值右边的所有空格。<br>大多数 DBMS都支持 RTRIM() （正如刚才所见，它去掉字符串右边的<br>空格）、 LTRIM() （去掉字符串左边的空格）以及 TRIM() （去掉字符<br>串左右两边的空格）。</p>
+<p>需要特别注意，只有数据库知道 SELECT 语句中哪些列是实际的表列，哪些列是计算字段。从客户端（如应用程序）来看，计算字段的数据与其他列的数据的返回方式相同。</p>
+<h3 id="拼接字段"><a href="#拼接字段" class="headerlink" title="拼接字段"></a>拼接字段</h3><p>在 SQL中的 SELECT 语句中，可使用一个特殊的操作符来拼接两个列。根据你所使用的 DBMS，此操作符可用加号（ + ）或两个竖杠（ || ）表示。在 MySQL和 MariaDB中，必须使用特殊的函数。SQL Server使用 + 号。DB2、Oracle、PostgreSQL和SQLite使用 || 。</p>
+<p>###　TRIM 函数<br>RTRIM() 函数去掉值右边的所有空格。<br>大多数 DBMS都支持 RTRIM() （正如刚才所见，它去掉字符串右边的空格）、 LTRIM() （去掉字符串左边的空格）以及 TRIM() （去掉字符串左右两边的空格）。</p>
 <h3 id="使用别名"><a href="#使用别名" class="headerlink" title="使用别名"></a>使用别名</h3><p>SQL 支持列别名。别名（alias）是一个字段或值的替换名。别名用 AS 关键字赋予。</p>
 <p>别名的名字既可以是一个单词，也可以是一个字符串。如果是后者，字符串应该括在引号中。虽然这种做法是合法的，但不建议这么去做。多单词的名字可读性高，不过会给客户端应用带来各种问题。因此，别名最常见的使用是将多个单词的列名重命名为一个单词的名字。</p>
-<h3 id="执行算术计算"><a href="#执行算术计算" class="headerlink" title="执行算术计算"></a>执行算术计算</h3><p>SELECT 语句为测试、检验函数和计算提供了很好的方法。虽然 SELECT通常用于从表中检索数据，但是省略了 FROM 子句后就是简单地访问和处理表达式，例如 SELECT 3 * 2; 将返回 6 ， SELECT Trim(‘ abc ‘);将返回 abc ， SELECT Curdate(); 使用 Curdate() 函数返回当前日期和时间。现在你明白了，可以根据需要使用 SELECT 语句进行检验。</p>
+<h3 id="执行算术计算"><a href="#执行算术计算" class="headerlink" title="执行算术计算"></a>执行算术计算</h3><p>SELECT 语句为测试、检验函数和计算提供了很好的方法。虽然 SELECT通常用于从表中检索数据，但是省略了 FROM 子句后就是简单地访问和处理表达式，例如 <code>SELECT 3 * 2</code>; 将返回 6 ， <code>SELECT Trim(&#39; abc &#39;)</code>;将返回 abc ， <code>SELECT Curdate()</code>; 使用 <code>Curdate()</code> 函数返回当前日期和时间。现在你明白了，可以根据需要使用 SELECT 语句进行检验。</p>
+<h2 id="第-8-课-使用函数处理数据"><a href="#第-8-课-使用函数处理数据" class="headerlink" title="第 8 课 使用函数处理数据"></a>第 8 课 使用函数处理数据</h2><h3 id="函数带来的问题"><a href="#函数带来的问题" class="headerlink" title="函数带来的问题"></a>函数带来的问题</h3><p>虽然所有类型的函数一般都可以在每个 DBMS中使用，但各个函数的名称和语法可能极其不同。</p>
+<p>与 SQL语句不一样，SQL函数不是可移植的。这意味着为特定 SQL实现编写的代码在其他实现中可能不能用。</p>
+<p>如果你决定使用函数，应该保证做好代码注释，以便以后你自己（或其他人）能确切地知道这些 SQL代码的含义。</p>
+<h3 id="文本处理函数"><a href="#文本处理函数" class="headerlink" title="文本处理函数"></a>文本处理函数</h3><p>常用的文本处理函数</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">LEFT</span><span class="params">()</span></span> （或使用子字符串函数） 返回字符串左边的字符</div><div class="line"></div><div class="line"><span class="function"><span class="title">LENGTH</span><span class="params">()</span></span> （也使用 DATALENGTH() 或 LEN() ） 返回字符串的长度</div><div class="line"></div><div class="line"><span class="function"><span class="title">LOWER</span><span class="params">()</span></span> 将字符串转换为小写</div><div class="line"></div><div class="line"><span class="function"><span class="title">LTRIM</span><span class="params">()</span></span> 去掉字符串左边的空格</div><div class="line"></div><div class="line"><span class="function"><span class="title">RIGHT</span><span class="params">()</span></span> （或使用子字符串函数） 返回字符串右边的字符</div><div class="line"></div><div class="line"><span class="function"><span class="title">RTRIM</span><span class="params">()</span></span> 去掉字符串右边的空格</div><div class="line"></div><div class="line"><span class="function"><span class="title">SUBSTR</span><span class="params">()</span></span>或SUBSTRING() 提取字符串的组成部分（DB2、Oracle、PostgreSQL和SQLite使用 SUBSTR() ；MariaDB、MySQL和SQL Server使用 SUBSTRING()）</div><div class="line"></div><div class="line"><span class="function"><span class="title">SOUNDEX</span><span class="params">()</span></span> 返回字符串的 SOUNDEX 值（DSOUNDEX 是一个将任何文本串转换为描述其语音表示的字母数字模式的算法。）</div><div class="line"></div><div class="line"><span class="function"><span class="title">UPPER</span><span class="params">()</span></span> 将字符串转换为大写</div></pre></td></tr></table></figure>
+<h3 id="日期和时间处理函数"><a href="#日期和时间处理函数" class="headerlink" title="日期和时间处理函数"></a>日期和时间处理函数</h3><p>日期和时间采用相应的数据类型存储在表中，每种 DBMS都有自己的特殊形式。</p>
+<p>取当前日期 : DB2和PostgreSQL使用 <code>CURRENT_DATE</code> ；MariaDB和MySQL使用<code>CURDATE()</code> ；Oracle使用<code>SYSDATE</code>；SQL Server使用 <code>GETDATE()</code> ；SQLite使用 <code>DATE()</code>。</p>
+<p>DB2，MySQL和 MariaDB具有各种日期处理函数，但没有 DATEPART() 。<br>DB2，MySQL和 MariaDB用户可使用名为 YEAR() 的函数从日期中提取年份。</p>
+<p>不同 DBMS的日期 − 时间处理函数可能不同。关于你的 DBMS具体支持的日期 − 时间处理函数，请参阅相应的文档。</p>
+<h3 id="数值处理函数"><a href="#数值处理函数" class="headerlink" title="数值处理函数"></a>数值处理函数</h3><p>数值处理函数仅处理数值数据。这些函数一般主要用于代数、三角或几何运算，因此不像字符串或日期 − 时间处理函数使用那么频繁。具有讽刺意味的是，在主要 DBMS的函数中，数值函数是最一致、最统一的函数。</p>
+<p>常用数值处理函数</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">ABS</span><span class="params">()</span></span> 返回一个数的绝对值</div><div class="line"><span class="function"><span class="title">COS</span><span class="params">()</span></span> 返回一个角度的余弦</div><div class="line"><span class="function"><span class="title">EXP</span><span class="params">()</span></span> 返回一个数的指数值</div><div class="line"><span class="function"><span class="title">PI</span><span class="params">()</span></span> 返回圆周率 π的值</div><div class="line"><span class="function"><span class="title">SIN</span><span class="params">()</span></span> 返回一个角度的正弦</div><div class="line"><span class="function"><span class="title">SQRT</span><span class="params">()</span></span> 返回一个数的平方根</div><div class="line"><span class="function"><span class="title">TAN</span><span class="params">()</span></span> 返回一个角度的正切</div></pre></td></tr></table></figure>
+<h2 id="第-9-课-汇总数据"><a href="#第-9-课-汇总数据" class="headerlink" title="第 9 课 汇总数据"></a>第 9 课 汇总数据</h2><h3 id="聚集函数"><a href="#聚集函数" class="headerlink" title="聚集函数"></a>聚集函数</h3><p>为方便这种类型的检索，SQL给出了 5个聚集函数，SQL 的聚集函数在各种主要 SQL实现中得到了相当一致的支持。</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">AVG</span><span class="params">()</span></span>  通过对表中行数计数并计算其列值之和，求得该列的平均值。可用来返回所有列的平均值，也可以用来返回特定列或行的平均值。注意：只用于单个列。</div><div class="line"></div><div class="line"><span class="function"><span class="title">COUNT</span><span class="params">()</span></span> 返回某列的行数</div><div class="line"></div><div class="line"><span class="function"><span class="title">COUNT</span><span class="params">()</span></span> 函数有两种使用方式：</div><div class="line"><span class="number">1</span>. 使用 COUNT(*) 对表中行的数目进行计数，不管表列中包含的是空值</div><div class="line">（ NULL ）还是非空值。</div><div class="line"><span class="number">2</span>. 使用 COUNT(column) 对特定列中具有值的行进行计数，忽略 NULL 值。</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="title">MAX</span><span class="params">()</span></span> 返回某列的最大值。 MAX() 要求指定列名，MAX() 函数忽略列值为 NULL 的行。</div><div class="line"></div><div class="line"><span class="function"><span class="title">MIN</span><span class="params">()</span></span> 返回某列的最小值。 MIN() 要求指定列名，MIN() 函数忽略列值为 NULL 的行。</div><div class="line"></div><div class="line"><span class="function"><span class="title">SUM</span><span class="params">()</span></span> 返回某列值之和。SUM() 函数忽略列值为 NULL 的行。</div></pre></td></tr></table></figure>
+<p>以上 5个聚集函数都可以如下使用。</p>
+<ul>
+<li>对所有行执行计算，指定 ALL 参数或不指定参数（因为 ALL 是默认行<br>为）。</li>
+<li>只包含不同的值，指定 DISTINCT 参数。</li>
+</ul>
+<h2 id="第-10-课-分组数据"><a href="#第-10-课-分组数据" class="headerlink" title="第 10 课 分组数据"></a>第 10 课 分组数据</h2><p>使用分组可以将数据分为多个逻辑组，对每个组进行聚集计算。</p>
+<h3 id="创建分组"><a href="#创建分组" class="headerlink" title="创建分组"></a>创建分组</h3><p>分组是使用 SELECT 语句的 GROUP BY 子句建立的。</p>
+<p>在使用 GROUP BY 子句前，需要知道一些重要的规定。</p>
+<ul>
+<li><p>GROUP BY 子句可以包含任意数目的列，因而可以对分组进行嵌套，更细致地进行数据分组。</p>
+</li>
+<li><p>如果在 GROUP BY 子句中嵌套了分组，数据将在最后指定的分组上进行汇总。换句话说，在建立分组时，指定的所有列都一起计算（所以不能从个别的列取回数据）。</p>
+</li>
+<li><p>GROUP BY 子句中列出的每一列都必须是检索列或有效的表达式（但不能是聚集函数）。如果在 SELECT 中使用表达式，则必须在 GROUP BY子句中指定相同的表达式。不能使用别名。</p>
+</li>
+<li><p>大多数 SQL实现不允许 GROUP BY 列带有长度可变的数据类型（如文本或备注型字段）。</p>
+</li>
+<li><p>除聚集计算语句外， SELECT 语句中的每一列都必须在 GROUP BY 子句中给出。</p>
+</li>
+<li><p>如果分组列中包含具有 NULL 值的行，则 NULL 将作为一个分组返回。如果列中有多行 NULL 值，它们将分为一组。</p>
+</li>
+<li><p>GROUP BY 子句必须出现在 WHERE 子句之后， ORDER BY 子句之前。</p>
+</li>
+</ul>
+<h3 id="过滤分组"><a href="#过滤分组" class="headerlink" title="过滤分组"></a>过滤分组</h3><p> HAVING 非常类似于 WHERE 。事实上，目前为止所学过的所有类型的 WHERE 子句都可以用 HAVING 来替代。唯一的差别是， WHERE过滤行，而 HAVING 过滤分组。<br>HAVING 和 WHERE 的差别:这里有另一种理解方法， WHERE 在数据分组前进行过滤， HAVING 在数据分组后进行过滤。</p>
+<p>使用 HAVING 时应该结合 GROUP BY 子句，而 WHERE 子句用于标准的行级过滤。</p>
+<h3 id="分组和排序"><a href="#分组和排序" class="headerlink" title="分组和排序"></a>分组和排序</h3><p>差别:</p>
+<table>
+<thead>
+<tr>
+<th>ORDER BY</th>
+<th>GROUP BY</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>对产生的输出排序</td>
+<td>对行分组，但输出可能不是分组的顺序</td>
+</tr>
+<tr>
+<td>任意列都可以使用（甚至非选择的列也可以使用）</td>
+<td>只可能使用选择列或表达式列，而且必须使用每个选择列表达式</td>
+</tr>
+<tr>
+<td>不一定需要</td>
+<td>如果与聚集函数一起使用列（或表达式），则必须使用</td>
+</tr>
+</tbody>
+</table>
+<p>一般在使用 GROUP BY 子句时，应该也给出 ORDER BY 子句。这是保证数据正确排序的唯一方法。千万不要仅依赖 GROUP BY 排序数据。</p>
+<h2 id="第-11-课-使用子查询"><a href="#第-11-课-使用子查询" class="headerlink" title="第 11 课 使用子查询"></a>第 11 课 使用子查询</h2><p>创建子查询（subquery），即嵌套在其他查询中的查询。</p>
+<p>子查询常用于 WHERE 子句的 IN 操作符中，以及用来填充计算列。</p>
+<p>在 SELECT 语句中，子查询总是从内向外处理。作为子查询的 SELECT 语句只能查询单个列。企图检索多个列将返回错误。</p>
+<h2 id="第-12-课-联结表"><a href="#第-12-课-联结表" class="headerlink" title="第 12 课 联结表"></a>第 12 课 联结表</h2><p>SQL最强大的功能之一就是能在数据查询的执行中联结（join）表。联结是利用 SQL的 SELECT 能执行的最重要的操作。</p>
+<p>关系表的设计就是要把信息分解成多个表，一类数据一个表。各表通过某些共同的值互相关联（所以才叫关系数据库）。</p>
+<p>简单说，联结是一种机制，用来在一条 SELECT 语句中关联表，因此称为联结。使用特殊的语法，可以联结多个表返回一组输出，联结在运行时关联表中正确的行。</p>
+<p>内联结或等值联结的简单联结</p>
+<p>要记住，在一条 SELECT 语句中联结几个表时，相应的关系是在运行中构造的。在联结两个表时，实际要做的是将第一个表中的每一行与第二个表中的每一行配对。 WHERE 子句作为过滤条件，只包含那些匹配给定条件（这里是联结条件）的行。</p>
+<p>DBMS 在运行时关联指定的每个表，以处理联结。这种处理可能非常耗费资源，因此应该注意，不要联结不必要的表。联结的表越多，性能下降越厉害。</p>
+<h2 id="第-13-课-创建高级联结"><a href="#第-13-课-创建高级联结" class="headerlink" title="第 13 课 创建高级联结"></a>第 13 课 创建高级联结</h2><h3 id="使用表别名"><a href="#使用表别名" class="headerlink" title="使用表别名"></a>使用表别名</h3><p>SQL 除了可以对列名和计算字段使用别名，还允许给表名起别名。这样做有两个主要理由：</p>
+<ul>
+<li>缩短 SQL语句；</li>
+<li>允许在一条 SELECT 语句中多次使用相同的表。</li>
+</ul>
+<p><em>*注意</em> Oracle 中没有 AS：<br>Oracle不支持 AS 关键字。要在 Oracle中使用别名，可以不用 AS ，简单地指定列名即可（因此，应该是 Customers C ，而不是 Customers AS C ）。</p>
+<p>###　自联结（self-join）<br>自联结通常作为外部语句，用来替代从相同表中检索数据的使用子查询语句。虽然最终的结果是相同的，但许多 DBMS处理联结远比处理子查询快得多。</p>
+<p>###　自然联结（natural join）<br>自然联结排除多次出现，使每一列只返回一次。<br>自然联结要求你只能选择那些唯一的列，一般通过对一个表使用通配符（ SELECT * ），而对其他表的列使用明确的子集来完成。</p>
+<p>###　外联结（outer join）<br>许多联结将一个表中的行与另一个表中的行相关联，但有时候需要包含没有关联行的那些行。</p>
+<p>在使用 OUTER　JOIN 语法时，必须使用 RIGHT 或 LEFT 关键字指定包括其所有行的表（ RIGHT 指出的是 OUTER JOIN 右边的表，而 LEFT 指出的是 OUTER JOIN　左边的表）。</p>
+<p>要记住，总是有两种基本的外联结形式：左外联结和右外联结。它们之间的唯一差别是所关联的表的顺序。换句话说，调整 FROM 或 WHERE　子句中表的顺序，左外联结可以转换为右外联结。因此，这两种外联结可以互换使用，哪个方便就用哪个。</p>
+<p>全外联结（full outer join），它检索两个表中的所有行并关联那些可以关联的行。MariaDB、MySQL和 SQLite不支持 FULL OUTER JOIN 语法。</p>
+<h2 id="第-14-课-组合查询"><a href="#第-14-课-组合查询" class="headerlink" title="第 14 课 组合查询"></a>第 14 课 组合查询</h2><p>SQL也允许执行多个查询（多条 SELECT 语句），并将结果作为一个查询结果集返回。这些组合查询通常称为并（union）或复合查询（compound query）。</p>
+<p>主要有两种情况需要使用组合查询：</p>
+<ul>
+<li>在一个查询中从不同的表返回结构数据；</li>
+<li>对一个表执行多个查询，按一个查询返回数据。</li>
+</ul>
+<p>可用 UNION 操作符来组合数条 SQL 查询。</p>
+<p><strong>UNION 规则</strong></p>
+<ul>
+<li>UNION 必须由两条或两条以上的 SELECT 语句组成，语句之间用关键字UNION 分隔（因此，如果组合四条 SELECT 语句，将要使用三个 UNION关键字）。</li>
+<li>UNION 中的每个查询必须包含相同的列、表达式或聚集函数（不过，各个列不需要以相同的次序列出）。</li>
+<li>列数据类型必须兼容：类型不必完全相同，但必须是 DBMS可以隐含转换的类型（例如，不同的数值类型或不同的日期类型）。</li>
+</ul>
+<p>UNION 从查询结果集中自动去除了重复的行；换句话说，它的行为与一条 SELECT 语句中使用多个 WHERE 子句条件一样。</p>
+<p>这是 UNION 的默认行为，如果愿意也可以改变它。事实上，如果想返回所有的匹配行，可使用<code>UNION ALL</code> 而不是 <code>UNION</code> 。</p>
+<h2 id="第-15-课-插入数据"><a href="#第-15-课-插入数据" class="headerlink" title="第 15 课 插入数据"></a>第 15 课 插入数据</h2><p>INSERT 用来将行插入（或添加）到数据库表。 </p>
+<h3 id="插入完整的行；"><a href="#插入完整的行；" class="headerlink" title="插入完整的行；"></a>插入完整的行；</h3><p>不要使用没有明确给出列的 INSERT 语句。给出列能使 SQL代码继续发挥作用，即使表结构发生了变化。</p>
+<p>不管使用哪种 INSERT 语法， VALUES 的数目都必须正确。如果不提供列名，则必须给每个表列提供一个值；如果提供列名，则必须给列出的每个列一个值。否则，就会产生一条错误消息，相应的行不能成功插入。</p>
+<h3 id="插入行的一部分；"><a href="#插入行的一部分；" class="headerlink" title="插入行的一部分；"></a>插入行的一部分；</h3><p>如果表的定义允许，则可以在 INSERT 操作中省略某些列。省略的列必须满足以下某个条件。</p>
+<ul>
+<li>该列定义为允许 NULL 值（无值或空值）。</li>
+<li>在表定义中给出默认值。这表示如果不给出值，将使用默认值。</li>
+</ul>
+<h3 id="插入某些查询的结果。"><a href="#插入某些查询的结果。" class="headerlink" title="插入某些查询的结果。"></a>插入某些查询的结果。</h3><p>INSERT 通常只插入一行。要插入多行，必须执行多个 INSERT 语句。<br>INSERT SELECT 是个例外，它可以用一条 INSERT 插入多行，不管 SELECT 语句返回多少行，都将被 INSERT 插入。</p>
+<h3 id="从一个表复制到另一个表"><a href="#从一个表复制到另一个表" class="headerlink" title="从一个表复制到另一个表"></a>从一个表复制到另一个表</h3><p>要将一个表的内容复制到一个全新的表（运行中创建的表），可以使用 CREATE SELECT 语句（或者在SQL Server里也可用 SELECT INTO 语句）。</p>
+<p>SELECT INTO 是试验新 SQL语句前进行表复制的很好工具。先进行复制，可在复制的数据上测试 SQL代码，而不会影响实际的数据。</p>
+<h2 id="第-16-课-更新和删除数据"><a href="#第-16-课-更新和删除数据" class="headerlink" title="第 16 课 更新和删除数据"></a>第 16 课 更新和删除数据</h2><p>基本的 UPDATE 语句由三部分组成，分别是：</p>
+<ul>
+<li>要更新的表；</li>
+<li>列名和它们的新值；</li>
+<li>确定要更新哪些行的过滤条件。</li>
+</ul>
+<p>在更新多个列时，只需要使用一条 SET 命令，每个“列=值”对之间用逗号分隔（最后一列之后不用逗号）。</p>
+<p>要删除某个列的值，可设置它为 NULL （假如表定义允许 NULL 值）。</p>
+<p>DELETE FROM 要求指定从中删除数据的表名，WHERE 子句过滤要删除的行。</p>
+<p>DELETE 语句从表中删除行，甚至是删除表中所有行。但是， DELETE不删除表本身。</p>
+<p>如果想从表中删除所有行，不要使用 DELETE 。可使用 <code>TRUNCATE TABLE</code>语句，它完成相同的工作，而速度更快（因为不记录数据的变动）。</p>
+<p>在 UPDATE 或 DELETE 语句使用 WHERE 子句前，应该先用 SELECT 进行测试，保证它过滤的是正确的记录，以防编写的 WHERE 子句不正确。</p>
+<h2 id="第-17-课-创建和操纵表"><a href="#第-17-课-创建和操纵表" class="headerlink" title="第 17 课 创建和操纵表"></a>第 17 课 创建和操纵表</h2><h3 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h3><p>利用 <code>CREATE TABLE</code> 创建表。</p>
+<p>在创建新的表时，指定的表名必须不存在，否则会出错。防止意外覆盖已有的表，SQL 要求首先手工删除该表，然后再重建它，而不是简单地用创建表语句覆盖它。</p>
+<p>NULL 值就是没有值或缺值。允许 NULL 值的列也允许在插入行时不给出该列的值。不允许 NULL 值的列不接受没有列值的行，换句话说，在插入或更新行时，该列必须有值。每个表列要么是 NULL 列，要么是 NOT NULL 列，这种状态在创建时由表的定义规定。</p>
+<p>不要把 NULL 值与空字符串相混淆。 NULL 值是没有值，不是空字符串。如果指定 ‘’ （两个单引号，其间没有字符），这在 NOT NULL 列中是允许的。空字符串是一个有效的值，它不是无值。 NULL 值用关键字 NULL而不是空字符串指定。</p>
+<p>SQL 允许指定默认值，在插入行时如果不给出值，DBMS 将自动采用默认值。默认值在 CREATE TABLE 语句的列定义中用关键字 DEFAULT 指定。</p>
+<h3 id="更新表"><a href="#更新表" class="headerlink" title="更新表"></a>更新表</h3><p>更新表定义，可以使用 <code>ALTER TABLE</code> 语句。</p>
+<p>使用 ALTER　TABLE 时需要考虑的事情。</p>
+<ul>
+<li>理想情况下，不要在表中包含数据时对其进行更新。应该在表的设计过程中充分考虑未来可能的需求，避免今后对表的结构做大改动。</li>
+<li>所有的 DBMS都允许给现有的表增加列，不过对所增加列的数据类型（以及 NULL 和 DEFAULT 的使用）有所限制。</li>
+<li>许多 DBMS不允许删除或更改表中的列。</li>
+<li>多数 DBMS允许重新命名表中的列。</li>
+<li>许多 DBMS限制对已经填有数据的列进行更改，对未填有数据的列几乎没有限制。</li>
+</ul>
+<p>使用 ALTER TABLE 要极为小心，应该在进行改动前做完整的备份（表结构和数据的备份）。数据库表的更改不能撤销，如果增加了不需要的列，也许无法删除它们。类似地，如果删除了不应该删除的列，可能会丢失该列中的所有数据。</p>
+<h3 id="删除表"><a href="#删除表" class="headerlink" title="删除表"></a>删除表</h3><p>删除表（删除整个表而不是其内容）非常简单，使用 <code>DROP TABLE</code> 语句。<br>删除表没有确认步骤，也不能撤销，执行这条语句将永久删除该表。</p>
+<h3 id="重命名表"><a href="#重命名表" class="headerlink" title="重命名表"></a>重命名表</h3><p>每个 DBMS对表重命名的支持有所不同。对于这个操作，不存在严格的标准。DB2、MariaDB、MySQL、Oracle和 PostgreSQL用户使用 RENAME语句，SQL Server用户使用 sp_rename 存储过程，SQLite用户使用 ALTERTABLE 语句。所有重命名操作的基本语法都要求指定旧表名和新表名。</p>
+<h2 id="第-18-课-使用视图"><a href="#第-18-课-使用视图" class="headerlink" title="第 18 课 使用视图"></a>第 18 课 使用视图</h2><p>视图是虚拟的表。与包含数据的表不一样，视图只包含使用时动态检索数据的查询。</p>
+<p>视图的一些常见应用:</p>
+<ul>
+<li><p>重用 SQL语句。</p>
+</li>
+<li><p>简化复杂的 SQL操作。在编写查询后，可以方便地重用它而不必知道其基本查询细节。</p>
+</li>
+<li><p>使用表的一部分而不是整个表。</p>
+</li>
+<li><p>保护数据。可以授予用户访问表的特定部分的权限，而不是整个表的访问权限。</p>
+</li>
+<li><p>更改数据格式和表示。视图可返回与底层表的表示和格式不同的数据。</p>
+</li>
+</ul>
+<h3 id="视图的规则和限制"><a href="#视图的规则和限制" class="headerlink" title="视图的规则和限制"></a>视图的规则和限制</h3><ul>
+<li>与表一样，视图必须唯一命名（不能给视图取与别的视图或表相同的<br>名字）。</li>
+<li>对于可以创建的视图数目没有限制。</li>
+<li><p>创建视图，必须具有足够的访问权限。这些权限通常由数据库管理人员授予。</p>
+</li>
+<li><p>视图可以嵌套，即可以利用从其他视图中检索数据的查询来构造视图。所允许的嵌套层数在不同的 DBMS中有所不同（嵌套视图可能会严重降低查询的性能，因此在产品环境中使用之前，应该对其进行全面测试）。</p>
+</li>
+<li><p>许多 DBMS禁止在视图查询中使用 ORDER BY 子句。</p>
+</li>
+<li><p>有些 DBMS要求对返回的所有列进行命名，如果列是计算字段，则需要使用别名（关于列别名的更多信息，请参阅第 7课）。- 视图不能索引，也不能有关联的触发器或默认值。</p>
+</li>
+<li><p>有些 DBMS把视图作为只读的查询，这表示可以从视图检索数据，但不能将数据写回底层表。详情请参阅具体的 DBMS文档。</p>
+</li>
+<li><p>有些 DBMS允许创建这样的视图，它不能进行导致行不再属于视图的插入或更新。例如有一个视图，只检索带有电子邮件地址的顾客。如果更新某个顾客，删除他的电子邮件地址，将使该顾客不再属于视图。这是默认行为，而且是允许的，但有的 DBMS可能会防止这种情况发生。</p>
+</li>
+</ul>
+<h3 id="创建视图"><a href="#创建视图" class="headerlink" title="创建视图"></a>创建视图</h3><p>视图用 CREATE VIEW 语句来创建。<br>删除视图，可以使用 DROP 语句，其语法为<code>DROP VIEW viewname</code>。覆盖（或更新）视图，必须先删除它，然后再重新创建。</p>
+<p>从视图检索数据时如果使用了一条 WHERE 子句，则两组子句（一组在视图中，另一组是传递给视图的）将自动组合</p>
+<h2 id="第-19-课-使用存储过程"><a href="#第-19-课-使用存储过程" class="headerlink" title="第 19 课 使用存储过程"></a>第 19 课 使用存储过程</h2><p>存储过程就是为以后使用而保存的一条或多条 SQL语句。可将其视为批文件，虽然它们的作用不仅限于批处理。</p>
+<p>SQLite不支持存储过程</p>
+<p>使用存储过程有三个主要的好处，即简单、安全、高性能。</p>
+<p>在将 SQL代码转换为存储过程前，也必须知道它的一些缺陷。</p>
+<ul>
+<li><p>不同 DBMS中的存储过程语法有所不同。事实上，编写真正的可移植存储过程几乎是不可能的。不过，存储过程的自我调用（名字以及数据如何传递）可以相对保持可移植。因此，如果需要移植到别的DBMS，至少客户端应用代码不需要变动。</p>
+</li>
+<li><p>一般来说，编写存储过程比编写基本 SQL语句复杂，需要更高的技能，更丰富的经验。因此，许多数据库管理员把限制存储过程的创建作为安全措施（主要受上一条缺陷的影响）。</p>
+</li>
+</ul>
+<h3 id="执行存储过程"><a href="#执行存储过程" class="headerlink" title="执行存储过程"></a>执行存储过程</h3><p>执行存储过程的 SQL语句很简单，即 EXECUTE 。 EXECUTE 接受存储过程名和需要传递给它的任何参数。</p>
+<h3 id="创建存储过程"><a href="#创建存储过程" class="headerlink" title="创建存储过程"></a>创建存储过程</h3><p><code>CREATE PROCEDURE</code></p>
+<p>对代码进行注释的标准方式是在之前放置 – （两个连字符）。</p>
+<h2 id="第-20-课-管理事务处理"><a href="#第-20-课-管理事务处理" class="headerlink" title="第 20 课 管理事务处理"></a>第 20 课 管理事务处理</h2><h3 id="事务处理"><a href="#事务处理" class="headerlink" title="事务处理"></a>事务处理</h3><p>使用事务处理（transaction processing），通过确保成批的 SQL 操作要么完全执行，要么完全不执行，来维护数据库的完整性。</p>
+<p>事务处理是一种机制，用来管理必须成批执行的 SQL操作，保证数据库不包含不完整的操作结果。利用事务处理，可以保证一组操作不会中途停止，它们要么完全执行，要么完全不执行（除非明确指示）。如果没有错误发生，整组语句提交给（写到）数据库表；如果发生错误，则进行回退（撤销），将数据库恢复到某个已知且安全的状态。</p>
+<p>事务处理需要知道的几个术语：</p>
+<ul>
+<li>事务（transaction）指一组 SQL语句；</li>
+<li>回退（rollback）指撤销指定 SQL语句的过程；</li>
+<li>提交（commit）指将未存储的 SQL语句结果写入数据库表；</li>
+<li>保留点（savepoint）指事务处理中设置的临时占位符（placeholder），可以对它发布回退（与回退整个事务处理不同）。</li>
+</ul>
+<p>事务处理用来管理 INSERT 、 UPDATE 和 DELETE 语句。不能回退 SELECT语句（回退 SELECT 语句也没有必要），也不能回退 CREATE 或 DROP 操作。事务处理中可以使用这些语句，但进行回退时，这些操作也不撤销。</p>
+<h3 id="控制事务处理"><a href="#控制事务处理" class="headerlink" title="控制事务处理"></a>控制事务处理</h3><p>管理事务的关键在于将 SQL语句组分解为逻辑块，并明确规定数据何时应该回退，何时不应该回退。<br>不同 DBMS用来实现事务处理的语法有所不同。在使用事务处理时请参阅相应的 DBMS文档。</p>
+<h3 id="使用-ROLLBACK"><a href="#使用-ROLLBACK" class="headerlink" title="使用 ROLLBACK"></a>使用 ROLLBACK</h3><p>SQL的 ROLLBACK 命令用来回退（撤销）SQL语句</p>
+<h3 id="使用-COMMIT"><a href="#使用-COMMIT" class="headerlink" title="使用 COMMIT"></a>使用 COMMIT</h3><p>一般的 SQL语句都是针对数据库表直接执行和编写的。这就是所谓的隐式提交（implicit commit），即提交（写或保存）操作是自动进行的。在事务处理块中，提交不会隐式进行。不过，不同 DBMS的做法有所不同。有的 DBMS按隐式提交处理事务端，有的则不这样。</p>
+<p>进行明确的提交，使用 COMMIT 语句。</p>
+<h3 id="使用保留点"><a href="#使用保留点" class="headerlink" title="使用保留点"></a>使用保留点</h3><p>要支持回退部分事务，必须在事务处理块中的合适位置放置占位符。这样，如果需要回退，可以回退到某个占位符。 在 SQL 中，这些占位符称为保留点。在 MariaDB、MySQL 和 Oracle 中创建占位符，可使用 SAVEPOINT 语句。</p>
+<p>每个保留点都要取能够标识它的唯一名字，以便在回退时，DBMS 知道回退到何处。</p>
+<p>在 SQL Server 中，可检查一个名为 <code>@@ERROR</code>的变量，看操作是否成功。（其他 DBMS 使用不同的函数或变量返回此信息。）如果 <code>@@ERROR</code> 返回一个非 0 的值，表示有错误发生，事务处理回退到保留点。如果整个事务处理成功，发布 COMMIT 以保留数据。</p>
+<h2 id="第-21-课-使用游标"><a href="#第-21-课-使用游标" class="headerlink" title="第 21 课 使用游标"></a>第 21 课 使用游标</h2><p>游标（cursor）是一个存储在 DBMS 服务器上的数据库查询，它不是一条 SELECT 语句，而是被该语句检索出来的结果集。在存储了游标之后，应用程序可以根据需要滚动或浏览其中的数据。</p>
+<p>游标主要用于交互式应用，其中用户需要滚动屏幕上的数据，并对数据进行浏览或做出更改。</p>
+<p>使用游标涉及几个明确的步骤。</p>
+<ul>
+<li>在使用游标前，必须声明（定义）它。这个过程实际上没有检索数据，它只是定义要使用的 SELECT 语句和游标选项。</li>
+<li>一旦声明，就必须打开游标以供使用。这个过程用前面定义的 SELECT语句把数据实际检索出来。</li>
+<li>对于填有数据的游标，根据需要取出（检索）各行。</li>
+<li>在结束游标使用时，必须关闭游标，可能的话，释放游标（有赖于具体的 DBMS）。</li>
+</ul>
+<p>声明游标后，可根据需要频繁地打开和关闭游标。在游标打开时，可根据需要频繁地执行取操作。</p>
+<p>使用 DECLARE 语句创建游标，这条语句在不同的 DBMS 中有所不同。DECLARE 命名游标，并定义相应的 SELECT 语句，根据需要带 WHERE 和其他子句。</p>
+<p>使用 OPEN CURSOR 语句打开游标;在处理 OPEN CURSOR 语句时，执行查询，存储检索出的数据以供浏览和滚动。</p>
+<p>现在可以用 FETCH 语句访问游标数据了。 FETCH 指出要检索哪些行，从何处检索它们以及将它们放于何处（如变量名）。</p>
+<p>CLOSE 语句用来关闭游标。一旦游标关闭，如果不再次打开，将不能使用。第二次使用它时不需要再声明，只需用 OPEN 打开它即可。</p>
+<h2 id="第-22-课-高级-SQL-特性"><a href="#第-22-课-高级-SQL-特性" class="headerlink" title="第 22 课 高级 SQL 特性"></a>第 22 课 高级 SQL 特性</h2><h3 id="约束（constraint）"><a href="#约束（constraint）" class="headerlink" title="约束（constraint）"></a>约束（constraint）</h3><p>管理如何插入或处理数据库数据的规则。<br>DBMS 通过在数据库表上施加约束来实施引用完整性。大多数约束是在表定义中定义的。</p>
+<ol>
+<li>主键</li>
+</ol>
+<p>是一种特殊的约束，用来保证一列（或一组列）中的值是唯一的，而且永不改动。</p>
+<ol>
+<li>外键</li>
+</ol>
+<p>是表中的一列，其值必须列在另一表的主键中。外键是保证引用完整性的极其重要部分。外键有助防止意外删除</p>
+<ol>
+<li>唯一约束</li>
+</ol>
+<p>唯一约束用来保证一列（或一组列）中的数据是唯一的。它们类似于主键，但存在以下重要区别。</p>
+<ul>
+<li>表可包含多个唯一约束，但每个表只允许一个主键。</li>
+<li>唯一约束列可包含 NULL 值。</li>
+<li>唯一约束列可修改或更新。</li>
+<li>唯一约束列的值可重复使用。</li>
+<li>与主键不一样，唯一约束不能用来定义外键。</li>
+</ul>
+<ol>
+<li>检查约束</li>
+</ol>
+<p>检查约束用来保证一列（或一组列）中的数据满足一组指定的条件。</p>
+<p>检查约束在数据类型内又做了进一步的限制，这些限制极其重要，可以确保插入数据库的数据正是你想要的数据。不需要依赖于客户端应用程序或用户来保证正确获取它，DBMS本身将会拒绝任何无效的数据。</p>
+<h3 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h3><p>索引用来排序数据以加快搜索和排序操作的速度。</p>
+<p>可以在一个或多个列上定义索引，使 DBMS保存其内容的一个排过序的列表。在定义了索引后，DBMS 以使用书的索引类似的方法使用它。DBMS 搜索排过序的索引，找出匹配的位置，然后检索这些行。</p>
+<ul>
+<li><p>索引改善检索操作的性能，但降低了数据插入、修改和删除的性能。在执行这些操作时，DBMS必须动态地更新索引。</p>
+</li>
+<li><p>索引数据可能要占用大量的存储空间。</p>
+</li>
+<li><p>并非所有数据都适合做索引。取值不多的数据（如州）不如具有更多可能值的数据（如姓或名），能通过索引得到那么多的好处。</p>
+</li>
+<li><p>索引用于数据过滤和数据排序。如果你经常以某种特定的顺序排序数据，则该数据可能适合做索引。</p>
+</li>
+<li><p>可以在索引中定义多个列（例如，州加上城市）。这样的索引仅在以州加城市的顺序排序时有用。如果想按城市排序，则这种索引没有用处。</p>
+</li>
+</ul>
+<p>索引必须唯一命名。</p>
+<p><strong>检查索引</strong>:<br>索引的效率随表数据的增加或改变而变化。许多数据库管理员发现，过去创建的某个理想的索引经过几个月的数据处理后可能变得不再理想了。最好定期检查索引，并根据需要对索引进行调整。</p>
+<h3 id="触发器"><a href="#触发器" class="headerlink" title="触发器"></a>触发器</h3><p>触发器是特殊的存储过程，它在特定的数据库活动发生时自动执行。触发器可以与特定表上的 INSERT 、 UPDATE 和 DELETE 操作（或组合）相关联。</p>
+<p>与存储过程不一样（存储过程只是简单的存储 SQL 语句），触发器与单个的表相关联。</p>
+<p>一般来说，约束的处理比触发器快，因此在可能的时候，应该尽量使用约束。</p>
+<h2 id="数据库安全"><a href="#数据库安全" class="headerlink" title="数据库安全"></a>数据库安全</h2><p>任何安全系统的基础都是用户授权和身份确认。</p>
+<p>安全性使用 SQL的 GRANT 和 REVOKE 语句来管理，不过，大多数 DBMS提供了交互式的管理实用程序，这些实用程序在内部使用 GRANT 和REVOKE 语句。</p>
 
       
 
@@ -304,7 +566,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2023/11/15/SQL-Study-Notes/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2023/11/22/SQL-Study-Notes/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -318,18 +580,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2023/11/17/Network-Management-Study-Notes/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          网络管理学习笔记
-        
-      </div>
-    </a>
   
-  
-    <a href="/2023/11/13/ERP-Study-Notes/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">ERP原理设计实施-读书笔记</div>
+    <a href="/2023/11/18/Informationization-Study-Notes/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">智能制造与数字化工厂学习笔记</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -356,7 +609,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#第-1-课-了解-SQL"><span class="toc-number">1.</span> <span class="toc-text">第 1 课 了解 SQL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第-2-课-检索数据"><span class="toc-number">2.</span> <span class="toc-text">第 2 课 检索数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第-3-课-排序检索数据"><span class="toc-number">3.</span> <span class="toc-text">第 3 课 排序检索数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第-4-课-过滤数据"><span class="toc-number">4.</span> <span class="toc-text">第 4 课 过滤数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第-5-课-高级数据过滤"><span class="toc-number">5.</span> <span class="toc-text">第 5 课 高级数据过滤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第-6-课-用通配符进行过滤"><span class="toc-number">6.</span> <span class="toc-text">第 6 课 用通配符进行过滤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#LIKE-操作符"><span class="toc-number">6.1.</span> <span class="toc-text">LIKE 操作符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用通配符的技巧"><span class="toc-number">6.2.</span> <span class="toc-text">使用通配符的技巧</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第-7-课-创建计算字段"><span class="toc-number">7.</span> <span class="toc-text">第 7 课 创建计算字段</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#计算字段"><span class="toc-number">7.1.</span> <span class="toc-text">计算字段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#拼接字段"><span class="toc-number">7.2.</span> <span class="toc-text">拼接字段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用别名"><span class="toc-number">7.3.</span> <span class="toc-text">使用别名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#执行算术计算"><span class="toc-number">7.4.</span> <span class="toc-text">执行算术计算</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#第-1-课-了解-SQL"><span class="toc-number">1.</span> <span class="toc-text">第 1 课 了解 SQL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第-2-课-检索数据"><span class="toc-number">2.</span> <span class="toc-text">第 2 课 检索数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第-3-课-排序检索数据"><span class="toc-number">3.</span> <span class="toc-text">第 3 课 排序检索数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第-4-课-过滤数据"><span class="toc-number">4.</span> <span class="toc-text">第 4 课 过滤数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第-5-课-高级数据过滤"><span class="toc-number">5.</span> <span class="toc-text">第 5 课 高级数据过滤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第-6-课-用通配符进行过滤"><span class="toc-number">6.</span> <span class="toc-text">第 6 课 用通配符进行过滤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#LIKE-操作符"><span class="toc-number">6.1.</span> <span class="toc-text">LIKE 操作符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用通配符的技巧"><span class="toc-number">6.2.</span> <span class="toc-text">使用通配符的技巧</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第-7-课-创建计算字段"><span class="toc-number">7.</span> <span class="toc-text">第 7 课 创建计算字段</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#计算字段"><span class="toc-number">7.1.</span> <span class="toc-text">计算字段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#拼接字段"><span class="toc-number">7.2.</span> <span class="toc-text">拼接字段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用别名"><span class="toc-number">7.3.</span> <span class="toc-text">使用别名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#执行算术计算"><span class="toc-number">7.4.</span> <span class="toc-text">执行算术计算</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第-8-课-使用函数处理数据"><span class="toc-number">8.</span> <span class="toc-text">第 8 课 使用函数处理数据</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#函数带来的问题"><span class="toc-number">8.1.</span> <span class="toc-text">函数带来的问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文本处理函数"><span class="toc-number">8.2.</span> <span class="toc-text">文本处理函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#日期和时间处理函数"><span class="toc-number">8.3.</span> <span class="toc-text">日期和时间处理函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数值处理函数"><span class="toc-number">8.4.</span> <span class="toc-text">数值处理函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第-9-课-汇总数据"><span class="toc-number">9.</span> <span class="toc-text">第 9 课 汇总数据</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#聚集函数"><span class="toc-number">9.1.</span> <span class="toc-text">聚集函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第-10-课-分组数据"><span class="toc-number">10.</span> <span class="toc-text">第 10 课 分组数据</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建分组"><span class="toc-number">10.1.</span> <span class="toc-text">创建分组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#过滤分组"><span class="toc-number">10.2.</span> <span class="toc-text">过滤分组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分组和排序"><span class="toc-number">10.3.</span> <span class="toc-text">分组和排序</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第-11-课-使用子查询"><span class="toc-number">11.</span> <span class="toc-text">第 11 课 使用子查询</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第-12-课-联结表"><span class="toc-number">12.</span> <span class="toc-text">第 12 课 联结表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第-13-课-创建高级联结"><span class="toc-number">13.</span> <span class="toc-text">第 13 课 创建高级联结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#使用表别名"><span class="toc-number">13.1.</span> <span class="toc-text">使用表别名</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第-14-课-组合查询"><span class="toc-number">14.</span> <span class="toc-text">第 14 课 组合查询</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第-15-课-插入数据"><span class="toc-number">15.</span> <span class="toc-text">第 15 课 插入数据</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#插入完整的行；"><span class="toc-number">15.1.</span> <span class="toc-text">插入完整的行；</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#插入行的一部分；"><span class="toc-number">15.2.</span> <span class="toc-text">插入行的一部分；</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#插入某些查询的结果。"><span class="toc-number">15.3.</span> <span class="toc-text">插入某些查询的结果。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#从一个表复制到另一个表"><span class="toc-number">15.4.</span> <span class="toc-text">从一个表复制到另一个表</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第-16-课-更新和删除数据"><span class="toc-number">16.</span> <span class="toc-text">第 16 课 更新和删除数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第-17-课-创建和操纵表"><span class="toc-number">17.</span> <span class="toc-text">第 17 课 创建和操纵表</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建表"><span class="toc-number">17.1.</span> <span class="toc-text">创建表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#更新表"><span class="toc-number">17.2.</span> <span class="toc-text">更新表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除表"><span class="toc-number">17.3.</span> <span class="toc-text">删除表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#重命名表"><span class="toc-number">17.4.</span> <span class="toc-text">重命名表</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第-18-课-使用视图"><span class="toc-number">18.</span> <span class="toc-text">第 18 课 使用视图</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#视图的规则和限制"><span class="toc-number">18.1.</span> <span class="toc-text">视图的规则和限制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建视图"><span class="toc-number">18.2.</span> <span class="toc-text">创建视图</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第-19-课-使用存储过程"><span class="toc-number">19.</span> <span class="toc-text">第 19 课 使用存储过程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#执行存储过程"><span class="toc-number">19.1.</span> <span class="toc-text">执行存储过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建存储过程"><span class="toc-number">19.2.</span> <span class="toc-text">创建存储过程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第-20-课-管理事务处理"><span class="toc-number">20.</span> <span class="toc-text">第 20 课 管理事务处理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#事务处理"><span class="toc-number">20.1.</span> <span class="toc-text">事务处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#控制事务处理"><span class="toc-number">20.2.</span> <span class="toc-text">控制事务处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用-ROLLBACK"><span class="toc-number">20.3.</span> <span class="toc-text">使用 ROLLBACK</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用-COMMIT"><span class="toc-number">20.4.</span> <span class="toc-text">使用 COMMIT</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用保留点"><span class="toc-number">20.5.</span> <span class="toc-text">使用保留点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第-21-课-使用游标"><span class="toc-number">21.</span> <span class="toc-text">第 21 课 使用游标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第-22-课-高级-SQL-特性"><span class="toc-number">22.</span> <span class="toc-text">第 22 课 高级 SQL 特性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#约束（constraint）"><span class="toc-number">22.1.</span> <span class="toc-text">约束（constraint）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#索引"><span class="toc-number">22.2.</span> <span class="toc-text">索引</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#触发器"><span class="toc-number">22.3.</span> <span class="toc-text">触发器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据库安全"><span class="toc-number">23.</span> <span class="toc-text">数据库安全</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -480,22 +733,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ERP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">智能制造</a>
               </li>
              
@@ -512,11 +749,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JavaScript高级程序</a>
+                <a href="javascript:void(0)" class="js-tag color4">ERP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -524,15 +765,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Vscode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">技巧</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -556,19 +797,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">学习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Issue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">http-server</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -576,15 +805,19 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Live Server</a>
+                <a href="javascript:void(0)" class="js-tag color3">学习</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">版权声明</a>
+                <a href="javascript:void(0)" class="js-tag color2">http-server</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">博客</a>
+                <a href="javascript:void(0)" class="js-tag color5">JavaScript高级程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">技巧</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -596,11 +829,27 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">命令</a>
+                <a href="javascript:void(0)" class="js-tag color3">博客</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
+                <a href="javascript:void(0)" class="js-tag color2">Vscode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Live Server</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">感想</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">计划</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">路径</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -612,15 +861,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">感想</a>
+                <a href="javascript:void(0)" class="js-tag color3">转载</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">路径</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">计划</a>
+                <a href="javascript:void(0)" class="js-tag color5">版权声明</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -628,7 +873,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">转载</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">命令</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
               </li>
             
             <div class="clearfix"></div>
