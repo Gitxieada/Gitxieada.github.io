@@ -7,6 +7,6 @@
 
 如果想体验手机浏览效果，可以扫一下二维码：
 
- ![Alt text](/img/phpVISQGJ_qrcode.png "Optional title") 
+ ![Alt text](/img/qrcode.png "Optional title") 
 
 ​
