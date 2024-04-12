@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>数字化转型及RPA落地指南的学习笔记 | Gitxie的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本文为《数字化路径：从蓝图到实施图》、《RPA落地指南》的读书笔记，这两本书都偏理论,适合初学者。推荐两个自动化工具：(1) TagUI（RPA工具：命令行操作，非浏览器程序支持一般，适合研发）TagUI : 一款免费、开源、跨平台的RPA工具，可帮助您轻松实现桌面、Web、鼠标和键盘操作的自动化。(2) 流程图自动化桌面应用（自研，技术：react/electron/websocket/Chro">
+  <meta name="description" content="本文为《数字化路径：从蓝图到实施图》、《RPA落地指南》的读书笔记，这两本书都偏理论,适合初学者。自动化工具：(1) TagUI(免费、开源、跨平台的RPA工具，可帮助您轻松实现桌面、Web、鼠标和键盘操作的自动化);playwright (微软开源自动化测试工具，跨浏览器、跨平台、跨语言，支持Node.js、Python、.NET、Java)。(2) 自研(学习设计理念、核心功能以及实现原理，开">
 <meta name="keywords" content="笔记,数字化路径：从蓝图到实施图,RPA落地指南">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数字化转型及RPA落地指南的学习笔记">
 <meta property="og:url" content="http://yoursite.com/2024/04/11/Digital-Transformation-Rpa-Notes/index.html">
 <meta property="og:site_name" content="Gitxie的博客">
-<meta property="og:description" content="本文为《数字化路径：从蓝图到实施图》、《RPA落地指南》的读书笔记，这两本书都偏理论,适合初学者。推荐两个自动化工具：(1) TagUI（RPA工具：命令行操作，非浏览器程序支持一般，适合研发）TagUI : 一款免费、开源、跨平台的RPA工具，可帮助您轻松实现桌面、Web、鼠标和键盘操作的自动化。(2) 流程图自动化桌面应用（自研，技术：react/electron/websocket/Chro">
+<meta property="og:description" content="本文为《数字化路径：从蓝图到实施图》、《RPA落地指南》的读书笔记，这两本书都偏理论,适合初学者。自动化工具：(1) TagUI(免费、开源、跨平台的RPA工具，可帮助您轻松实现桌面、Web、鼠标和键盘操作的自动化);playwright (微软开源自动化测试工具，跨浏览器、跨平台、跨语言，支持Node.js、Python、.NET、Java)。(2) 自研(学习设计理念、核心功能以及实现原理，开">
 <meta property="og:image" content="http://yoursite.com/img/RPA的3个发展阶段.png">
-<meta property="og:updated_time" content="2024-04-11T12:18:06.789Z">
+<meta property="og:updated_time" content="2024-04-12T06:07:29.821Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数字化转型及RPA落地指南的学习笔记">
-<meta name="twitter:description" content="本文为《数字化路径：从蓝图到实施图》、《RPA落地指南》的读书笔记，这两本书都偏理论,适合初学者。推荐两个自动化工具：(1) TagUI（RPA工具：命令行操作，非浏览器程序支持一般，适合研发）TagUI : 一款免费、开源、跨平台的RPA工具，可帮助您轻松实现桌面、Web、鼠标和键盘操作的自动化。(2) 流程图自动化桌面应用（自研，技术：react/electron/websocket/Chro">
+<meta name="twitter:description" content="本文为《数字化路径：从蓝图到实施图》、《RPA落地指南》的读书笔记，这两本书都偏理论,适合初学者。自动化工具：(1) TagUI(免费、开源、跨平台的RPA工具，可帮助您轻松实现桌面、Web、鼠标和键盘操作的自动化);playwright (微软开源自动化测试工具，跨浏览器、跨平台、跨语言，支持Node.js、Python、.NET、Java)。(2) 自研(学习设计理念、核心功能以及实现原理，开">
 <meta name="twitter:image" content="http://yoursite.com/img/RPA的3个发展阶段.png">
   
     <link rel="alternative" href="/atom.xml" title="Gitxie的博客" type="application/atom+xml">
@@ -176,7 +176,7 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>本文为《数字化路径：从蓝图到实施图》、《RPA落地指南》的读书笔记，这两本书都偏理论,适合初学者。<br>推荐两个自动化工具：<br>(1) TagUI（RPA工具：命令行操作，非浏览器程序支持一般，适合研发）<br><a href="https://tagui.readthedocs.io/en/latest/index.html" target="_blank" rel="external">TagUI</a> : 一款免费、开源、跨平台的RPA工具，可帮助您轻松实现桌面、Web、鼠标和键盘操作的自动化。<br>(2) 流程图自动化桌面应用（自研，技术：react/electron/websocket/Chrome插件）<br>主要学习<a href="https://blog.csdn.net/weixin_42429220/category_12560336.html" target="_blank" rel="external">从0到1自动化工具专栏</a>和其开源的<a href="https://github.com/WtecHtec/electron-jest" target="_blank" rel="external">代码</a>，进行二次开发，后续会新增OCR节点、Ai等功能。使用手册：<a href="https://blog.csdn.net/weixin_42429220/article/details/135713289" target="_blank" rel="external">一个关于自动化工具的操作手册</a>，开发设计思路值得借鉴。<br><a id="more"></a></p>
+        <p>本文为《数字化路径：从蓝图到实施图》、《RPA落地指南》的读书笔记，这两本书都偏理论,适合初学者。<br>自动化工具：<br>(1) <a href="https://tagui.readthedocs.io/en/latest/index.html" target="_blank" rel="external">TagUI</a>(免费、开源、跨平台的RPA工具，可帮助您轻松实现桌面、Web、鼠标和键盘操作的自动化);<a href="https://github.com/microsoft/playwright" target="_blank" rel="external">playwright</a> (微软开源自动化测试工具，跨浏览器、跨平台、跨语言，支持Node.js、Python、.NET、Java)。<br>(2) 自研(学习设计理念、核心功能以及实现原理，开源的代码进行二次开发)<br><a href="https://zhuanlan.zhihu.com/p/197737856" target="_blank" rel="external">Electron + Puppeteer + Robotjs 实现工作自动化</a>。<br><a href="https://blog.csdn.net/weixin_42429220/category_12560336.html" target="_blank" rel="external">从0到1自动化工具专栏</a>和其开源的<a href="https://github.com/WtecHtec/electron-jest" target="_blank" rel="external">代码</a>，使用手册：<a href="https://blog.csdn.net/weixin_42429220/article/details/135713289" target="_blank" rel="external">一个关于自动化工具的操作手册</a>，技术：react/electron/websocket/Chrome插件。<br><a href="https://juejin.cn/post/7350199693753073715" target="_blank" rel="external">基于数据沙箱与LLM用例自愈的UI自动化测试平台</a>。<br><a id="more"></a></p>
 <h1 id="《数字化路径：从蓝图到实施图》"><a href="#《数字化路径：从蓝图到实施图》" class="headerlink" title="《数字化路径：从蓝图到实施图》"></a>《数字化路径：从蓝图到实施图》</h1><p>数字化转型的“三力模型”——融合力、敏捷力、数据力。融合力主要是指企业在战略、业务和文化等层面与数字化时代发展需求进行融合，从业务经营层面促进企业实现数字化转型，从而帮助企业准确地判断时代的发展趋势。敏捷力主要是指从企业层面促进企业的数字化转型，通过提升企业领导者的敏捷力、构建敏捷组织以及培养敏捷人员等方式提升企业应对数字化时代的能力，进而让企业能够敏捷地应对市场快速变化、客户需求多样的时代特征。数据力则主要是从数据基础层面促进企业进行数字化转型，从数据获取、数据流通以及数据应用等多方面提高数据使用效率，从基础层面保障数字化的切实可行。</p>
 <h2 id="第一章-直面不确定性：机遇与挑战"><a href="#第一章-直面不确定性：机遇与挑战" class="headerlink" title="第一章 直面不确定性：机遇与挑战"></a>第一章 直面不确定性：机遇与挑战</h2><h3 id="第一节-行业被重新定义"><a href="#第一节-行业被重新定义" class="headerlink" title="第一节 行业被重新定义"></a>第一节 行业被重新定义</h3><p>数字化与信息化最大的区别就在于数字化打通了数据之间的“墙壁”，凸显了数据资源的价值，让数据资源成为一种与劳动力、知识、资本等相提并论的生产要素。<br>在如今的数字化时代，时代要求企业甚至行业打破屏障，要求数据系统之间形成有机衔接。行业间的无形边界被逐渐打破，这给企业带来了新的发展机遇。一方面，企业的跨界合作运营变得简单；另一方面，数字化技术的应用也使行业的运作方式发生了巨大改变。有了大量数据作为基础，在数字化技术的支撑下，企业就相对容易打破行业壁垒，进行多维度的战略布局。产能过剩、成本上涨、不能适应数字化浪潮、新产品与新科技的冲击和消费者需求的改变等，都是传统行业在数字化时代面临的巨大挑战，在这种情况下，新兴行业正在崭露头角。<br>企业在经营过程中，可以不拘泥于传统的运营方式和营销手段，转而进行跨界合作，以达到随时随地创造价值和传递价值的效果，让用户耳目一新。数字技术与具体业务的结合既可以让企业借助新科技领先竞争对手从而“升维”，也可以帮助企业自主“降维”，使业务更加精细化，从而进一步占领市场。通常而言，降维打击在商业中的第一大路径是置对手于低维，通过不断发展自身，让企业始终处于更高的维度，这可以理解为带着本不属于本行业的技术、优势或资源参与行业竞争，从而对低维度的竞争对手实现降维打击。商业模式中实现降维打击的第二大途径便是自我升维，将业务融会贯通，构建一体化运作模式，减少不必要的成本或业务，专注于细节或品质，将自己擅长的领域做到极致，这便是所谓的“自我更新式升维”。</p>
 <h3 id="第二节-全新的竞争模式"><a href="#第二节-全新的竞争模式" class="headerlink" title="第二节 全新的竞争模式"></a>第二节 全新的竞争模式</h3><p>一、竞争模式的三个阶段<br>在我国，商业竞争模式主要经历了以下三个阶段。<br>1.企业间的竞争<br>竞争的边界基本为企业业务的边界。在这种竞争状态下，竞争力主要源于企业自身的竞争力，自身资源是企业间竞争的基础，而自身提供的产品或者服务则是竞争价值的体现。<br>2.产业链间的竞争<br>竞争的边界扩大至不同的产业链，但竞争依然处于该行业内。在这种竞争模式下，企业在行业内的影响力是竞争的基础，产业链的协调运作是竞争力的主要来源，合作效率提高带来的溢价则是竞争价值的体现。<br>3.跨行业竞争<br>竞争的边界跨越不同的行业。<br>在这种竞争模式下，企业间的互利共生是竞争的基础，行业整合带来的优势和影响力的互惠溢价则是竞争力的主要来源。<br>二、全新竞争模式的本质<br>新竞争模式下，企业首先要明确产品的价值定位，从而把握消费者的喜好，在市场竞争中占据消费者的心智，进而在数字化时代占据一席之地。新时代背景下，企业面临的竞争愈发激烈，不仅要面对同行业的竞争对手，还要谨防新兴企业的颠覆和其他行业大企业的跨界竞争。因此，在跨行业竞争模式中，除了明确价值定位、准确把握消费者喜好和市场动向，还要重视提升自身的应变能力，新竞争模式的本质之一也就是企业间应变能力的竞争。价值定位是一种经营战略思想，应变能力是企业的组织结构特性，而资源结构则是新竞争模式下企业最有价值的、难以模仿的、不可替代的重要资产。完善的资源结构，尤其是强大的数据资源，可以帮助企业分析产业的发展前景和市场动向。因此，新竞争模式在本质上也是企业资源结构，尤其是数据资源结构的竞争。<br>综上所述，新时代跨行业的竞争其实是企业价值定位、应变能力和资源结构的竞争，它需要企业利用现有的资源结构，通过数字技术分析市场，把握市场动向和消费者喜好，从而明确企业的价值定位，并基于这一定位不断强化自身对市场环境和消费者需求的应变能力。<br>三、构建新时代的核心竞争力<br>提升企业核心竞争力的关键在于精准狙击消费者的消费取向。具体而言，在数字化时代，企业面对未来的核心竞争力主要可以归纳为以下几个方面：1.快速感知市场；2.持续进行技术创新；3.组织敏捷灵活；4.打造商业生态。<br>企业要想在复杂多变的市场环境中生存下来，就必须想办法精简组织，简化审批流程，打破部门壁垒，打造敏捷灵活的组织。只有组织结构和人员足够敏捷与灵活，企业才能在感知市场变化时快速做出相应决策。</p>
@@ -685,10 +685,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">demo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ERP</a>
               </li>
              
@@ -697,7 +693,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">电子档案</a>
+                <a href="javascript:void(0)" class="js-tag color5">demo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -737,6 +733,106 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">JavaScript高级程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">网络</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">流程管理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">tkinter</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">可视化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">TV</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">电视</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Vscode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">技巧</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">产品经理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Web</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">全栈</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Issue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IPTV</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">gist</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CDN</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">http-server</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">智能制造</a>
               </li>
              
@@ -753,123 +849,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JavaScript高级程序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">网络</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">流程管理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">产品经理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">tkinter</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">可视化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">TV</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">电视</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Vscode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">技巧</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Web</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">全栈</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">WebGIS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">L7-AntV</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Leaflet</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">学习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Issue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">http-server</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IPTV</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">gist</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CDN</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">shell</a>
+                <a href="javascript:void(0)" class="js-tag color2">Live Server</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -889,11 +869,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Live Server</a>
+                <a href="javascript:void(0)" class="js-tag color5">版权声明</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">版权声明</a>
+                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -901,11 +881,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">方法</a>
+                <a href="javascript:void(0)" class="js-tag color2">WebGIS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">感悟</a>
+                <a href="javascript:void(0)" class="js-tag color3">L7-AntV</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Leaflet</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -917,6 +901,22 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">计划</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">感想</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">方法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">感悟</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">JavaScrip</a>
               </li>
              
@@ -925,15 +925,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">感想</a>
+                <a href="javascript:void(0)" class="js-tag color1">shell</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">路径</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">计划</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -950,6 +946,10 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">基于DDD与前后端分离</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">电子档案</a>
               </li>
              
               <li class="article-tag-list-item">
