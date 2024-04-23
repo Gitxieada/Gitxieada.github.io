@@ -202,7 +202,7 @@ var _hmt = _hmt || [];
 <p>lxml 是 一个HTML/XML的解析器，主要的功能是如何解析和提取 HTML/XML 数据。可以利用学习的XPath语法，来快速的定位特定元素以及节点信息。</p>
 </blockquote>
 <figure class="highlight moonscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"># xpath表达式:</div><div class="line"># - 属性定位: //div[@class=<span class="string">"song"</span>] 找到<span class="class"><span class="keyword">class</span>属性值为<span class="title">song</span>的<span class="title">div</span> 返回一个列表</span></div><div class="line"># - 索引层级定位: //div[@class=<span class="string">"tang"</span>]/ul/li[<span class="number">2</span>]/a</div><div class="line"># - 逻辑运算: //a[@href=<span class="string">""</span> <span class="keyword">and</span> @class=<span class="string">"du"</span>] 并且</div><div class="line"># - 模糊匹配: //div[contains(@class, <span class="string">'ng'</span>)] <span class="class"><span class="keyword">class</span>包含 <span class="title">ng</span> 的<span class="title">div</span></span></div><div class="line">#            //div[startwith(@class, <span class="string">'ta'</span>)] <span class="class"><span class="keyword">class</span>以 <span class="title">ta</span> 开头的<span class="title">div</span></span></div><div class="line"># - 取文本: //div[@class=<span class="string">"song"</span>]/p[<span class="number">1</span>]/text() div下的文本内容</div><div class="line">#          //div[@class=<span class="string">"tang"</span>]//text() div下以及字标签下的文本内容 返回列表</div><div class="line"># - 取属性: // div[@class=<span class="string">"tang"</span>]//a[<span class="number">1</span>]/@href</div><div class="line"></div><div class="line">#获取li标签下href为www.baidu.com的a标签</div><div class="line"> <span class="keyword">from</span> lxml <span class="keyword">import</span> etree</div><div class="line"></div><div class="line"> html = etree.parse(<span class="string">'hello.html'</span>)</div><div class="line"> result = html.xpath(<span class="string">'//li/a[@href="www.baidu.com"]'</span>)</div><div class="line"></div><div class="line"> <span class="built_in">print</span>(result)</div></pre></td></tr></table></figure>
-<h3 id="os-system-与-subprocess"><a href="#os-system-与-subprocess" class="headerlink" title="os.system 与 subprocess"></a>os.system 与 subprocess</h3><p>参考：<br>Python调用外部程序——os.system()和subprocess.call() <a href="https://www.cnblogs.com/songwenlong/p/5940155.html" target="_blank" rel="external">https://www.cnblogs.com/songwenlong/p/5940155.html</a><br>Python 通过系统默认浏览器打开网址链接 <a href="https://manual.toulan.fun/posts/python-open-url-with-system-default-browser/" target="_blank" rel="external">https://manual.toulan.fun/posts/python-open-url-with-system-default-browser/</a><br>subprocess Python执行系统命令最优选模块 <a href="https://www.cnblogs.com/goldsunshine/p/17558075.html" target="_blank" rel="external">https://www.cnblogs.com/goldsunshine/p/17558075.html</a><br>python执行系统命令的方法：os.system(), os.popen(), subprocess.Popen() <a href="https://www.cnblogs.com/superbaby11/p/15560994.html" target="_blank" rel="external">https://www.cnblogs.com/superbaby11/p/15560994.html</a><br>os.system用来执行cmd指令，在cmd输出的内容会直接在控制台输出，返回结果为0表示执行成功<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span>）返回值</div><div class="line">执行操作系统的命令，将结果输出到屏幕，只返回命令执行状态(<span class="number">0</span>：成功，非 <span class="number">0</span> ： 失败)</div><div class="line"><span class="meta">&gt;&gt;</span>&gt; result = os.system(<span class="string">'python -V'</span>)</div><div class="line">python -V</div><div class="line"><span class="meta">&gt;&gt;</span>&gt; result</div><div class="line"><span class="number">0</span></div><div class="line"><span class="number">2</span>）阻塞</div><div class="line">在执行os.system函数的时候通常会阻塞它的调用者，等待所启动的命令行程序退出。</div><div class="line">在Linux平台上 只需要在命令末尾加上shell后台运算符&amp;即可。</div></pre></td></tr></table></figure></p>
+<h3 id="os-system-与-subprocess"><a href="#os-system-与-subprocess" class="headerlink" title="os.system 与 subprocess"></a>os.system 与 subprocess</h3><p>参考：<br>Python调用外部程序——os.system()和subprocess.call() <a href="https://www.cnblogs.com/songwenlong/p/5940155.html" target="_blank" rel="external">https://www.cnblogs.com/songwenlong/p/5940155.html</a><br>Python 通过系统默认浏览器打开网址链接 <a href="https://manual.toulan.fun/posts/python-open-url-with-system-default-browser/" target="_blank" rel="external">https://manual.toulan.fun/posts/python-open-url-with-system-default-browser/</a><br>subprocess Python执行系统命令最优选模块 <a href="https://www.cnblogs.com/goldsunshine/p/17558075.html" target="_blank" rel="external">https://www.cnblogs.com/goldsunshine/p/17558075.html</a><br>python执行系统命令的方法：os.system(), os.popen(), subprocess.Popen() <a href="https://www.cnblogs.com/superbaby11/p/15560994.html" target="_blank" rel="external">https://www.cnblogs.com/superbaby11/p/15560994.html</a><br>os.system用来执行cmd指令，在cmd输出的内容会直接在控制台输出，返回结果为0表示执行成功<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">1）返回值</div><div class="line">执行操作系统的命令，将结果输出到屏幕，只返回命令执行状态(0：成功，非 0 ： 失败)</div><div class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; result = os.system(<span class="string">'python -V'</span>)</span></div><div class="line">python -V</div><div class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; result</span></div><div class="line">0</div><div class="line">2）阻塞</div><div class="line">在执行os.system函数的时候通常会阻塞它的调用者，等待所启动的命令行程序退出。</div><div class="line">在Linux平台上 只需要在命令末尾加上shell后台运算符&amp;即可。</div></pre></td></tr></table></figure></p>
 <p>subprocess.run()是Python 3.5及更高版本引入的函数，用于运行外部命令并等待其完成。<br>popen是一个功能更强大的方法，而run是它的一个简化版。如果run函数不能满足功能的要求，可以尝试功能更多的popen方法。<br>除了方法的多少之外，run和popen最大的区别在于：run方法是阻塞调用，会一直等待命令执行完成或失败；popen是非阻塞调用，执行之后立刻返回，结果通过返回对象获取。<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">subprocess.<span class="builtin-name">run</span>(args, *, <span class="attribute">stdin</span>=None, <span class="attribute">input</span>=None, <span class="attribute">stdout</span>=None, <span class="attribute">stderr</span>=None, <span class="attribute">capture_output</span>=<span class="literal">False</span>, <span class="attribute">shell</span>=<span class="literal">False</span>, <span class="attribute">cwd</span>=None, <span class="attribute">timeout</span>=None, <span class="attribute">check</span>=<span class="literal">False</span>, <span class="attribute">encoding</span>=None, <span class="attribute">errors</span>=None, <span class="attribute">text</span>=None, <span class="attribute">env</span>=None, <span class="attribute">universal_newlines</span>=None)</div><div class="line"></div><div class="line">args传入的是要执行的系统命令，可以接收两种方法：字符串或列表。</div><div class="line">    使用列表形式subprocess.<span class="builtin-name">run</span>([<span class="string">"ls"</span>, <span class="string">"-al"</span>])</div><div class="line">    使用字符串形式 subprocess.<span class="builtin-name">run</span>(<span class="string">"ls -al"</span>, <span class="attribute">shell</span>=<span class="literal">True</span>)。使用字符串形式必须设置参数shell=True</div><div class="line">capture_output 捕获控制台输出</div><div class="line">    捕获命令输出。默认为<span class="literal">false</span>，所有的命令输出都打印到控制台。设置为<span class="literal">true</span>，所有命令的输出都被捕获保存到返回对象中。</div><div class="line">cwd 设置命令执行的目录</div><div class="line">    设置子进程的工作目录。默认为None，表示使用当前工作目录</div></pre></td></tr></table></figure></p>
 <h3 id="http-server"><a href="#http-server" class="headerlink" title="http.server"></a>http.server</h3><p>在本地创建一个文件夹作为Server目录，目录中放入需要共享的文件或目录, 然后通过cmd命令行在此目录下输入命令<code>python -m http.server</code>搭一个简易的本地局域网。<br>执行上面的命令就会在当前目录下启动一个文件下载服务器，默认打开8000端口。完成以后，只需要将 IP和端口告诉同事，让同事自己去操作即可，非常方便高效。<br>使用浏览器访问Python启动的下载服务器，可以看到一个类似于FTP下载的界面，这个时候单击文件下载即可。通过这种方式传输文件，可以降低大家的沟通成本，提高文件传输的效率。<br>如果当前目录下存在一个名为index.html的文件，则默认显示该文件的内容。如果当前目录下不存在这样一个文 件，则默认显示当前目录下的文件列表，也就是大家看到的下载服务器。</p>
 <h3 id="os-popen"><a href="#os-popen" class="headerlink" title="os.popen"></a>os.popen</h3><p>os.popen()方法不仅执行命令而且返回执行后的信息对象(常用于需要获取执行命令后的返回信息)，是通过一个管道文件将结果返回。通过 os.popen() 返回的是 file read 的对象。<br>Python获取本机IP地址 <a href="https://www.zhihu.com/question/49036683" target="_blank" rel="external">https://www.zhihu.com/question/49036683</a><br>获取正在上网所使用的本机IP，通过route命令可以得到：<br>Windows下用<code>[a for a in os.popen(&#39;route print&#39;).readlines() if &#39; 0.0.0.0 &#39; in a][0].split()[-2]</code><br>Linux下用<code>[a for a in os.popen(&#39;/sbin/route&#39;).readlines() if &#39;default&#39; in a][0].split()[1]</code></p>
@@ -426,7 +426,31 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Power BI商业数据分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">商业智能</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">demo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Django</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">DRF</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">MySQL8</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -434,7 +458,23 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
+                <a href="javascript:void(0)" class="js-tag color5">电子档案</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">信息化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">规划</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">财务就是IT</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">企业财务信息系统</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -458,7 +498,47 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">智能制造</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">数字化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">MES</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">WMS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">JavaScript高级程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">tkinter</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">可视化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">产品经理</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -466,11 +546,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">TV</a>
+                <a href="javascript:void(0)" class="js-tag color5">流程管理</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">电视</a>
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -479,6 +559,14 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">技巧</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">TV</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">电视</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -514,22 +602,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Issue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">http-server</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">IPTV</a>
               </li>
              
@@ -542,75 +614,19 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">shell</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Live Server</a>
+                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">版权声明</a>
+                <a href="javascript:void(0)" class="js-tag color2">http-server</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">命令</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">感想</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">路径</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">计划</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">npm</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">转载</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">感悟</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">电子档案</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">信息化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">规划</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JavaScript高级程序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">tkinter</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">可视化</a>
+                <a href="javascript:void(0)" class="js-tag color1">Issue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -630,11 +646,47 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">版权声明</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">shell</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Live Server</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">命令</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">博客</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">方法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">感悟</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">计划</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">感想</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">路径</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -646,51 +698,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">智能制造</a>
+                <a href="javascript:void(0)" class="js-tag color3">转载</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">数字化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">MES</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">WMS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">流程管理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">财务就是IT</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">企业财务信息系统</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">产品经理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Power BI商业数据分析</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">商业智能</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color4">npm</a>
               </li>
              
               <li class="article-tag-list-item">
