@@ -66,16 +66,19 @@ var _hmt = _hmt || [];
 		  <h1 class="header-author"><a href="">小谢</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">认生，慢热</p>
-		
 
 		<nav class="header-menu">
 			<ul>
 			
 				<li><a href="/">主页</a></li>
 	        
+				<li><a href="/archives/index.html">归档</a></li>
+	        
 			</ul>
 		</nav>
+		<div class="posts-len">
+			总文章数 55
+		</div>
 		<nav class="header-smart-menu">
     		
     			
@@ -120,9 +123,9 @@ var _hmt = _hmt || [];
 			  <h1 class="header-author js-header-author">小谢</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>认生，慢热<i class="icon icon-quo-right"></i></p>
 			
 			
+				
 			
 				
 			
@@ -142,7 +145,9 @@ var _hmt = _hmt || [];
 				<ul style="width: 50%">
 				
 				
-					<li style="width: 100%"><a href="/">主页</a></li>
+					<li style="width: 50%"><a href="/">主页</a></li>
+		        
+					<li style="width: 50%"><a href="/archives/index.html">归档</a></li>
 		        
 				</ul>
 			</nav>
@@ -173,6 +178,29 @@ var _hmt = _hmt || [];
   	<time datetime="2024-04-23T08:52:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-04-23</time>
 </a>
         
+          <!-- 需要添加的位置 -->
+        <!-- 开始添加字数统计-->
+        
+          <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text">  字数统计: </span>
+        <span class="post-count">14.3k字</span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text">  阅读时长: </span>
+        <span class="post-count">52分</span>
+      </span>
+    </span>
+</div>
+          
+        <!-- 添加完成 -->
       </header>
     
     <div class="article-entry" itemprop="articleBody">
@@ -188,7 +216,7 @@ var _hmt = _hmt || [];
 <li>启动MySQL：<br><code>net start mysql</code></li>
 <li>从命令行中连接 mysql 服务器：<br><code>mysql -u root -p</code><br>按照提示输入密码，并按下 Enter 键。在登录成功后会出现 mysql&gt; 命令提示窗口，你可以在上面执行任何 SQL 语句。(不要忘记使用MySQL时在命令后加;)<br>列出所有可用的数据库：<code>show databases;</code><br>创建数据库volunteersys:<code>create database volunteersys;</code>。<br>退出：<code>exit</code>。<br>根据实际情况修改project-drf中settings.py的DATABASES字段。</li>
 <li>DBeaver<br>MySQL启动后使用DBeaver连接MySQL，新建volunteersys数据库。<br>DBeaver连接MySQL报错：Public Key Retrieval is not allowed。（不允许检索公钥）。出现这个问题原因是：mysql8以上版本默认使用 sha256_password 认证，密码在传输过程中必须加密保护，如果无法使用 TLS，就需要使用 RSA 公钥加密。<br>解决：在驱动属性里设置 allowPublicKeyRetrieval 的值为 true。</li>
-<li>关闭MySQL：<code>net stop mysql</code>。<h3 id="后端project-drf"><a href="#后端project-drf" class="headerlink" title="后端project-drf"></a>后端project-drf</h3><h4 id="虚拟环境-安装模块"><a href="#虚拟环境-安装模块" class="headerlink" title="虚拟环境,安装模块"></a>虚拟环境,安装模块</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">pip install pipenv</div><div class="line"><span class="meta">#</span> 检测安装是否成功</div><div class="line">pipenv --version</div><div class="line"><span class="meta">#</span>预览一下pipenv的用法 </div><div class="line">pipenv --help</div><div class="line"><span class="meta">#</span>到项目根目录创建环境 ，修改当前目录下Pipfile文件，将[source]下的url属性改成国内的源即可，"https://mirrors.aliyun.com/pypi/simple" or "https://pypi.tuna.tsinghua.edu.cn/simple"</div><div class="line">pipenv install</div><div class="line"><span class="meta">#</span> 进入虚拟环境。在虚拟环境中运行以下命令</div><div class="line">pipenv shell </div><div class="line"><span class="meta">#</span> 安装文件中所包含的所有模块</div><div class="line">pipenv install django djangorestframework drf-yasg babel xlwt django-cors-headers cryptography pymysql</div></pre></td></tr></table></figure>
+<li>关闭MySQL：<code>net stop mysql</code>。<h3 id="后端project-drf"><a href="#后端project-drf" class="headerlink" title="后端project-drf"></a>后端project-drf</h3><h4 id="虚拟环境-安装模块"><a href="#虚拟环境-安装模块" class="headerlink" title="虚拟环境,安装模块"></a>虚拟环境,安装模块</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">pip install pipenv</div><div class="line"><span class="meta">#</span><span class="bash"> 检测安装是否成功</span></div><div class="line">pipenv --version</div><div class="line"><span class="meta">#</span><span class="bash">预览一下pipenv的用法 </span></div><div class="line">pipenv --help</div><div class="line"><span class="meta">#</span><span class="bash">到项目根目录创建环境 ，修改当前目录下Pipfile文件，将[<span class="built_in">source</span>]下的url属性改成国内的源即可，<span class="string">"https://mirrors.aliyun.com/pypi/simple"</span> or <span class="string">"https://pypi.tuna.tsinghua.edu.cn/simple"</span></span></div><div class="line">pipenv install</div><div class="line"><span class="meta">#</span><span class="bash"> 进入虚拟环境。在虚拟环境中运行以下命令</span></div><div class="line">pipenv shell </div><div class="line"><span class="meta">#</span><span class="bash"> 安装文件中所包含的所有模块</span></div><div class="line">pipenv install django djangorestframework drf-yasg babel xlwt django-cors-headers cryptography pymysql</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <p><em>注意点</em>：<br>平时安装和卸载包的时候不需要先进入或退出虚拟环境，直接在项目文件下pipenv install/uninstall xxx就行了。退出虚拟环境不要deactivate，请使用exit，否则下次pipenv进入的时候就会报错。</p>
@@ -211,7 +239,7 @@ var _hmt = _hmt || [];
 <p>Dbeaver刷新可以看到新建出来的表。</p>
 <h4 id="创建超级管理员的账号和密码"><a href="#创建超级管理员的账号和密码" class="headerlink" title="创建超级管理员的账号和密码"></a>创建超级管理员的账号和密码</h4><p>在浏览器上输入127.0.0.1:8000/admin就能访问Admin后台系统。在访问Admin后台系统时，需要用户的账号和密码才能登录后台管理页面。创建用户的账号和密码之前，必须确保项目已执行数据迁移，在数据库中已创建相应的数据表。创建超级管理员的账号和密码，创建方法 由 Django 的内 置 指 令 createsuperuser 完 成，<code>python manage.py createsuperuser</code> 。<br>在后台管理页面，新建组、用户：<br>1: manager 管理员；<br>2: company 企业；<br>3: common 普通用户。</p>
 <h4 id="启动项目"><a href="#启动项目" class="headerlink" title="启动项目"></a>启动项目</h4><p><code>pipenv run  python manage.py runserver 8088</code><br>访问<a href="http://127.0.0.1:8088/swagger" target="_blank" rel="external">http://127.0.0.1:8088/swagger</a></p>
-<h3 id="前端project-react"><a href="#前端project-react" class="headerlink" title="前端project-react"></a>前端project-react</h3><p>前端根目录新建.env 配置端口3000<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span> 安装依赖</div><div class="line">yarn</div><div class="line"><span class="meta">#</span> 启动服务</div><div class="line">yarn start</div></pre></td></tr></table></figure></p>
+<h3 id="前端project-react"><a href="#前端project-react" class="headerlink" title="前端project-react"></a>前端project-react</h3><p>前端根目录新建.env 配置端口3000<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> 安装依赖</span></div><div class="line">yarn</div><div class="line"><span class="meta">#</span><span class="bash"> 启动服务</span></div><div class="line">yarn start</div></pre></td></tr></table></figure></p>
 <p>访问地址 <a href="http://localhost:3000" target="_blank" rel="external">http://localhost:3000</a></p>
 <h2 id="requirements-txt文件"><a href="#requirements-txt文件" class="headerlink" title="requirements.txt文件"></a>requirements.txt文件</h2><p>作用：记录所有项目所依赖的第三方模块，方便迁移到不同的环境中，防止缺少模块，或因为所依赖的第三方模块不同而引起的一系列问题。<br>cd到项目根目录，然后通过以下方法： </p>
 <ul>
@@ -486,38 +514,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">demo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Django</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">DRF</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">MySQL8</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ERP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">电子档案</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">信息化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">规划</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Express</a>
               </li>
              
@@ -542,6 +538,22 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Django</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">DRF</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">MySQL8</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ERP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">FastAPI</a>
               </li>
              
@@ -550,11 +562,31 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">demo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">财务就是IT</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">企业财务信息系统</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">信息化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">规划</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -567,6 +599,14 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -586,27 +626,35 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+                <a href="javascript:void(0)" class="js-tag color5">JavaScript高级程序</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+                <a href="javascript:void(0)" class="js-tag color5">电子档案</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">智能制造</a>
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">数字化</a>
+                <a href="javascript:void(0)" class="js-tag color2">Modbus</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">MES</a>
+                <a href="javascript:void(0)" class="js-tag color5">MQTT</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">WMS</a>
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -634,46 +682,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JavaScript高级程序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Modbus</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">MQTT</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">网络</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">流程管理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">产品经理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
@@ -690,11 +698,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">微服务</a>
+                <a href="javascript:void(0)" class="js-tag color5">产品经理</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -703,6 +707,34 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">电视</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">微服务</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">智能制造</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">数字化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">MES</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">WMS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">学习</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -718,35 +750,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">WebGIS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">L7-AntV</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Leaflet</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">学习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -770,7 +774,19 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">shell</a>
+                <a href="javascript:void(0)" class="js-tag color2">WebGIS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">L7-AntV</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Leaflet</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Live Server</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -790,10 +806,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Live Server</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">版权声明</a>
               </li>
              
@@ -810,14 +822,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">命令</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">JavaScrip</a>
               </li>
              
@@ -826,15 +830,19 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">感想</a>
+                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">路径</a>
+                <a href="javascript:void(0)" class="js-tag color1">shell</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">计划</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">路径</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -846,11 +854,31 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ASP.NET Core技术内幕与项目实战</a>
+                <a href="javascript:void(0)" class="js-tag color3">命令</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">基于DDD与前后端分离</a>
+                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">流程管理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">感想</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">网络</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">高级</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -859,6 +887,14 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">RPA落地指南</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ASP.NET Core技术内幕与项目实战</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">基于DDD与前后端分离</a>
               </li>
             
             <div class="clearfix"></div>
