@@ -74,7 +74,7 @@ var _hmt = _hmt || [];
 			</ul>
 		</nav>
 		<div class="posts-len">
-			总文章数 58
+			总文章数 59
 		</div>
 		<nav class="header-smart-menu">
     		
@@ -336,7 +336,7 @@ var _hmt = _hmt || [];
 <li>Node-Inspector<br>日志输出只能解决一部分简单的问题，如果需要深入代码进行逻辑分析还需要借助更高级的调试工具，比如Node Inspector。这是Node.js自带的一个调试功能，在启动命令时添加参数–inspect指定调试地址端口，就可以通过相应的工具连接该地址进行端口调试。<br>开启端口先通过–inspect参数指定调试用的地址端口,我们指定本地地址0.0.0.0和1248作为调试端口:<code>node --inspect=0.0.0.0:1248 app.js</code>此时控制台会给出日志信息表示Node Inspector已启用,有一个websocket连接可以使用，不过我们不需要直接使用。<br>使用Visual Studio Code的debug功能来进行调试:Visual Studio Code的左侧有一个debug菜单，单击之后出现调试窗口，单击齿轮图标对配置文件launch.json进行编辑。找到configurations属性，它的值是一个数组，添加一个JSON对象作为配置信息，<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">type</span>: <span class="string">"node"</span></div><div class="line">request: <span class="string">"attach"</span>为固定值，不需要修改。指定调试请求类型，通常为 <span class="string">"launch"</span>（启动调试）或 <span class="string">"attach"</span>（附加到已运行的进程）。</div><div class="line">name:配置名称。</div><div class="line">port: <span class="keyword">Node</span>.<span class="title">js</span>应用的debug端口。</div><div class="line">address: <span class="keyword">Node</span>.<span class="title">js</span> 的域名或IP。</div><div class="line">localRoot:本地源代码路径。</div><div class="line">remoteRoot:远程服务器端源代码路径。</div></pre></td></tr></table></figure>
 </li>
 </ol>
-<p>配置完成后保存，在齿轮图标左侧下拉框中选中刚才的配置信息，然后单击绿色三角形开始按钮进行连接。这样我们就可以设置断点进行调试，并在调试过程中修改代码。只是每次修改代码之后需要重新启动Node.js应用，然后连接调试。<br>单元测试：<br>● 单元测试是保障代码的可持续迭代开发。<br>● 单元测试代码也能帮开发者思考清楚代码之间的逻辑关系。<br>● 单元测试保证了代码的可交付性。<br>编写单元测试的一个核心原则就是简单，或者可以称之为单一原则。一个单元测试案例通常只针对一个函数功能进行测试。单元测试文件通常也与源代码文件一一对应，然后加上后缀例如.test.js、.spec.js等，一个文件中可以包含多个单元测试案例。除此之外，也需要注意从正反两个方向来测试代码的可靠性，既要考虑符合预期的情况，也要考虑代码出现意外时的异常情况。<br>Node.js已经为我们提供了一个用于测试的assert模块，它可以实现基本的断言功能。这里的断言是指程序中的一阶表达式，即判断一个结果为真或假的逻辑表达式，目的是为了验证代码与开发者预期结果是否一致。断言为真时代表程序符合预期，否则抛出异常。<br>有一些框架既提供了模块也提供了命令行工具，比如ava。<br>为什么要用 AVA?<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">轻量和高效</div><div class="line">简单的测试语法</div><div class="line">并发运行测试</div><div class="line">强制编写原子测试</div><div class="line">没有隐藏的全局变量</div><div class="line">包含 TypeScript 和 Flow 的类型定义</div><div class="line">Magic <span class="keyword">assert</span></div><div class="line">为每个测试文件隔离环境</div><div class="line">用 ES2017 编写测试</div><div class="line">支持 Promise</div><div class="line">支持 Generator</div><div class="line">支持 Async</div><div class="line">支持 Observable</div><div class="line">强化断言信息</div><div class="line">可选的 TAP 输出显示</div><div class="line">简明的堆栈跟踪</div></pre></td></tr></table></figure></p>
+<p>配置完成后保存，在齿轮图标左侧下拉框中选中刚才的配置信息，然后单击绿色三角形开始按钮进行连接。这样我们就可以设置断点进行调试，并在调试过程中修改代码。只是每次修改代码之后需要重新启动Node.js应用，然后连接调试。<br>单元测试：<br>● 单元测试是保障代码的可持续迭代开发。<br>● 单元测试代码也能帮开发者思考清楚代码之间的逻辑关系。<br>● 单元测试保证了代码的可交付性。<br>编写单元测试的一个核心原则就是简单，或者可以称之为单一原则。一个单元测试案例通常只针对一个函数功能进行测试。单元测试文件通常也与源代码文件一一对应，然后加上后缀例如.test.js、.spec.js等，一个文件中可以包含多个单元测试案例。除此之外，也需要注意从正反两个方向来测试代码的可靠性，既要考虑符合预期的情况，也要考虑代码出现意外时的异常情况。<br>Node.js已经为我们提供了一个用于测试的assert模块，它可以实现基本的断言功能。这里的断言是指程序中的一阶表达式，即判断一个结果为真或假的逻辑表达式，目的是为了验证代码与开发者预期结果是否一致。断言为真时代表程序符合预期，否则抛出异常。<br>有一些框架既提供了模块也提供了命令行工具，比如ava。<br>为什么要用 AVA?<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">轻量和高效</div><div class="line">简单的测试语法</div><div class="line">并发运行测试</div><div class="line">强制编写原子测试</div><div class="line">没有隐藏的全局变量</div><div class="line">包含 TypeScript 和 Flow 的类型定义</div><div class="line"><span class="symbol">Magic</span> <span class="meta">assert</span></div><div class="line">为每个测试文件隔离环境</div><div class="line">用 ES2017 编写测试</div><div class="line">支持 Promise</div><div class="line">支持 Generator</div><div class="line">支持 Async</div><div class="line">支持 Observable</div><div class="line">强化断言信息</div><div class="line">可选的 TAP 输出显示</div><div class="line">简明的堆栈跟踪</div></pre></td></tr></table></figure></p>
 <p>为什么不用 mocha，tape，tap？<br>Mocha 要求你使用隐式全局变量比如 describe 和 it 作为其默认接口（这是大部分人使用的）。这样做不是很好，并且串行执行测试没有进程隔离，使得测试十分缓慢。<br>Tape 和 tap 是非常好的。AVA 在它们的语法中得到大量启发，但它们也是串行执行测试，它们的默认 TAP 输出不是非常友好，因此你总是需要使用额外的 tap 报告。<br>与它们不同的是，AVA 可以并发执行测试，为每个测试文件提供独立进程，它的默认报告简单明了，并且 AVA 也支持通过 CLI 标志来输出一个 TAP 报告。</p>
 <ul>
 <li>测试风格<br>主流的单元测试风格包括测试驱动开发(TDD)和行为驱动开发(BDD)两种。<br>测试驱动的开发方式更强调代码执行逻辑的正确性。好处就是代码可靠性比较强，可以有效地减少bug。但是缺点也比较明显，对于某些耦合度比较高的复杂逻辑，编写测试代码需要大量时间。行为驱动开发方式更符合人的直觉，从功能点出发来编写，有点像黑盒测试，不关注代码实现逻辑，更关注代码实现效果。</li>
@@ -616,30 +616,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Django</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">DRF</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">MySQL8</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">电子档案</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">信息化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">规划</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Express</a>
               </li>
              
@@ -664,31 +640,35 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Django</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">DRF</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">MySQL8</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">电子档案</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">信息化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">规划</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">FastAPI</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Web</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">财务就是IT</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">企业财务信息系统</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">FreeOTP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">2FA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Github</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -712,23 +692,35 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">FreeOTP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">2FA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">财务就是IT</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">企业财务信息系统</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">智能制造</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">数字化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">MES</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">WMS</a>
+                <a href="javascript:void(0)" class="js-tag color5">JavaScript高级程序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -756,23 +748,27 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+                <a href="javascript:void(0)" class="js-tag color5">智能制造</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
+                <a href="javascript:void(0)" class="js-tag color4">数字化</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JavaScript高级程序</a>
+                <a href="javascript:void(0)" class="js-tag color4">MES</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color4">WMS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
+                <a href="javascript:void(0)" class="js-tag color2">Modbus</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">MQTT</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -784,11 +780,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Modbus</a>
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">MQTT</a>
+                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -804,7 +800,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">流程管理</a>
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -824,11 +820,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">微服务</a>
+                <a href="javascript:void(0)" class="js-tag color5">流程管理</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -840,7 +832,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">代码之髓</a>
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -852,15 +844,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">WebGIS</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">L7-AntV</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Leaflet</a>
+                <a href="javascript:void(0)" class="js-tag color1">Issue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -872,19 +860,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color4">微服务</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Issue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">http-server</a>
+                <a href="javascript:void(0)" class="js-tag color5">代码之髓</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -904,6 +884,30 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Live Server</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">WebGIS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">L7-AntV</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Leaflet</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">版权声明</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">http-server</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">RTSP</a>
               </li>
              
@@ -920,23 +924,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Live Server</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">版权声明</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">博客</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">方法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">感悟</a>
+                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -948,11 +940,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JavaScrip</a>
+                <a href="javascript:void(0)" class="js-tag color3">方法</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">廖雪峰</a>
+                <a href="javascript:void(0)" class="js-tag color3">感悟</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">计划</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -964,7 +960,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">计划</a>
+                <a href="javascript:void(0)" class="js-tag color5">JavaScrip</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">廖雪峰</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1001,6 +1001,14 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">基于DDD与前后端分离</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">实战供应链</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">业务梳理、系统设计与项目实战</a>
               </li>
              
               <li class="article-tag-list-item">
